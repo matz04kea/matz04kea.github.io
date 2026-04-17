@@ -96,6 +96,171 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .substack-cta{margin-top:3rem;text-align:center;padding:2.5rem 0;border-top:1px solid rgba(0,0,0,0.07);}
 .substack-cta p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem;}
 @media(max-width:600px){.article-item{grid-template-columns:1fr;}.article-img-placeholder{width:100%;height:140px;}}
+
+/* ── GLOBAL MOBILE OVERFLOW FIX ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  max-width: 100%;
+}
+img { max-width: 100%; height: auto; }
+
+/* Prevent any section from overflowing */
+section, nav, footer, div {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  /* Fix hero text overflow */
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+    word-break: break-word;
+  }
+  .hero-intro {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+  .hero-btns {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  .hero-btns .btn {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* Fix books row overflow */
+  .books-row {
+    gap: 10px !important;
+    padding: 10px 0 40px !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+  }
+  .book-cover {
+    width: 26vw !important;
+    height: 39vw !important;
+    min-width: 80px !important;
+  }
+
+  /* Fix nav overflow */
+  .nav-logo {
+    font-size: 1.1rem !important;
+  }
+
+  /* Fix page headers */
+  .page-header {
+    padding: 50px 5% 40px !important;
+  }
+  .page-header-title {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    word-break: break-word;
+  }
+
+  /* Fix blurb text overflow on book page */
+  .blurb-prose, .blurb-intro, .timeline-text, .blurb-tagline {
+    font-size: 1rem !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Fix about/contact grid overflow */
+  .about-inner, .contact-inner, .author-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .about-img-wrap::after,
+  .author-img-wrap::after {
+    display: none !important;
+  }
+
+  /* Fix footer overflow */
+  footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 24px 5% !important;
+  }
+  .footer-links {
+    justify-content: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Fix newsletter form */
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .newsletter-input {
+    border-right: 1px solid rgba(245,237,224,0.25) !important;
+    border-bottom: none !important;
+    border-radius: 2px 2px 0 0 !important;
+    width: 100% !important;
+  }
+  .newsletter-btn {
+    border-radius: 0 0 2px 2px !important;
+    width: 100% !important;
+    padding: 14px !important;
+  }
+
+  /* Fix socials overflow */
+  .socials-links {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Fix book page sidebar */
+  .book-top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .book-sidebar-covers {
+    position: static !important;
+  }
+  .bk2-row {
+    gap: 10px !important;
+  }
+  .bk2-cover {
+    width: 26vw !important;
+    height: 39vw !important;
+    min-width: 80px !important;
+  }
+
+  /* Fix writings page article grid */
+  .article-item {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .article-img, .article-img-placeholder {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  /* Fix contact form */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-submit {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Peer section */
+  .peer-quote {
+    font-size: 1.1rem !important;
+  }
+
+  /* Spotlight — can cause overflow */
+  .books-spotlight {
+    width: 100vw !important;
+    height: 300px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -239,6 +404,25 @@ document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener(
 document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
 const contactForm=document.getElementById('contact-form');
 if(contactForm){contactForm.addEventListener('submit',e=>{e.preventDefault();const btn=contactForm.querySelector('.contact-submit');btn.textContent='Message Sent ✓';btn.disabled=true;setTimeout(()=>{contactForm.reset();btn.textContent='Send Message';btn.disabled=false;},3000);});}
+
+// Newsletter subscribe fix - ensure button works on mobile
+document.querySelectorAll('.newsletter-form').forEach(function(form) {
+  var btn = form.querySelector('.newsletter-btn');
+  var inp = form.querySelector('.newsletter-input');
+  if (!btn || !inp) return;
+  // Remove old onclick and replace with robust handler
+  btn.removeAttribute('onclick');
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var email = inp.value.trim();
+    if (email && /^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      window.open('https://karabigeorge.substack.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    } else {
+      window.open('https://karabigeorge.substack.com/subscribe', '_blank');
+    }
+  });
+});
+
 </script>
 </body>
 </html>
