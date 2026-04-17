@@ -171,42 +171,80 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 (function(){
   const grid = document.getElementById('articles-grid');
   const loadMsg = document.getElementById('loading-msg');
-  const RSS_URL = 'https://karabigeorge.substack.com/feed';
-  const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+  const RSS = 'https://karabigeorge.substack.com/feed';
 
-  fetch(PROXY)
-    .then(r => r.json())
-    .then(data => {
-      if (!data.items || !data.items.length) throw new Error('No items');
-      loadMsg.remove();
-      data.items.forEach(item => {
-        const excerpt = item.description
-          ? item.description.replace(/<[^>]*>/g,'').substring(0,180).trim() + '…'
-          : '';
-        const img = item.thumbnail || item.enclosure?.link || '';
-        const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'}) : '';
-        const el = document.createElement('a');
-        el.href = item.link;
-        el.target = '_blank';
-        el.className = 'article-item';
-        el.innerHTML = `
-          ${img
-            ? `<img src="${img}" alt="" class="article-img" onerror="this.outerHTML='<div class=\"article-img-placeholder\"><span>Substack</span></div>'">`
-            : '<div class="article-img-placeholder"><span>Substack</span></div>'}
-          <div class="article-meta">
-            <span class="article-source">Substack${pubDate ? ' · ' + pubDate : ''}</span>
-            <h2 class="article-title">${item.title}</h2>
-            <p class="article-excerpt">${excerpt}</p>
-            <span class="article-readmore">Read on Substack →</span>
-          </div>`;
-        grid.appendChild(el);
-      });
+  // Try multiple CORS proxies in sequence
+  const proxies = [
+    'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS) + '&count=6',
+    'https://api.allorigins.win/get?url=' + encodeURIComponent(RSS),
+  ];
+
+  async function tryRss2Json(url) {
+    const r = await fetch(url);
+    const d = await r.json();
+    if (d.items && d.items.length) return d.items;
+    return null;
+  }
+
+  async function tryAllOrigins(url) {
+    const r = await fetch(url);
+    const d = await r.json();
+    if (!d.contents) return null;
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(d.contents, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item')).slice(0,6);
+    return items.map(item => ({
+      title: item.querySelector('title')?.textContent || '',
+      link: item.querySelector('link')?.textContent || '',
+      description: item.querySelector('description')?.textContent || '',
+      pubDate: item.querySelector('pubDate')?.textContent || '',
+      thumbnail: item.querySelector('enclosure')?.getAttribute('url') || ''
+    }));
+  }
+
+  function renderItems(items) {
+    if (!items || !items.length) throw new Error('No items');
+    loadMsg && loadMsg.remove();
+    items.forEach(item => {
+      const excerpt = item.description
+        ? item.description.replace(/<[^>]*>/g,'').substring(0,180).trim() + '…'
+        : '';
+      const img = item.thumbnail || item.enclosure?.link || '';
+      const pubDate = item.pubDate
+        ? new Date(item.pubDate).toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'})
+        : '';
+      const el = document.createElement('a');
+      el.href = item.link;
+      el.target = '_blank';
+      el.className = 'article-item';
+      el.innerHTML = `
+        ${img
+          ? `<img src="${img}" alt="" class="article-img" onerror="this.outerHTML='<div class=\"article-img-placeholder\"><span>Substack</span></div>'">`
+          : '<div class="article-img-placeholder"><span>Substack</span></div>'}
+        <div class="article-meta">
+          <span class="article-source">Substack${pubDate ? ' · ' + pubDate : ''}</span>
+          <h2 class="article-title">${item.title}</h2>
+          <p class="article-excerpt">${excerpt}</p>
+          <span class="article-readmore">Read on Substack →</span>
+        </div>`;
+      grid.appendChild(el);
+    });
+  }
+
+  tryRss2Json(proxies[0])
+    .then(items => {
+      if (items) { renderItems(items); return; }
+      return tryAllOrigins(proxies[1]).then(renderItems);
     })
     .catch(() => {
-      if (loadMsg) loadMsg.textContent = 'Unable to load articles automatically right now. Visit Karabi's Substack to read all her pieces.';
+      tryAllOrigins(proxies[1])
+        .then(renderItems)
+        .catch(() => {
+          if (loadMsg) loadMsg.innerHTML =
+            'Visit <a href="https://karabigeorge.substack.com/" target="_blank" style="color:var(--teal)">Karabi's Substack</a> to read all her articles.';
+        });
     });
 })();
-</script>
 
 <script>var el=document.getElementById("nav-writings");if(el){el.classList.add("active");}</script>
 <script>const hamburger=document.getElementById('hamburger');
