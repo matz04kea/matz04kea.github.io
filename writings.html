@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writings — Karabi George</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+:root {
+  --teal:#2a7c6f;--teal-mid:#1e6b5c;--teal-dark:#1a5c52;--teal-deeper:#134d44;--teal-darkest:#0e3d35;
+  --champagne:#f5ede0;--champagne-warm:#e8c9a0;--page-bg:#ffffff;--off-white:#faf7f2;
+  --text-dark:#1c2b28;--text-mid:#4a6560;--text-light:#8aa5a0;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;--max-w:1100px;--pad:7%;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--page-bg);color:var(--text-dark);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
+.nav-logo{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
+.nav-links a:hover,.nav-links a.active{opacity:1;}
+.nav-links a.active{border-bottom:1.5px solid var(--teal);padding-bottom:2px;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--text-dark);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;gap:1.5rem;z-index:99;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:var(--sans);font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.7;}
+.page-header{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 40%,var(--teal-deeper) 100%);padding:70px var(--pad) 60px;text-align:center;}
+.page-header-eyebrow{font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:var(--champagne-warm);margin-bottom:1rem;display:block;}
+.page-header-title{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--champagne);line-height:1.1;}
+.btn{display:inline-block;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn-light{background:var(--champagne);color:var(--teal-deeper);}
+.btn-light:hover{background:#fff;}
+.btn-outline-light{background:transparent;color:var(--champagne);border:1px solid rgba(245,237,224,0.45);}
+.btn-outline-light:hover{border-color:var(--champagne);background:rgba(245,237,224,0.1);}
+.btn-teal{background:var(--teal);color:var(--champagne);}
+.btn-teal:hover{background:var(--teal-dark);}
+.btn-outline-teal{background:transparent;color:var(--teal);border:1px solid var(--teal);}
+.btn-outline-teal:hover{background:var(--teal);color:var(--champagne);}
+.section-label{font-family:var(--sans);font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
+.section-label-light{color:var(--champagne-warm);}
+.section-heading{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--text-dark);margin-bottom:1.5rem;}
+.newsletter-section{background:var(--teal-deeper);padding:80px var(--pad);text-align:center;}
+.newsletter-inner{max-width:500px;margin:0 auto;}
+.newsletter-heading{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--champagne);margin-bottom:0.75rem;}
+.newsletter-sub{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--champagne);opacity:0.8;margin-bottom:2.5rem;line-height:1.75;}
+.newsletter-form{display:flex;max-width:420px;margin:0 auto 1rem;}
+.newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:var(--sans);font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
+.newsletter-input:focus{border-color:rgba(245,237,224,0.6);}
+.newsletter-input::placeholder{color:rgba(245,237,224,0.4);}
+.newsletter-btn{padding:14px 22px;background:var(--champagne-warm);color:var(--teal-deeper);border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.newsletter-btn:hover{background:var(--champagne);}
+.newsletter-note{font-family:var(--sans);font-size:0.72rem;color:rgba(245,237,224,0.5);}
+.newsletter-note a{color:var(--champagne-warm);text-decoration:none;}
+.newsletter-note a:hover{text-decoration:underline;}
+.peer-section{background:var(--off-white);padding:80px var(--pad);text-align:center;}
+.peer-inner{max-width:680px;margin:0 auto;}
+.peer-quote-mark{font-family:var(--serif);font-size:6rem;line-height:0.5;color:var(--teal);opacity:0.18;margin-bottom:1.5rem;display:block;}
+.peer-quote{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;font-weight:300;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;}
+.peer-attribution{font-family:var(--sans);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mid);}
+.peer-placeholder{font-family:var(--sans);font-size:0.7rem;color:var(--text-light);font-style:italic;margin-top:0.5rem;}
+.socials-section{background:var(--page-bg);padding:44px var(--pad);text-align:center;border-top:1px solid rgba(0,0,0,0.06);}
+.socials-label{font-family:var(--sans);font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.5rem;display:block;}
+.socials-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;}
+.social-link{display:flex;align-items:center;gap:0.45rem;font-family:var(--sans);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.2s;}
+.social-link:hover{color:var(--teal);}
+.social-icon{width:17px;height:17px;flex-shrink:0;}
+footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-name{font-family:var(--serif);font-size:1rem;color:var(--champagne);opacity:0.42;letter-spacing:0.06em;}
+.footer-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-family:var(--sans);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--champagne);opacity:0.38;text-decoration:none;transition:opacity 0.2s;}
+.footer-links a:hover{opacity:0.8;}
+.ornament{text-align:center;padding:20px 0;color:var(--teal);opacity:0.2;font-size:0.85rem;letter-spacing:0.5em;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:900px){:root{--pad:6%;}.nav-links{display:none;}.hamburger{display:flex;}}
+@media(max-width:600px){:root{--pad:5%;}.newsletter-form{flex-direction:column;}.newsletter-input{border-right:1px solid rgba(245,237,224,0.25);border-bottom:none;border-radius:2px 2px 0 0;}.newsletter-btn{border-radius:0 0 2px 2px;}footer{flex-direction:column;align-items:center;text-align:center;}.footer-links{justify-content:center;}}
+
+.writings-section{padding:80px var(--pad);background:#fff;}
+.writings-inner{max-width:860px;margin:0 auto;}
+.writings-intro{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-mid);line-height:1.85;margin-bottom:3rem;font-style:italic;}
+.articles-grid{display:flex;flex-direction:column;}
+.article-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;transition:opacity 0.2s;align-items:start;}
+.article-item:first-child{border-top:1px solid rgba(0,0,0,0.07);}
+.article-item:hover{opacity:0.75;}
+.article-img-placeholder{width:180px;height:118px;border-radius:3px;background:linear-gradient(135deg,#e8f4f1 0%,#d0ece6 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.article-img-placeholder span{font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);opacity:0.5;}
+.article-img{width:180px;height:118px;border-radius:3px;object-fit:cover;flex-shrink:0;}
+.article-meta{display:flex;flex-direction:column;gap:0.4rem;}
+.article-source{font-family:'Jost',sans-serif;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:400;color:var(--text-dark);line-height:1.3;margin:0.1rem 0 0.4rem;}
+.article-excerpt{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-mid);line-height:1.75;}
+.article-readmore{font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-top:0.6rem;}
+.loading-msg{font-family:'Jost',sans-serif;font-size:0.8rem;color:var(--text-light);text-align:center;padding:2rem 0;font-style:italic;}
+.substack-cta{margin-top:3rem;text-align:center;padding:2.5rem 0;border-top:1px solid rgba(0,0,0,0.07);}
+.substack-cta p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem;}
+@media(max-width:600px){.article-item{grid-template-columns:1fr;}.article-img-placeholder{width:100%;height:140px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Karabi George</a>
+  <ul class="nav-links">
+    <li><a href="book.html" id="nav-book">The Book</a></li>
+    <li><a href="writings.html" id="nav-writings">Writings</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="contact.html" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="book.html" onclick="closeMobile()">The Book</a>
+  <a href="writings.html" onclick="closeMobile()">Writings</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<div class="page-header">
+  <span class="page-header-eyebrow">Essays &amp; Articles</span>
+  <h1 class="page-header-title">Writings</h1>
+</div>
+
+<section class="writings-section">
+  <div class="writings-inner">
+    <p class="writings-intro">Karabi writes about craft, crime fiction, culture, and the experience of writing her debut thriller. Her latest pieces are loaded automatically from Substack.</p>
+    <div class="articles-grid" id="articles-grid">
+      <p class="loading-msg" id="loading-msg">Loading articles from Substack…</p>
+    </div>
+    <div class="substack-cta">
+      <p>Read all of Karabi's writing dispatches and essays on Substack.</p>
+      <a href="https://karabigeorge.substack.com/" target="_blank" class="btn btn-teal">Visit Substack →</a>
+    </div>
+  </div>
+</section>
+<section class="newsletter-section reveal">
+  <div class="newsletter-inner">
+    <span class="section-label section-label-light" style="display:block;text-align:center;">Stay in the Loop</span>
+    <h2 class="newsletter-heading">Sign Up for Updates</h2>
+    <p class="newsletter-sub">Cover reveals, publication news and writing dispatches — straight to your inbox.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+    <p class="newsletter-note">Via <a href="https://karabigeorge.substack.com/" target="_blank">Karabi's Substack</a>. No spam, ever.</p>
+  </div>
+</section>
+<div class="socials-section reveal">
+  <span class="socials-label">Find Karabi Online</span>
+  <div class="socials-links">
+    <a href="https://karabigeorge.substack.com/" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>Substack</a>
+    <a href="https://www.instagram.com/karabi_george_author" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+    <a href="https://www.tiktok.com/@karabi_george" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</a>
+    <a href="https://www.facebook.com/karabigeorge" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
+    <a href="https://www.threads.com/@karabi_george_author" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 12.376c-.068-3.944-2.578-6.165-6.516-6.165-2.43 0-4.428.955-5.66 2.693l1.823 1.252c.923-1.402 2.37-1.703 3.837-1.703 2.202 0 3.435 1.305 3.64 3.122-.97-.165-2.01-.215-3.107-.147-3.146.183-5.17 2.017-5.037 4.565.068 1.295.714 2.408 1.817 3.136.932.617 2.133.918 3.382.85 1.648-.09 2.94-.718 3.84-1.868.685-.875 1.117-2.004 1.309-3.43.786.474 1.367 1.097 1.688 1.845.547 1.273.578 3.368-1.13 5.072-1.495 1.494-3.295 2.142-6.013 2.162-3.012-.022-5.294-.989-6.78-2.874-1.394-1.766-2.113-4.327-2.136-7.624.023-3.297.742-5.858 2.136-7.624C7.706 3.769 9.988 2.802 13 2.78c3.034.022 5.345.994 6.868 2.888.756.934 1.323 2.095 1.7 3.458l2.135-.57c-.456-1.676-1.175-3.14-2.152-4.36C19.603 1.318 16.877.03 13.007 0h-.015C9.124.03 6.42 1.325 4.596 3.839 2.955 6.1 2.109 9.358 2.08 12.943L2.079 13v.057c.03 3.585.876 6.843 2.517 9.104C6.42 24.675 9.124 25.97 12.992 26h.015c3.438-.024 5.854-.946 7.848-2.936 2.636-2.63 2.556-5.958 1.685-7.994-.624-1.454-1.82-2.637-3.47-3.425a16.617 16.617 0 0 0-.48-3.269zm-5.47 5.232c-1.377.076-2.809-.54-2.883-1.874-.056-1.045.743-2.212 3.14-2.346.275-.016.546-.023.812-.023.855 0 1.548.074 2.151.216-.245 3.055-1.74 3.932-3.22 4.027z"/></svg>Threads</a>
+    <a href="https://x.com/karabi_george" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</a>
+  </div>
+</div>
+<footer>
+  <span class="footer-name">Karabi George</span>
+  <ul class="footer-links">
+    <li><a href="book.html">The Book</a></li>
+    <li><a href="writings.html">Writings</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+// Auto-load Substack articles via RSS feed
+(function(){
+  const grid = document.getElementById('articles-grid');
+  const loadMsg = document.getElementById('loading-msg');
+  const RSS_URL = 'https://karabigeorge.substack.com/feed';
+  const PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+
+  fetch(PROXY)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.items || !data.items.length) throw new Error('No items');
+      loadMsg.remove();
+      data.items.forEach(item => {
+        const excerpt = item.description
+          ? item.description.replace(/<[^>]*>/g,'').substring(0,180).trim() + '…'
+          : '';
+        const img = item.thumbnail || item.enclosure?.link || '';
+        const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'}) : '';
+        const el = document.createElement('a');
+        el.href = item.link;
+        el.target = '_blank';
+        el.className = 'article-item';
+        el.innerHTML = `
+          ${img
+            ? `<img src="${img}" alt="" class="article-img" onerror="this.outerHTML='<div class=\"article-img-placeholder\"><span>Substack</span></div>'">`
+            : '<div class="article-img-placeholder"><span>Substack</span></div>'}
+          <div class="article-meta">
+            <span class="article-source">Substack${pubDate ? ' · ' + pubDate : ''}</span>
+            <h2 class="article-title">${item.title}</h2>
+            <p class="article-excerpt">${excerpt}</p>
+            <span class="article-readmore">Read on Substack →</span>
+          </div>`;
+        grid.appendChild(el);
+      });
+    })
+    .catch(() => {
+      if (loadMsg) loadMsg.textContent = 'Unable to load articles automatically right now. Visit Karabi's Substack to read all her pieces.';
+    });
+})();
+</script>
+
+<script>var el=document.getElementById("nav-writings");if(el){el.classList.add("active");}</script>
+<script>const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+if(hamburger&&mobileMenu){hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));}
+function closeMobile(){if(mobileMenu)mobileMenu.classList.remove('open');}
+document.querySelectorAll('.reveal').forEach(el=>{
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+  obs.observe(el);
+});
+document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener('click',()=>(function(){
+  var inp = this.closest('.newsletter-form, .newsletter-inner, section').querySelector('.newsletter-input');
+  var email = inp ? inp.value.trim() : '';
+  if(email && /^[^@]+@[^@]+\.[^@]+$/.test(email)){
+    window.open('https://karabigeorge.substack.com/subscribe?email='+encodeURIComponent(email),'_blank');
+  } else {
+    window.open('https://karabigeorge.substack.com/subscribe','_blank');
+  }
+})());});
+document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
+const contactForm=document.getElementById('contact-form');
+if(contactForm){contactForm.addEventListener('submit',e=>{e.preventDefault();const btn=contactForm.querySelector('.contact-submit');btn.textContent='Message Sent ✓';btn.disabled=true;setTimeout(()=>{contactForm.reset();btn.textContent='Send Message';btn.disabled=false;},3000);});}
+</script>
+</body>
+</html>
