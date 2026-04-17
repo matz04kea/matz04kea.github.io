@@ -114,11 +114,11 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .about-bio-para{font-family:'Libre Baskerville',Georgia,serif;font-size:1.1rem;color:var(--text-dark);line-height:1.9;margin-bottom:1.5rem;}
 .awards-heading{font-family:'Source Sans 3',sans-serif;font-size:0.8rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin:2.5rem 0 1.2rem;display:block;}
 .awards-list{list-style:none;margin-bottom:1rem;}
-.awards-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.07);display:block;line-height:1.6;}
-.awards-list li::before{content:'◆';font-size:0.42rem;color:var(--teal);margin-top:5px;flex-shrink:0;}
+.awards-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:10px 0 10px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.07);display:block;line-height:1.6;position:relative;}
+.awards-list li::before{content:'◆';font-size:0.42rem;color:var(--teal);position:absolute;left:0;top:14px;}
 .pubs-list{list-style:none;}
-.pubs-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.06);display:block;line-height:1.6;}
-.pubs-list li::before{content:'◆';font-size:0.42rem;color:var(--champagne-warm);margin-top:5px;flex-shrink:0;}
+.pubs-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:8px 0 8px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.06);display:block;line-height:1.6;position:relative;}
+.pubs-list li::before{content:'◆';font-size:0.42rem;color:var(--champagne-warm);position:absolute;left:0;top:12px;}
 @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:3rem;}.about-img-wrap::after{display:none;}}
 
 /* ── GLOBAL MOBILE OVERFLOW FIX ── */
