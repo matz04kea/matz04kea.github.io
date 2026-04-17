@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Book — Karabi George</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
 :root {
   --teal:#2a7c6f;--teal-mid:#1e6b5c;--teal-dark:#1a5c52;--teal-deeper:#134d44;--teal-darkest:#0e3d35;
   --champagne:#f5ede0;--champagne-warm:#e8c9a0;--page-bg:#ffffff;--off-white:#faf7f2;
   --text-dark:#1c2b28;--text-mid:#4a6560;--text-light:#8aa5a0;
-  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;--max-w:1100px;--pad:7%;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',sans-serif;--max-w:1100px;--pad:7%;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--page-bg);color:var(--text-dark);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--sans);background:var(--page-bg);color:var(--text-dark);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:17px;}
 nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
-.nav-logo{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
-.nav-links a{font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
+.nav-links a{font-family:var(--sans);font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
 .nav-links a:hover,.nav-links a.active{opacity:1;}
 .nav-links a.active{border-bottom:1.5px solid var(--teal);padding-bottom:2px;}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
@@ -28,7 +28,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .mobile-menu a{font-family:var(--sans);font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.7;}
 .page-header{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 40%,var(--teal-deeper) 100%);padding:70px var(--pad) 60px;text-align:center;}
 .page-header-eyebrow{font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:var(--champagne-warm);margin-bottom:1rem;display:block;}
-.page-header-title{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--champagne);line-height:1.1;}
+.page-header-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .btn{display:inline-block;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:var(--champagne);color:var(--teal-deeper);}
 .btn-light:hover{background:#fff;}
@@ -38,13 +38,13 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .btn-teal:hover{background:var(--teal-dark);}
 .btn-outline-teal{background:transparent;color:var(--teal);border:1px solid var(--teal);}
 .btn-outline-teal:hover{background:var(--teal);color:var(--champagne);}
-.section-label{font-family:var(--sans);font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
+.section-label{font-family:'Inter',sans-serif;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
 .section-label-light{color:var(--champagne-warm);}
 .section-heading{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--text-dark);margin-bottom:1.5rem;}
 .newsletter-section{background:var(--teal-deeper);padding:80px var(--pad);text-align:center;}
 .newsletter-inner{max-width:500px;margin:0 auto;}
-.newsletter-heading{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--champagne);margin-bottom:0.75rem;}
-.newsletter-sub{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--champagne);opacity:0.8;margin-bottom:2.5rem;line-height:1.75;}
+.newsletter-heading{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;color:var(--champagne);margin-bottom:0.75rem;}
+.newsletter-sub{font-family:'Inter',sans-serif;font-size:0.95rem;font-style:normal;color:var(--champagne);opacity:0.8;margin-bottom:2.5rem;line-height:1.75;}
 .newsletter-form{display:flex;max-width:420px;margin:0 auto 1rem;}
 .newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:var(--sans);font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
 .newsletter-input:focus{border-color:rgba(245,237,224,0.6);}
@@ -57,7 +57,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .peer-section{background:var(--off-white);padding:80px var(--pad);text-align:center;}
 .peer-inner{max-width:680px;margin:0 auto;}
 .peer-quote-mark{font-family:var(--serif);font-size:6rem;line-height:0.5;color:var(--teal);opacity:0.18;margin-bottom:1.5rem;display:block;}
-.peer-quote{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;font-weight:300;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;}
+.peer-quote{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.2vw,1.45rem);font-style:italic;font-weight:400;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;}
 .peer-attribution{font-family:var(--sans);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mid);}
 .peer-placeholder{font-family:var(--sans);font-size:0.7rem;color:var(--text-light);font-style:italic;margin-top:0.5rem;}
 .socials-section{background:var(--page-bg);padding:44px var(--pad);text-align:center;border-top:1px solid rgba(0,0,0,0.06);}
@@ -91,13 +91,13 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 
 .book-content-section{padding:80px var(--pad);background:#fff;}
 .book-top{display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start;max-width:1080px;margin:0 auto 60px;}
-.blurb-intro{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:normal;color:var(--text-dark);line-height:1.85;margin-bottom:1.75rem;font-weight:700;}
-.blurb-prose{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-dark);line-height:1.85;margin-bottom:1.5rem;}
+.blurb-intro{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:normal;font-weight:700;color:var(--text-dark);line-height:1.85;margin-bottom:1.75rem;font-weight:400;}
+.blurb-prose{font-family:'Inter',sans-serif;font-size:1rem;color:var(--text-dark);line-height:1.85;margin-bottom:1.5rem;}
 .timeline-entry{margin-bottom:1.5rem;padding-left:1.5rem;}
-.timeline-time{font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.18em;color:var(--teal);text-transform:uppercase;display:block;margin-bottom:0.35rem;}
-.timeline-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-dark);line-height:1.75;}
+.timeline-time{font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.18em;color:var(--teal);text-transform:uppercase;display:block;margin-bottom:0.35rem;}
+.timeline-text{font-family:'Inter',sans-serif;font-size:1rem;color:var(--text-dark);line-height:1.75;}
 .blurb-em{font-style:italic;}
-.blurb-tagline{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;color:var(--teal-dark);border-top:1px solid rgba(42,124,111,0.15);padding-top:1.5rem;margin:2rem 0 2rem;}
+.blurb-tagline{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--teal-dark);border-top:1px solid rgba(42,124,111,0.15);padding-top:1.5rem;margin:2rem 0 2rem;}
 .book-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;}
 .book-sidebar-covers{display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:100px;}
 .books-overlap{position:relative;height:290px;width:260px;margin:0 auto 1.5rem;}
@@ -106,7 +106,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .bk-back1{left:35px;z-index:2;transform:rotateY(-18deg) translateZ(-10px);}
 .bk-front{left:70px;z-index:3;transform:rotateY(-18deg);}
 .publisher-list{list-style:none;margin-bottom:1.5rem;}
-.publisher-list li{font-family:'Jost',sans-serif;font-size:0.76rem;color:var(--text-mid);padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.06);display:flex;justify-content:space-between;gap:1rem;}
+.publisher-list li{font-family:'Inter',sans-serif;font-size:0.76rem;color:var(--text-mid);padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.06);display:flex;justify-content:space-between;gap:1rem;}
 .publisher-list li span:first-child{color:var(--text-light);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;}
 @media(max-width:860px){.book-top{grid-template-columns:1fr;}.book-sidebar-covers{position:static;}}
 
@@ -207,7 +207,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .bk2-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:3px;}
 .bk2-inner{border:1px solid rgba(255,255,255,0.1);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 8px;position:relative;z-index:2;}
 .bk2-tag{font-family:'Jost',sans-serif;font-size:0.45rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,237,224,0.35);}
-.bk2-title{font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-weight:500;color:#f5ede0;line-height:1.2;text-align:center;}
+.bk2-title{font-family:'Playfair Display',serif;font-size:0.88rem;font-weight:500;color:#f5ede0;line-height:1.2;text-align:center;}
 .bk2-author{font-family:'Jost',sans-serif;font-size:0.48rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,237,224,0.58);}
 .bk2-lbl{font-family:'Jost',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);}
 
@@ -383,9 +383,9 @@ section, nav, footer, div {
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo">Karabi George</a>
+  <a href="index_v2.html" class="nav-logo">Karabi George</a>
   <ul class="nav-links">
-    <li><a href="book.html" id="nav-book">The Book</a></li>
+    <li><a href="book_v2.html" id="nav-book">The Book</a></li>
     <li><a href="writings.html" id="nav-writings">Writings</a></li>
     <li><a href="about.html" id="nav-about">About</a></li>
     <li><a href="contact.html" id="nav-contact">Contact</a></li>
@@ -393,7 +393,7 @@ section, nav, footer, div {
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="book.html" onclick="closeMobile()">The Book</a>
+  <a href="book_v2.html" onclick="closeMobile()">The Book</a>
   <a href="writings.html" onclick="closeMobile()">Writings</a>
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
@@ -526,7 +526,7 @@ section, nav, footer, div {
 <footer>
   <span class="footer-name">Karabi George</span>
   <ul class="footer-links">
-    <li><a href="book.html">The Book</a></li>
+    <li><a href="book_v2.html">The Book</a></li>
     <li><a href="writings.html">Writings</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
