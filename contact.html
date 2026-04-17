@@ -306,6 +306,14 @@ section, nav, footer, div {
   z-index:98;
 }
 .menu-overlay.open{display:block;}
+
+/* Scroll lock when menu open - iOS Safari compatible */
+body.menu-open{
+  overflow:hidden;
+  position:fixed;
+  width:100%;
+  height:100%;
+}
 </style>
 <script src="https://www.google.com/recaptcha/api.js" async defer>
 // Newsletter subscribe fix - ensure button works on mobile
@@ -448,17 +456,22 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
 const mobileMenu=document.getElementById('mobile-menu');
 const menuOverlay=document.getElementById('menu-overlay');
 
+var scrollY = 0;
 function openMobile(){
+  scrollY = window.scrollY;
   mobileMenu.classList.add('open');
   hamburger.classList.add('open');
   if(menuOverlay) menuOverlay.classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.classList.add('menu-open');
+  document.body.style.top = '-' + scrollY + 'px';
 }
 function closeMobile(){
   if(mobileMenu) mobileMenu.classList.remove('open');
   if(hamburger) hamburger.classList.remove('open');
   if(menuOverlay) menuOverlay.classList.remove('open');
-  document.body.style.overflow='';
+  document.body.classList.remove('menu-open');
+  document.body.style.top = '';
+  window.scrollTo(0, scrollY);
 }
 if(hamburger&&mobileMenu){
   hamburger.addEventListener('click',()=>{
