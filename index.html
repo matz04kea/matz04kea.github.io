@@ -557,6 +557,22 @@ section, nav, footer, div {
     height: 300px !important;
   }
 }
+
+/* Hamburger → X transition */
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.hamburger span{transition:transform 0.3s ease, opacity 0.3s ease;}
+
+/* Overlay behind mobile menu */
+.menu-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:98;
+}
+.menu-overlay.open{display:block;}
 </style>
 </head>
 <body>
@@ -576,6 +592,7 @@ section, nav, footer, div {
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
 </div>
+<div class="menu-overlay" id="menu-overlay"></div>
 
 <section class="hero">
   <div class="hero-text">
@@ -711,8 +728,26 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
 <script>
 const hamburger=document.getElementById('hamburger');
 const mobileMenu=document.getElementById('mobile-menu');
-if(hamburger&&mobileMenu){hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));}
-function closeMobile(){if(mobileMenu)mobileMenu.classList.remove('open');}
+const menuOverlay=document.getElementById('menu-overlay');
+
+function openMobile(){
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  if(menuOverlay) menuOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMobile(){
+  if(mobileMenu) mobileMenu.classList.remove('open');
+  if(hamburger) hamburger.classList.remove('open');
+  if(menuOverlay) menuOverlay.classList.remove('open');
+  document.body.style.overflow='';
+}
+if(hamburger&&mobileMenu){
+  hamburger.addEventListener('click',()=>{
+    mobileMenu.classList.contains('open') ? closeMobile() : openMobile();
+  });
+}
+if(menuOverlay){ menuOverlay.addEventListener('click', closeMobile); }
 document.querySelectorAll('.reveal').forEach(el=>{
   const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
   obs.observe(el);

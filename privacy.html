@@ -584,6 +584,22 @@ section, nav, footer, div {
   text-decoration: none;
 }
 .privacy-section a:hover { text-decoration: underline; }
+
+/* Hamburger → X transition */
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.hamburger span{transition:transform 0.3s ease, opacity 0.3s ease;}
+
+/* Overlay behind mobile menu */
+.menu-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:98;
+}
+.menu-overlay.open{display:block;}
 </style>
 </head>
 <body>
