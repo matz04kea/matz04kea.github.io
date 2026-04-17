@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karabi George — Author</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+:root {
+  --teal:#2a7c6f;--teal-mid:#1e6b5c;--teal-dark:#1a5c52;--teal-deeper:#134d44;--teal-darkest:#0e3d35;
+  --champagne:#f5ede0;--champagne-warm:#e8c9a0;--page-bg:#ffffff;--off-white:#faf7f2;
+  --text-dark:#1c2b28;--text-mid:#4a6560;--text-light:#8aa5a0;
+  --serif:'Libre Baskerville',Georgia,serif;--sans:'Source Sans 3',sans-serif;--max-w:1100px;--pad:7%;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--page-bg);color:var(--text-dark);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:17px;}
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
+.nav-logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:'Source Sans 3',sans-serif;font-size:0.75rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
+.nav-links a:hover,.nav-links a.active{opacity:1;}
+.nav-links a.active{border-bottom:1.5px solid var(--teal);padding-bottom:2px;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--text-dark);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;gap:1.5rem;z-index:99;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.7;}
+.page-header{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 40%,var(--teal-deeper) 100%);padding:70px var(--pad) 60px;text-align:center;}
+.page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:var(--champagne-warm);margin-bottom:1rem;display:block;}
+.page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--champagne);line-height:1.1;}
+.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn-light{background:var(--champagne);color:var(--teal-deeper);}
+.btn-light:hover{background:#fff;}
+.btn-outline-light{background:transparent;color:var(--champagne);border:1px solid rgba(245,237,224,0.45);}
+.btn-outline-light:hover{border-color:var(--champagne);background:rgba(245,237,224,0.1);}
+.btn-teal{background:var(--teal);color:var(--champagne);}
+.btn-teal:hover{background:var(--teal-dark);}
+.btn-outline-teal{background:transparent;color:var(--teal);border:1px solid var(--teal);}
+.btn-outline-teal:hover{background:var(--teal);color:var(--champagne);}
+.section-label{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
+.section-label-light{color:var(--champagne-warm);}
+.section-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--text-dark);margin-bottom:1.5rem;}
+.newsletter-section{background:var(--teal-deeper);padding:80px var(--pad);text-align:center;}
+.newsletter-inner{max-width:500px;margin:0 auto;}
+.newsletter-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--champagne);margin-bottom:0.75rem;}
+.newsletter-sub{font-family:'Libre Baskerville',Georgia,serif;font-size:1.05rem;font-style:italic;color:var(--champagne);opacity:0.8;margin-bottom:2.5rem;line-height:1.75;}
+.newsletter-form{display:flex;max-width:420px;margin:0 auto 1rem;}
+.newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
+.newsletter-input:focus{border-color:rgba(245,237,224,0.6);}
+.newsletter-input::placeholder{color:rgba(245,237,224,0.4);}
+.newsletter-btn{padding:14px 22px;background:var(--champagne-warm);color:var(--teal-deeper);border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.newsletter-btn:hover{background:var(--champagne);}
+.newsletter-note{font-family:'Source Sans 3',sans-serif;font-size:0.72rem;color:rgba(245,237,224,0.5);}
+.newsletter-note a{color:var(--champagne-warm);text-decoration:none;}
+.newsletter-note a:hover{text-decoration:underline;}
+.peer-section{background:var(--off-white);padding:80px var(--pad);text-align:center;}
+.peer-inner{max-width:680px;margin:0 auto;}
+.peer-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:6rem;line-height:0.5;color:var(--teal);opacity:0.18;margin-bottom:1.5rem;display:block;}
+.peer-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;font-weight:300;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;}
+.peer-attribution{font-family:'Source Sans 3',sans-serif;font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mid);}
+.peer-placeholder{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;color:var(--text-light);font-style:italic;margin-top:0.5rem;}
+.socials-section{background:var(--page-bg);padding:44px var(--pad);text-align:center;border-top:1px solid rgba(0,0,0,0.06);}
+.socials-label{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.5rem;display:block;}
+.socials-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;}
+.social-link{display:flex;align-items:center;gap:0.45rem;font-family:'Source Sans 3',sans-serif;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color 0.2s;}
+.social-link:hover{color:var(--teal);}
+.social-icon{width:17px;height:17px;flex-shrink:0;}
+footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-name{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;color:var(--champagne);opacity:0.42;letter-spacing:0.06em;}
+.footer-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--champagne);opacity:0.38;text-decoration:none;transition:opacity 0.2s;}
+.footer-links a:hover{opacity:0.8;}
+.ornament{text-align:center;padding:20px 0;color:var(--teal);opacity:0.2;font-size:0.85rem;letter-spacing:0.5em;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:900px){:root{--pad:6%;}.nav-links{display:none;}.hamburger{display:flex;}}
+@media(max-width:600px){:root{--pad:5%;}.newsletter-form{flex-direction:column;}.newsletter-input{border-right:1px solid rgba(245,237,224,0.25);border-bottom:none;border-radius:2px 2px 0 0;}.newsletter-btn{border-radius:0 0 2px 2px;}footer{flex-direction:column;align-items:center;text-align:center;}.footer-links{justify-content:center;}}
+
+
+.book-3d{width:180px;height:268px;transform-style:preserve-3d;position:relative;}
+.book-face{position:absolute;width:180px;height:268px;backface-visibility:hidden;border-radius:2px 5px 5px 2px;}
+.book-face.front{display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 14px;box-shadow:inset -6px 0 14px rgba(0,0,0,0.3),4px 8px 30px rgba(0,0,0,0.45);}
+.book-spine{position:absolute;left:-24px;top:0;width:24px;height:268px;transform-origin:right center;transform:rotateY(-90deg) translateX(-12px);border-radius:3px 0 0 3px;box-shadow:-2px 0 8px rgba(0,0,0,0.25);}
+.book-cover-inner{border:1px solid rgba(255,255,255,0.1);border-radius:1px;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 12px;}
+.book-cover-tag{font-family:'Source Sans 3',sans-serif;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,237,224,0.42);}
+.book-cover-title{font-family:'Libre Baskerville',Georgia,serif;font-size:1.12rem;font-weight:500;color:#f5ede0;line-height:1.2;text-align:center;}
+.book-cover-author{font-family:'Source Sans 3',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,237,224,0.6);}
+.book-region{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#f5ede0;opacity:0.5;margin-top:0.6rem;text-align:center;display:block;}
+
+.hero{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 35%,#134d44 70%,#0e3d35 100%);padding:80px var(--pad) 120px;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.055) 0%,transparent 65%);pointer-events:none;}
+.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
+.hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#e8c9a0;margin-bottom:1.2rem;display:block;}
+.hero-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;color:#f5ede0;line-height:1.05;margin-bottom:1.5rem;}
+.hero-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1rem,1.5vw,1.18rem);color:#f5ede0;opacity:0.88;line-height:1.85;margin-bottom:2.5rem;max-width:480px;font-style:normal;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-books{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;height:380px;animation:fadeUp 0.85s 0.12s ease both;}
+.books-stack{position:relative;width:260px;height:320px;}
+.book-wrap{position:absolute;bottom:0;display:flex;flex-direction:column;align-items:center;}
+/* All books at same angle, overlapping */
+.book-back-2{left:0px;z-index:1;transform:rotateY(-18deg) translateZ(-30px);}
+.book-back-1{left:40px;z-index:2;transform:rotateY(-18deg) translateZ(-15px);}
+.book-front{left:80px;z-index:3;transform:rotateY(-18deg) translateZ(0px);}
+.author-section{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 40%,#134d44 100%);padding:100px var(--pad);}
+.author-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:6rem;align-items:start;}
+.author-img-wrap{position:relative;}
+.author-img-wrap::after{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid rgba(245,237,224,0.15);border-radius:2px;z-index:0;}
+.author-img{width:100%;display:block;border-radius:2px;position:relative;z-index:1;}
+.author-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:#f5ede0;line-height:1.1;margin-bottom:1.75rem;}
+.author-bio{font-family:'Libre Baskerville',Georgia,serif;font-size:1.06rem;color:#f5ede0;opacity:0.88;line-height:1.9;margin-bottom:2rem;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;padding-bottom:60px;overflow:visible;}.hero-books{margin-top:2rem;height:320px;}.books-stack{width:220px;height:280px;}.book-3d{width:150px;height:224px;}.book-spine{width:20px;height:224px;left:-20px;transform:rotateY(-90deg) translateX(-10px);}.author-inner{grid-template-columns:1fr;gap:3rem;}.author-img-wrap::after{display:none;}}
+@media(max-width:600px){.books-stack{width:190px;}.book-3d{width:130px;height:194px;}}
+
+
+.hero{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 35%,#134d44 70%,#0e3d35 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
+.hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 65%);pointer-events:none;}
+.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
+.hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#e8c9a0;margin-bottom:1.2rem;display:block;}
+.hero-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;color:#f5ede0;line-height:1.05;margin-bottom:1.5rem;}
+.hero-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1rem,1.5vw,1.18rem);color:#f5ede0;opacity:0.88;line-height:1.85;margin-bottom:2.5rem;max-width:480px;font-style:normal;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:440px;height:400px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.2) 0%,rgba(100,190,170,0.09) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.books-row{display:flex;align-items:flex-end;justify-content:center;gap:30px;position:relative;z-index:1;padding:20px 10px 50px;}
+.book-outer{display:flex;flex-direction:column;align-items:center;gap:14px;}
+.book-scene{perspective:900px;}
+.book-body{width:168px;height:252px;position:relative;transform-style:preserve-3d;}
+.book-body{transition:transform 0.4s ease;}
+.book-canada .book-body{transform:rotateY(-22deg);}
+.book-canada .book-body:hover{transform:rotateY(-28deg) translateY(-8px);}
+.book-usa .book-body{transform:rotateY(-22deg) translateY(-14px);}
+.book-usa .book-body:hover{transform:rotateY(-28deg) translateY(-22px);}
+.book-uk .book-body{transform:rotateY(-22deg);}
+.book-uk .book-body:hover{transform:rotateY(-28deg) translateY(-8px);}
+.book-front{position:absolute;inset:0;border-radius:2px 5px 5px 2px;overflow:hidden;box-shadow:5px 8px 30px rgba(0,0,0,0.55),inset -5px 0 12px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:2px 5px 5px 2px;}
+.cover-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 12px;z-index:0;}
+.cover-placeholder .cover-tag{font-family:'Source Sans 3',sans-serif;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,237,224,0.42);}
+.cover-placeholder .cover-title{font-family:'Libre Baskerville',Georgia,serif;font-size:1.05rem;font-weight:500;color:#f5ede0;line-height:1.2;text-align:center;border:1px solid rgba(255,255,255,0.1);width:100%;flex:1;display:flex;align-items:center;justify-content:center;margin:8px 0;padding:8px;}
+.cover-placeholder .cover-author{font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,237,224,0.6);}
+.book-spine{position:absolute;top:0;left:-22px;width:22px;height:100%;transform-origin:right center;transform:rotateY(-90deg) translateX(-11px);border-radius:3px 0 0 3px;box-shadow:-3px 0 8px rgba(0,0,0,0.35);}
+.book-pages{position:absolute;top:3px;right:-8px;width:8px;height:calc(100% - 6px);background:repeating-linear-gradient(to bottom,#f2ede8 0px,#f2ede8 1.5px,#ddd8d2 1.5px,#ddd8d2 3px);border-radius:0 2px 2px 0;}
+.book-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;white-space:nowrap;}
+.author-section{background:linear-gradient(150deg,#2e8b7a 0%,#1e6b5c 40%,#134d44 100%);padding:100px var(--pad);}
+.author-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:6rem;align-items:start;}
+.author-img-wrap{position:relative;}
+.author-img-wrap::after{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:1px solid rgba(245,237,224,0.15);border-radius:2px;z-index:0;}
+.author-img{width:100%;display:block;border-radius:2px;position:relative;z-index:1;}
+.author-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:#f5ede0;line-height:1.1;margin-bottom:1.75rem;}
+.author-bio{font-family:'Libre Baskerville',Georgia,serif;font-size:1.06rem;color:#f5ede0;opacity:0.88;line-height:1.9;margin-bottom:2rem;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;padding-bottom:120px;}.hero-books-area{margin-top:1rem;}.books-row{gap:18px;}.book-body{width:130px!important;height:195px!important;}.book-spine{width:18px!important;left:-18px!important;transform:rotateY(-90deg) translateX(-9px)!important;}.book-pages{width:6px!important;right:-6px!important;}.author-inner{grid-template-columns:1fr;gap:3rem;}.author-img-wrap::after{display:none;}}
+@media(max-width:480px){.books-row{gap:10px;}.book-body{width:96px!important;height:144px!important;}}
+
+/* ── TRUE 3D BOOK ── */
+.books-row{display:flex;align-items:flex-end;justify-content:center;gap:40px;padding:20px 10px 50px;position:relative;z-index:1;}
+.book-outer{display:flex;flex-direction:column;align-items:center;gap:14px;}
+
+/* The scene sets the perspective — parent does NOT rotate */
+.book-scene{perspective:1000px;perspective-origin:50% 40%;}
+
+/* The body IS the thing that rotates — all children are in its 3D space */
+.book-body{
+  width:160px;height:240px;
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateY(-28deg);
+  transition:transform 0.4s ease;
+}
+.book-canada .book-body{transform:rotateY(-28deg);}
+.book-canada .book-body:hover{transform:rotateY(-34deg) translateY(-8px);}
+.book-usa   .book-body{transform:rotateY(-28deg) translateY(-14px);}
+.book-usa   .book-body:hover{transform:rotateY(-34deg) translateY(-20px);}
+.book-uk    .book-body{transform:rotateY(-28deg);}
+.book-uk    .book-body:hover{transform:rotateY(-34deg) translateY(-8px);}
+
+/* FRONT FACE: sits at z = +0, facing forward */
+.book-front{
+  position:absolute;
+  width:160px;height:240px;
+  top:0;left:0;
+  transform:translateZ(0px);
+  border-radius:1px 4px 4px 1px;
+  overflow:hidden;
+  backface-visibility:hidden;
+  box-shadow:2px 4px 20px rgba(0,0,0,0.5);
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* SPINE: rotated 90deg around Y, positioned at left edge of front */
+.book-spine{
+  position:absolute;
+  width:28px;height:240px;
+  top:0;left:0;
+  transform-origin:left center;
+  transform:rotateY(90deg) translateZ(-28px);
+  backface-visibility:hidden;
+  border-radius:3px 0 0 3px;
+  box-shadow:inset -3px 0 8px rgba(0,0,0,0.3);
+}
+
+/* PAGE EDGES: thin slab on the right side of the book */
+.book-pages{
+  position:absolute;
+  width:8px;height:240px;
+  top:0;right:0;
+  transform-origin:right center;
+  transform:rotateY(-90deg) translateZ(-8px);
+  backface-visibility:hidden;
+  background:repeating-linear-gradient(
+    to bottom,
+    #f0ebe5 0px,#f0ebe5 1.5px,
+    #e0dbd4 1.5px,#e0dbd4 3px
+  );
+}
+
+/* Cover image (shown when real cover is available) */
+.cover-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;z-index:1;
+}
+/* Placeholder content (shown until real cover) */
+.cover-placeholder{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:space-between;
+  padding:16px 12px;z-index:0;
+}
+.cover-tag{font-family:'Source Sans 3',sans-serif;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,237,224,0.4);}
+.cover-title{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-weight:500;color:#f5ede0;line-height:1.2;text-align:center;border:1px solid rgba(255,255,255,0.1);width:100%;flex:1;display:flex;align-items:center;justify-content:center;margin:8px 0;padding:8px;}
+.cover-author{font-family:'Source Sans 3',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,237,224,0.58);}
+
+.book-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;white-space:nowrap;}
+
+/* Spotlight behind books */
+.books-spotlight{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:480px;height:360px;
+  background:radial-gradient(ellipse at center,
+    rgba(180,235,220,0.22) 0%,
+    rgba(100,190,170,0.10) 45%,
+    transparent 72%);
+  border-radius:50%;pointer-events:none;z-index:0;
+}
+
+@media(max-width:900px){
+  .books-row{gap:24px;}
+  .book-body,.book-front,.book-spine,.book-pages{width:124px!important;height:186px!important;}
+  .book-spine{width:22px!important;transform:rotateY(90deg) translateZ(-22px)!important;}
+  .book-pages{width:6px!important;transform:rotateY(-90deg) translateZ(-6px)!important;}
+}
+@media(max-width:480px){
+  .books-row{gap:14px;}
+  .book-body,.book-front,.book-spine,.book-pages{width:94px!important;height:141px!important;}
+  .book-spine{width:16px!important;transform:rotateY(90deg) translateZ(-16px)!important;}
+  .book-pages{width:5px!important;transform:rotateY(-90deg) translateZ(-5px)!important;}
+}
+
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:400px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.2) 0%,rgba(100,190,170,0.09) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.books-row-svg{display:flex;align-items:flex-end;justify-content:center;gap:20px;position:relative;z-index:1;padding:10px 10px 40px;}
+.book-svg-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform 0.35s ease;}
+.book-svg-wrap:hover{transform:translateY(-10px);}
+.book-svg-mid{transform:translateY(-14px);}
+.book-svg-mid:hover{transform:translateY(-22px);}
+.book-svg-img{position:relative;display:block;line-height:0;}
+.cover-real{position:absolute;top:0;left:26px;width:160px;height:240px;object-fit:cover;border-radius:1px 4px 4px 1px;z-index:10;display:none;}
+.cover-real[style=""]{display:block;}
+.book-svg-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;}
+@media(max-width:900px){
+  .books-row-svg{gap:10px;}
+  .books-row-svg svg{transform:scale(0.78);transform-origin:bottom center;}
+  .book-svg-wrap:hover{transform:translateY(-7px);}
+  .book-svg-mid{transform:translateY(-10px);}
+  .book-svg-mid:hover{transform:translateY(-16px);}
+}
+@media(max-width:480px){
+  .books-row-svg svg{transform:scale(0.56);transform-origin:bottom center;}
+}
+
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:400px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.2) 0%,rgba(100,190,170,0.09) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.books-row-svg{display:flex;align-items:flex-end;justify-content:center;gap:14px;position:relative;z-index:1;padding:10px 10px 44px;}
+.book-svg-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:14px;transition:transform 0.35s ease;}
+.book-svg-wrap:hover{transform:translateY(-10px);}
+.book-svg-mid{transform:translateY(-16px);}
+.book-svg-mid:hover{transform:translateY(-24px);}
+.book-svg-img{position:relative;line-height:0;}
+.cover-real{position:absolute;top:6px;left:56px;width:154px;height:232px;object-fit:cover;z-index:10;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);}
+.book-svg-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;padding-left:64px;}
+@media(max-width:900px){
+  .books-row-svg{gap:6px;}
+  .books-row-svg .book-svg-img svg{transform:scale(0.75);transform-origin:bottom left;}
+  .book-svg-mid{transform:translateY(-12px);}
+  .book-svg-mid:hover{transform:translateY(-18px);}
+}
+@media(max-width:480px){
+  .books-row-svg .book-svg-img svg{transform:scale(0.52);transform-origin:bottom left;}
+}
+
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:380px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.18) 0%,rgba(100,190,170,0.08) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.books-row-svg{display:flex;align-items:flex-end;justify-content:center;gap:18px;position:relative;z-index:1;padding:10px 10px 48px;}
+.book-svg-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:14px;transition:transform 0.35s ease;cursor:default;}
+.book-svg-wrap:hover{transform:translateY(-10px);}
+.book-svg-mid{transform:translateY(-18px);}
+.book-svg-mid:hover{transform:translateY(-26px);}
+.book-svg-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;padding-left:32px;}
+@media(max-width:900px){
+  .books-row-svg{gap:8px;}
+  .books-row-svg svg{transform:scale(0.74);transform-origin:bottom left;}
+  .book-svg-mid{transform:translateY(-13px);}
+}
+@media(max-width:480px){
+  .books-row-svg svg{transform:scale(0.52);transform-origin:bottom left;}
+  .book-svg-mid{transform:translateY(-9px);}
+}
+
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:380px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.18) 0%,rgba(100,190,170,0.08) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.bsv-row{display:flex;align-items:flex-end;justify-content:center;gap:16px;position:relative;z-index:1;padding:10px 10px 50px;}
+.bsv-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:14px;transition:transform 0.35s ease;}
+.bsv-wrap:hover{transform:translateY(-10px);}
+.bsv-mid{transform:translateY(-20px);}
+.bsv-mid:hover{transform:translateY(-28px);}
+.bsv-lbl{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;padding-left:36px;}
+@media(max-width:900px){.bsv-row{gap:8px;}.bsv-row svg{transform:scale(0.73);transform-origin:bottom left;}.bsv-mid{transform:translateY(-14px);}.bsv-mid:hover{transform:translateY(-20px);}}
+@media(max-width:480px){.bsv-row svg{transform:scale(0.5);transform-origin:bottom left;}.bsv-mid{transform:translateY(-10px);}}
+
+.hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;width:100%;}
+.books-spotlight{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:380px;background:radial-gradient(ellipse at center,rgba(180,235,220,0.18) 0%,rgba(100,190,170,0.08) 45%,transparent 70%);border-radius:50%;pointer-events:none;z-index:0;}
+.books-row{display:flex;align-items:flex-end;justify-content:center;gap:28px;position:relative;z-index:1;padding:10px 10px 50px;}
+.book-item{display:flex;flex-direction:column;align-items:center;gap:14px;transition:transform 0.35s ease;}
+.book-item:hover{transform:translateY(-10px);}
+.book-item.book-mid{transform:translateY(0);}
+.book-item.book-mid:hover{transform:translateY(-10px);}
+.book-cover{width:185px;height:278px;border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 12px;position:relative;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.55),0 2px 6px rgba(0,0,0,0.3);}
+.book-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%,rgba(0,0,0,0.08) 100%);pointer-events:none;}
+.book-cover-ca{background:linear-gradient(150deg,#4a8fb5 0%,#2d6a8f 100%);}
+.book-cover-us{background:linear-gradient(150deg,#5aaa8a 0%,#2e7a5e 100%);}
+.book-cover-uk{background:linear-gradient(150deg,#c47a45 0%,#8f4e28 100%);}
+.book-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:3px;}
+.book-cover-inner{border:1px solid rgba(255,255,255,0.1);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 10px;position:relative;z-index:2;}
+.book-cover-tag{font-family:'Source Sans 3',sans-serif;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,237,224,0.38);}
+.book-cover-title{font-family:'Libre Baskerville',Georgia,serif;font-size:1.08rem;font-weight:500;color:#f5ede0;line-height:1.25;text-align:center;}
+.book-cover-author{font-family:'Source Sans 3',sans-serif;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,237,224,0.62);}
+.book-label{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#f5ede0;opacity:0.52;white-space:nowrap;}
+@media(max-width:900px){.hero{overflow:visible;padding-bottom:60px;}.hero-books-area{width:100%;margin-top:2rem;}.books-row{gap:16px;justify-content:center;}.book-cover{width:140px;height:210px;}.book-item.book-mid{transform:translateY(0);}.book-item.book-mid:hover{transform:translateY(-10px);}}
+@media(max-width:480px){.books-row{gap:10px;}.book-cover{width:88px;height:132px;}.book-cover-inner{padding:10px 6px;}.book-cover-tag{font-size:0.42rem;}.book-cover-title{font-size:0.82rem;}.book-cover-author{font-size:0.44rem;}}
+
+@media(max-width:600px){
+  .hero{padding-left:4%;padding-right:4%;padding-bottom:50px;}
+  .hero-books-area{padding:0 0 10px;}
+  .books-row{gap:12px;width:100%;justify-content:center;}
+  .book-item{min-width:0;}
+}
+
+.label-short{display:none;}
+.label-full{display:inline;}
+@media(max-width:700px){
+  .label-short{display:inline;}
+  .label-full{display:none;}
+  .book-label{white-space:nowrap;}
+}
+
+/* ── GLOBAL MOBILE OVERFLOW FIX ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  max-width: 100%;
+}
+img { max-width: 100%; height: auto; }
+
+/* Prevent any section from overflowing */
+section, nav, footer, div {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  /* Fix hero text overflow */
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+    word-break: break-word;
+  }
+  .hero-intro {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+  .hero-btns {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  .hero-btns .btn {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* Fix books row overflow */
+  .books-row {
+    gap: 10px !important;
+    padding: 10px 0 40px !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+  }
+  .book-cover {
+    width: 26vw !important;
+    height: 39vw !important;
+    min-width: 80px !important;
+  }
+
+  /* Fix nav overflow */
+  .nav-logo {
+    font-size: 1.1rem !important;
+  }
+
+  /* Fix page headers */
+  .page-header {
+    padding: 50px 5% 40px !important;
+  }
+  .page-header-title {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    word-break: break-word;
+  }
+
+  /* Fix blurb text overflow on book page */
+  .blurb-prose, .blurb-intro, .timeline-text, .blurb-tagline {
+    font-size: 1rem !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Fix about/contact grid overflow */
+  .about-inner, .contact-inner, .author-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .about-img-wrap::after,
+  .author-img-wrap::after {
+    display: none !important;
+  }
+
+  /* Fix footer overflow */
+  footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 24px 5% !important;
+  }
+  .footer-links {
+    justify-content: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Fix newsletter form */
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .newsletter-input {
+    border-right: 1px solid rgba(245,237,224,0.25) !important;
+    border-bottom: none !important;
+    border-radius: 2px 2px 0 0 !important;
+    width: 100% !important;
+  }
+  .newsletter-btn {
+    border-radius: 0 0 2px 2px !important;
+    width: 100% !important;
+    padding: 14px !important;
+  }
+
+  /* Fix socials overflow */
+  .socials-links {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Fix book page sidebar */
+  .book-top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .book-sidebar-covers {
+    position: static !important;
+  }
+  .bk2-row {
+    gap: 10px !important;
+  }
+  .bk2-cover {
+    width: 26vw !important;
+    height: 39vw !important;
+    min-width: 80px !important;
+  }
+
+  /* Fix writings page article grid */
+  .article-item {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .article-img, .article-img-placeholder {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  /* Fix contact form */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-submit {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Peer section */
+  .peer-quote {
+    font-size: 1.1rem !important;
+  }
+
+  /* Spotlight — can cause overflow */
+  .books-spotlight {
+    width: 100vw !important;
+    height: 300px !important;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Karabi George</a>
+  <ul class="nav-links">
+    <li><a href="book.html" id="nav-book">The Book</a></li>
+    <li><a href="writings.html" id="nav-writings">Writings</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="contact.html" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="book.html" onclick="closeMobile()">The Book</a>
+  <a href="writings.html" onclick="closeMobile()">Writings</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow">Debut Novel &middot; Coming 2026</span>
+    <h1 class="hero-title">Not a Good<br>Mother</h1>
+    <p class="hero-intro">NOT A GOOD MOTHER is a fresh, twisty, page-turning thriller that explores the pressures of cultural duty and misogyny and the isolation of motherhood on a recent immigrant &mdash; a woman whose child is abducted from a park and who will do anything to get her back, only to discover that there&rsquo;s more to the kidnapping than she ever could have imagined.</p>
+    <div class="hero-btns">
+      <a href="book.html" class="btn btn-light">Learn More</a>
+      <a href="#" class="btn btn-outline-light goodreads-link">Want to Read on Goodreads</a>
+    </div>
+  </div>
+
+  
+            <div class="hero-books-area">
+    <div class="books-spotlight"></div>
+    <div class="books-row">
+      
+      <div class="book-item ">
+        <div class="book-cover book-cover-ca">
+          <img src="cover-canada.jpg" alt="Canada edition" onerror="this.style.display='none'">
+          <div class="book-cover-inner">
+            <span class="book-cover-tag">Cover Reveal Soon</span>
+            <span class="book-cover-title">Not a Good Mother</span>
+            <span class="book-cover-author">Karabi George</span>
+          </div>
+        </div>
+        <span class="book-label">Canada</span>
+      </div>
+      
+      <div class="book-item book-mid">
+        <div class="book-cover book-cover-us">
+          <img src="cover-usa.jpg" alt="USA edition" onerror="this.style.display='none'">
+          <div class="book-cover-inner">
+            <span class="book-cover-tag">Cover Reveal Soon</span>
+            <span class="book-cover-title">Not a Good Mother</span>
+            <span class="book-cover-author">Karabi George</span>
+          </div>
+        </div>
+        <span class="book-label">USA</span>
+      </div>
+      
+      <div class="book-item ">
+        <div class="book-cover book-cover-uk">
+          <img src="cover-uk.jpg" alt="UK &amp; Commonwealth edition" onerror="this.style.display='none'">
+          <div class="book-cover-inner">
+            <span class="book-cover-tag">Cover Reveal Soon</span>
+            <span class="book-cover-title">Not a Good Mother</span>
+            <span class="book-cover-author">Karabi George</span>
+          </div>
+        </div>
+        <span class="book-label"><span class="label-full">UK &amp; Commonwealth</span><span class="label-short">UK</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="peer-section reveal">
+  <div class="peer-inner">
+    <span class="peer-quote-mark">"</span>
+    <p class="peer-quote">A gripping, propulsive debut that will keep you reading long into the night. Karabi George is a thrilling new voice in crime fiction.</p>
+    <p class="peer-attribution">— Author Name, <em>Title of Their Book</em></p>
+    <p class="peer-placeholder">(Placeholder — to be updated with a real blurb)</p>
+  </div>
+</section>
+
+<section class="author-section reveal">
+  <div class="author-inner">
+    <div class="author-img-wrap">
+      <img src="Karabi-Mitra-04.jpg" alt="Karabi George, author" class="author-img">
+    </div>
+    <div class="author-content">
+      <span class="section-label section-label-light">Meet the Author</span>
+      <h2 class="author-heading">Karabi<br>George</h2>
+      <p class="author-bio">Originally from India, I now live just outside Toronto with my husband and two kids. I hold a Creative Writing certificate from the University of British Columbia. I also work in corporate strategy, and enjoy reading, organizing book clubs, volunteering and traveling.</p>
+      <a href="about.html" class="btn btn-outline-light" style="margin-top:0.5rem;">Read More</a>
+    </div>
+  </div>
+</section>
+<section class="newsletter-section reveal">
+  <div class="newsletter-inner">
+    <span class="section-label section-label-light" style="display:block;text-align:center;">Stay in the Loop</span>
+    <h2 class="newsletter-heading">Sign Up for Updates</h2>
+    <p class="newsletter-sub">Cover reveals, publication news and writing dispatches — straight to your inbox.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+    <p class="newsletter-note">Via <a href="https://karabigeorge.substack.com/" target="_blank">Karabi's Substack</a>. No spam, ever.</p>
+  </div>
+</section>
+<div class="socials-section reveal">
+  <span class="socials-label">Find Karabi Online</span>
+  <div class="socials-links">
+    <a href="https://karabigeorge.substack.com/" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>Substack</a>
+    <a href="https://www.instagram.com/karabi_george_author" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+    <a href="https://www.tiktok.com/@karabi_george" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</a>
+    <a href="https://www.facebook.com/karabigeorge" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
+    <a href="https://www.threads.com/@karabi_george_author" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 12.376c-.068-3.944-2.578-6.165-6.516-6.165-2.43 0-4.428.955-5.66 2.693l1.823 1.252c.923-1.402 2.37-1.703 3.837-1.703 2.202 0 3.435 1.305 3.64 3.122-.97-.165-2.01-.215-3.107-.147-3.146.183-5.17 2.017-5.037 4.565.068 1.295.714 2.408 1.817 3.136.932.617 2.133.918 3.382.85 1.648-.09 2.94-.718 3.84-1.868.685-.875 1.117-2.004 1.309-3.43.786.474 1.367 1.097 1.688 1.845.547 1.273.578 3.368-1.13 5.072-1.495 1.494-3.295 2.142-6.013 2.162-3.012-.022-5.294-.989-6.78-2.874-1.394-1.766-2.113-4.327-2.136-7.624.023-3.297.742-5.858 2.136-7.624C7.706 3.769 9.988 2.802 13 2.78c3.034.022 5.345.994 6.868 2.888.756.934 1.323 2.095 1.7 3.458l2.135-.57c-.456-1.676-1.175-3.14-2.152-4.36C19.603 1.318 16.877.03 13.007 0h-.015C9.124.03 6.42 1.325 4.596 3.839 2.955 6.1 2.109 9.358 2.08 12.943L2.079 13v.057c.03 3.585.876 6.843 2.517 9.104C6.42 24.675 9.124 25.97 12.992 26h.015c3.438-.024 5.854-.946 7.848-2.936 2.636-2.63 2.556-5.958 1.685-7.994-.624-1.454-1.82-2.637-3.47-3.425a16.617 16.617 0 0 0-.48-3.269zm-5.47 5.232c-1.377.076-2.809-.54-2.883-1.874-.056-1.045.743-2.212 3.14-2.346.275-.016.546-.023.812-.023.855 0 1.548.074 2.151.216-.245 3.055-1.74 3.932-3.22 4.027z"/></svg>Threads</a>
+    <a href="https://x.com/karabi_george" target="_blank" class="social-link"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</a>
+  </div>
+</div>
+<footer>
+  <span class="footer-name">Karabi George</span>
+  <ul class="footer-links">
+    <li><a href="book.html">The Book</a></li>
+    <li><a href="writings.html">Writings</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<script>var el=document.getElementById("nav-home");if(el){el.classList.add("active");}
+// Newsletter subscribe fix - ensure button works on mobile
+document.querySelectorAll('.newsletter-form').forEach(function(form) {
+  var btn = form.querySelector('.newsletter-btn');
+  var inp = form.querySelector('.newsletter-input');
+  if (!btn || !inp) return;
+  // Remove old onclick and replace with robust handler
+  btn.removeAttribute('onclick');
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var email = inp.value.trim();
+    if (email && /^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      window.open('https://karabigeorge.substack.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    } else {
+      window.open('https://karabigeorge.substack.com/subscribe', '_blank');
+    }
+  });
+});
+
+</script>
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+if(hamburger&&mobileMenu){hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));}
+function closeMobile(){if(mobileMenu)mobileMenu.classList.remove('open');}
+document.querySelectorAll('.reveal').forEach(el=>{
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+  obs.observe(el);
+});
+document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener('click',()=>(function(){
+  var inp = this.closest('.newsletter-form, .newsletter-inner, section').querySelector('.newsletter-input');
+  var email = inp ? inp.value.trim() : '';
+  if(email && /^[^@]+@[^@]+\.[^@]+$/.test(email)){
+    window.open('https://karabigeorge.substack.com/subscribe?email='+encodeURIComponent(email),'_blank');
+  } else {
+    window.open('https://karabigeorge.substack.com/subscribe','_blank');
+  }
+})());});
+document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
+const contactForm=document.getElementById('contact-form');
+if(contactForm){contactForm.addEventListener('submit',e=>{e.preventDefault();const btn=contactForm.querySelector('.contact-submit');btn.textContent='Message Sent ✓';btn.disabled=true;setTimeout(()=>{contactForm.reset();btn.textContent='Send Message';btn.disabled=false;},3000);});}
+
+</script>
+</body>
+</html>
