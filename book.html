@@ -238,9 +238,9 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .bk2-author{font-family:'Source Sans 3',sans-serif;font-size:0.48rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,237,224,0.58);}
 .bk2-lbl{font-family:'Source Sans 3',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);}
 
-.book-cover-ca{background:linear-gradient(150deg,#4a8fb5 0%,#2d6a8f 100%);}
-.book-cover-us{background:linear-gradient(150deg,#5aaa8a 0%,#2e7a5e 100%);}
-.book-cover-uk{background:linear-gradient(150deg,#c47a45 0%,#8f4e28 100%);}
+
+
+
 
 /* ── GLOBAL MOBILE OVERFLOW FIX ── */
 html, body {
@@ -436,7 +436,7 @@ body.menu-open{
   width:100%;
   max-width:280px;
   height:auto;
-  filter:drop-shadow(0 12px 28px rgba(0,0,0,0.25));
+  mix-blend-mode:multiply;
   transition:transform 0.4s ease;
 }
 .sidebar-book-3d:hover{transform:translateY(-6px);}
@@ -505,49 +505,19 @@ body.menu-open{
       </div>
     </div>
 
-    <div class="book-sidebar-covers reveal">
-      
-      <div class="bk2-row">
-    <div class="bk2-item ">
-    <div class="bk2-cover book-cover-ca">
-      <img src="cover-canada.jpg" alt="Canada" onerror="this.style.display='none'">
-      <div class="bk2-inner">
-        <span class="bk2-tag">Cover Reveal Soon</span>
-        <span class="bk2-title">Not a Good Mother</span>
-        <span class="bk2-author">Karabi George</span>
+    <div class="book-sidebar-new reveal">
+      <div class="book-sidebar-img">
+        <img src="Not_a_good_mother_3D.jpg" alt="Not a Good Mother by Karabi George" class="sidebar-book-3d">
       </div>
-    </div>
-    <span class="bk2-lbl">Canada</span>
-  </div>
-    <div class="bk2-item bk2-mid">
-    <div class="bk2-cover book-cover-us">
-      <img src="cover-usa.jpg" alt="USA" onerror="this.style.display='none'">
-      <div class="bk2-inner">
-        <span class="bk2-tag">Cover Reveal Soon</span>
-        <span class="bk2-title">Not a Good Mother</span>
-        <span class="bk2-author">Karabi George</span>
-      </div>
-    </div>
-    <span class="bk2-lbl">USA</span>
-  </div>
-    <div class="bk2-item ">
-    <div class="bk2-cover book-cover-uk">
-      <img src="cover-uk.jpg" alt="UK &amp; Comm." onerror="this.style.display='none'">
-      <div class="bk2-inner">
-        <span class="bk2-tag">Cover Reveal Soon</span>
-        <span class="bk2-title">Not a Good Mother</span>
-        <span class="bk2-author">Karabi George</span>
-      </div>
-    </div>
-    <span class="bk2-lbl">UK &amp; Comm.</span>
-  </div>
-</div>
       <span class="section-label">Publishers</span>
       <ul class="publisher-list">
         <li><span>Canada</span><span>Simon &amp; Schuster</span></li>
         <li><span>USA</span><span>HarperCollins</span></li>
         <li><span>UK &amp; Commonwealth</span><span>Bedford Square</span></li>
       </ul>
+      <div style="margin-top:1.5rem;">
+        <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-teal goodreads-link" style="width:100%;text-align:center;display:block;">Add to Your Goodreads List</a>
+      </div>
     </div>
   </div>
 </section>
