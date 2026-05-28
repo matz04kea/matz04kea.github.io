@@ -584,17 +584,10 @@ body.menu-open{
 
 .hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;}
 .book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.book-3d-img{
-  width:380px;
-  max-width:100%;
-  height:auto;
-  -webkit-mask-image:linear-gradient(to bottom, black 75%, transparent 95%);
-  mask-image:linear-gradient(to bottom, black 75%, transparent 95%);
-  transition:transform 0.4s ease;
-}
+.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
 .book-3d-img:hover{transform:translateY(-8px) scale(1.02);}
-@media(max-width:900px){.book-3d-img{width:280px;}}
-@media(max-width:600px){.book-3d-img{width:220px;}}
+@media(max-width:900px){.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
+@media(max-width:600px){.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 </style>
 </head>
 <body>
