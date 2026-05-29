@@ -312,6 +312,20 @@ body.menu-open{
   height:100%;
 }
 </style>
+<script>
+(function(){
+  // If running in the /navy/ subfolder on GitHub, images are one level up
+  var prefix = (window.location.pathname.indexOf('/navy/') !== -1) ? '../' : '';
+  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg'];
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      imgs.forEach(function(name){
+        if(img.getAttribute('src') === name) img.src = prefix + name;
+      });
+    });
+  });
+})();
+</script>
 </head>
 <body>
 <nav>
@@ -340,7 +354,7 @@ body.menu-open{
 <section class="about-section">
   <div class="about-inner">
     <div class="about-img-wrap reveal">
-      <img src="../Karabi-Mitra-04.jpg" alt="Karabi George, author" class="about-img">
+      <img src="Karabi-Mitra-04.jpg" alt="Karabi George, author" class="about-img">
     </div>
     <div class="about-content reveal">
       <h2 class="about-name">Karabi George</h2>

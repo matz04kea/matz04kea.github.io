@@ -592,6 +592,20 @@ body.menu-open{
 @media(max-width:900px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 @media(max-width:600px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 </style>
+<script>
+(function(){
+  // If running in the /navy/ subfolder on GitHub, images are one level up
+  var prefix = (window.location.pathname.indexOf('/navy/') !== -1) ? '../' : '';
+  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg'];
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(function(img){
+      imgs.forEach(function(name){
+        if(img.getAttribute('src') === name) img.src = prefix + name;
+      });
+    });
+  });
+})();
+</script>
 </head>
 <body>
 <nav>
