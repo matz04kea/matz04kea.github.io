@@ -118,7 +118,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .book-cover-author{font-family:'Source Sans 3',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,237,224,0.6);}
 .book-region{font-family:'Source Sans 3',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#ffffff;opacity:0.5;margin-top:0.6rem;text-align:center;display:block;}
 
-.hero{background:#1a2e45;padding:80px var(--pad) 120px;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:hidden;}
+.hero{background:#1a2e45;padding:80px var(--pad) 120px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.055) 0%,transparent 65%);pointer-events:none;}
 .hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
@@ -144,7 +144,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 @media(max-width:600px){.books-stack{width:190px;}.book-3d{width:130px;height:194px;}}
 
 
-.hero{background:#1a2e45;padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
+.hero{background:#1a2e45;padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 65%);pointer-events:none;}
 .hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
@@ -586,11 +586,11 @@ body.menu-open{
 }
 
 .hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;}
-.book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;width:150%;max-width:150%;position:relative;}
-.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
+.book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
 .book-3d-img:hover{transform:translateY(-8px) scale(1.02);}
-@media(max-width:900px){.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
-@media(max-width:600px){.book-3d-img{width:988px;max-width:100%;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
+@media(max-width:900px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
+@media(max-width:600px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 </style>
 </head>
 <body>
@@ -626,7 +626,7 @@ body.menu-open{
   
               <div class="hero-books-area">
     <div class="book-3d-display">
-      <img src="../Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="book-3d-img">
+      <img src="Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="book-3d-img">
     </div>
   </div>
 </section>
@@ -643,7 +643,7 @@ body.menu-open{
 <section class="author-section reveal">
   <div class="author-inner">
     <div class="author-img-wrap">
-      <img src="../Karabi-Mitra-04.jpg" alt="Karabi George, author" class="author-img">
+      <img src="Karabi-Mitra-04.jpg" alt="Karabi George, author" class="author-img">
     </div>
     <div class="author-content">
       <span class="section-label section-label-light">Meet the Author</span>
