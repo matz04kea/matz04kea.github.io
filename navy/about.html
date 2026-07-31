@@ -47,16 +47,16 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .nav-links a{position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:#1a2e45;transition:width 0.2s;}
 .nav-links a:hover::after{width:100%;}
-.nav-links a{font-family:'Source Sans 3',sans-serif;font-size:0.76rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.65;transition:opacity 0.2s;}
+.nav-links a{font-family:'Libre Baskerville',Georgia,serif;font-size:1.02rem;font-weight:400;letter-spacing:0.01em;text-transform:none;color:var(--text-dark);text-decoration:none;opacity:0.78;transition:opacity 0.2s;}
 .nav-links a:hover,.nav-links a.active{opacity:1;}.nav-links a.active::after{width:100%;}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--text-dark);}
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;gap:1.5rem;z-index:99;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.7;}
-.page-header{background:#1a2e45;padding:70px var(--pad) 60px;text-align:center;}
+.mobile-menu a{font-family:'Libre Baskerville',Georgia,serif;font-size:1.2rem;letter-spacing:0.01em;text-transform:none;color:var(--text-dark);text-decoration:none;opacity:0.8;}
+.page-header{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:70px var(--pad) 60px;text-align:center;}
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
-.page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--champagne);line-height:1.1;}
+.page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .page-header-title::after{content:\'\';display:block;width:48px;height:3px;background:#ffff00;margin-top:16px;}
 .btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:#ffff00;color:#111e2e;border:2px solid #ffff00;}.btn-light:hover{background:#ffffff;color:#1a2e45;border-color:#ffffff;}
@@ -71,7 +71,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 
 .newsletter-section{background:#111e2e;padding:80px var(--pad);text-align:center;}
 .newsletter-inner{max-width:500px;margin:0 auto;}
-.newsletter-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--champagne);margin-bottom:0.75rem;}
+.newsletter-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.2rem,3.5vw,3rem);font-weight:700;color:var(--champagne);margin-bottom:0.75rem;}
 .newsletter-sub{font-family:'Libre Baskerville',Georgia,serif;font-size:1.05rem;font-style:normal;color:var(--champagne);opacity:0.8;margin-bottom:2.5rem;line-height:1.75;}
 .newsletter-form{display:flex;max-width:420px;margin:0 auto 1rem;}
 .newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
@@ -91,9 +91,9 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .socials-section{background:var(--page-bg);padding:44px var(--pad);text-align:center;border-top:1px solid rgba(0,0,0,0.06);}
 .socials-label{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.5rem;display:block;}
 .socials-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;}
-.social-link{display:flex;align-items:center;gap:0.45rem;font-family:'Source Sans 3',sans-serif;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:#2a4a6e;text-decoration:none;transition:color 0.2s,background 0.2s;border-radius:3px;padding:5px 10px;margin:-5px -10px;}.social-link:hover{color:#ffff00;background:#1a2e45;}
+.social-link{display:flex;align-items:center;gap:0.55rem;font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#2a4a6e;text-decoration:none;transition:color 0.2s,background 0.2s;border-radius:4px;padding:8px 14px;margin:-8px -14px;}.social-link:hover{color:#ffff00;background:#1a2e45;}
 
-.social-icon{width:17px;height:17px;flex-shrink:0;}
+.social-icon{width:21px;height:21px;flex-shrink:0;}
 footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:3px solid #ffff00;}
 .footer-name{font-family:'Libre Baskerville',Georgia,serif;font-size:0.68rem;color:var(--champagne);opacity:0.42;letter-spacing:0.06em;}
 .footer-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;}
@@ -116,10 +116,10 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .about-bio-para{font-family:'Libre Baskerville',Georgia,serif;font-size:1.1rem;color:var(--text-dark);line-height:1.9;margin-bottom:1.5rem;}
 .awards-heading{font-family:'Source Sans 3',sans-serif;font-size:0.8rem;letter-spacing:0.28em;text-transform:uppercase;color:#1a2e45;margin:2.5rem 0 1.2rem;display:block;}
 .awards-list{list-style:none;margin-bottom:1rem;}
-.awards-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:10px 0 10px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.07);display:block;line-height:1.6;position:relative;}
+.awards-list li{font-family:'Libre Baskerville',Georgia,serif;font-size:1.02rem;font-weight:400;color:var(--text-dark);padding:10px 0 10px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.07);display:block;line-height:1.6;position:relative;}
 .awards-list li::before{content:'◆';font-size:0.42rem;color:#1a2e45;position:absolute;left:0;top:14px;}
 .pubs-list{list-style:none;}
-.pubs-list li{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:400;color:var(--text-dark);padding:8px 0 8px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.06);display:block;line-height:1.6;position:relative;}
+.pubs-list li{font-family:'Libre Baskerville',Georgia,serif;font-size:1.02rem;font-weight:400;color:var(--text-dark);padding:8px 0 8px 1.6rem;border-bottom:1px solid rgba(0,0,0,0.06);display:block;line-height:1.6;position:relative;}
 .pubs-list li::before{content:'◆';font-size:0.42rem;color:var(--champagne-warm);position:absolute;left:0;top:12px;}
 @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:3rem;}.about-img-wrap::after{display:none;}}
 
@@ -331,17 +331,19 @@ body.menu-open{
 <nav>
   <a href="index.html" class="nav-logo">Karabi George</a>
   <ul class="nav-links">
-    <li><a href="book.html" id="nav-book">The Book</a></li>
-    <li><a href="writings.html" id="nav-writings">The Writing Life</a></li>
+    <li><a href="index.html" id="nav-home">Home</a></li>
     <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="book.html" id="nav-book">Books</a></li>
+    <li><a href="writings.html" id="nav-writings">Resources For Writers</a></li>
     <li><a href="contact.html" id="nav-contact">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="book.html" onclick="closeMobile()">The Book</a>
-  <a href="writings.html" onclick="closeMobile()">The Writing Life</a>
+  <a href="index.html" onclick="closeMobile()">Home</a>
   <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="book.html" onclick="closeMobile()">Books</a>
+  <a href="writings.html" onclick="closeMobile()">Resources For Writers</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -361,7 +363,7 @@ body.menu-open{
       <span class="about-subtitle">Author · Thriller Writer</span>
       <p class="about-bio-para">I'm Karabi George, author of the upcoming thriller <strong>NOT A GOOD MOTHER</strong> by HarperCollins (US), Simon &amp; Schuster (Canada) and Bedford Square (UK).</p>
       <p class="about-bio-para">Originally from India, I now live just outside Toronto with my husband and two kids. I was shortlisted for the 2024 CWA Debut Dagger award, a runner-up for the 2023 Eleanor Taylor Bland Crime Fiction Writers of Color award, and a recipient of the 2024 ThrillerFest scholarship. My short fiction has been published in Litro Magazine, Volney Road Review, The Wayward and Upward anthology by Off Topic Publishing, Flash Fiction Magazine and Litbreak. I hold a Creative Writing certificate from the University of British Columbia.</p>
-      <p class="about-bio-para">I also work in corporate strategy, and enjoy reading, organizing book clubs, volunteering and traveling.</p>
+      <p class="about-bio-para">I hold an MBA and work in corporate strategy, and enjoy reading, organizing book clubs, volunteering and traveling.</p>
       <span class="awards-heading">Awards &amp; Recognition</span>
       <ul class="awards-list">
         <li>Shortlisted, 2024 CWA Debut Dagger Award</li>
@@ -407,9 +409,10 @@ body.menu-open{
 <footer>
   <span class="footer-name">&copy; 2026 Karabi M. George Writing Inc. All rights reserved.</span>
   <ul class="footer-links">
-    <li><a href="book.html">The Book</a></li>
-    <li><a href="writings.html">The Writing Life</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="book.html">Books</a></li>
+    <li><a href="writings.html">Resources For Writers</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
   </ul>
