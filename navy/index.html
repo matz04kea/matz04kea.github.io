@@ -59,7 +59,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
 .page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .page-header-title::after{content:\'\';display:block;width:48px;height:3px;background:#ffff00;margin-top:16px;}
-.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:#ffff00;color:#111e2e;border:2px solid #ffff00;}.btn-light:hover{background:#e6c800;color:#111e2e;border-color:#e6c800;}
 .btn-outline-light{background:transparent;color:#ffff00;border:2px solid #ffff00;}
 .btn-outline-light:hover{background:rgba(255,255,0,0.12);}.btn-outline-white{background:#ffffff;color:#1a2e45;border:2px solid #ffffff;}.btn-outline-white:hover{background:#ffffff;color:#111e2e;border:2px solid #ffff00;box-shadow:0 0 0 2px #ffff00;}
@@ -144,7 +144,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 @media(max-width:600px){.books-stack{width:190px;}.book-3d{width:130px;height:194px;}}
 
 
-.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
+.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:end;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 65%);pointer-events:none;}
 .hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
@@ -589,19 +589,17 @@ body.menu-open{
 .book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-decoration:none;cursor:pointer;}
 .book-3d-img{width:100%;max-width:900px;max-height:640px;object-fit:contain;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
 .book-3d-img:hover{transform:translateY(-8px) scale(1.02);}
-@media(max-width:900px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
-@media(max-width:600px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 
 /* Mobile: show the book cover before the text, large and prominent */
 @media(max-width:900px){
   .hero{display:flex;flex-direction:column;padding:36px 5% 60px;}
   .hero-books-area{order:1;margin-bottom:1.5rem;width:100%;}
   .hero-text{order:2;}
-  .book-3d-img{max-width:520px;}
+  .book-3d-img{width:96%!important;max-width:640px!important;max-height:none!important;margin:0 auto;}
 }
 @media(max-width:600px){
-  .hero{padding:28px 4% 50px;}
-  .book-3d-img{width:92%;max-width:none;}
+  .hero{padding:24px 4% 50px;}
+  .book-3d-img{width:96%!important;max-width:none!important;}
 }
 
 /* Preorder cards */
@@ -619,10 +617,10 @@ body.menu-open{
 
 /* Hero CTA clusters */
 .hero-preorder-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.3rem;justify-content:center;}
-.hero-preorder-row .btn{padding:13px 22px;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;}
+.hero-preorder-row .btn{padding:14px 24px;font-size:0.74rem;}
 .hero-preorder-row .btn.disabled{opacity:0.5;cursor:default;}
 .hero-secondary-row{display:flex;gap:0.7rem;flex-wrap:wrap;}
-.hero-secondary-row .btn{padding:11px 20px;font-size:0.68rem;}
+.hero-secondary-row .btn{padding:14px 24px;font-size:0.74rem;}
 
 /* Advance praise tiles */
 .advance-section{background:#ffffff;padding:80px var(--pad);text-align:center;}

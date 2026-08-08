@@ -59,7 +59,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
 .page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .page-header-title::after{content:\'\';display:block;width:48px;height:3px;background:#ffff00;margin-top:16px;}
-.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:#ffff00;color:#111e2e;border:2px solid #ffff00;}.btn-light:hover{background:#ffffff;color:#1a2e45;border-color:#ffffff;}
 .btn-outline-light{background:transparent;color:#ffff00;border:2px solid #ffff00;}
 .btn-outline-light:hover{background:rgba(255,255,0,0.12);}.btn-outline-white{background:#ffffff;color:#1a2e45;border:2px solid #ffffff;}.btn-outline-white:hover{background:#ffff00;color:#1a2e45;border-color:#ffff00;}
@@ -447,6 +447,8 @@ body.menu-open{
 .preorder-link-list li a span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;}
 .preorder-link-list li a:hover span:last-child{text-decoration:underline;}
 .preorder-link-list li.disabled{opacity:0.55;display:flex;justify-content:space-between;gap:1rem;padding:2px 0;}
+.preorder-link-list li.disabled span:first-child{color:var(--text-light);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;}
+.preorder-link-list li.disabled span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;}
 .sidebar-ctas{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem;}
 .sidebar-ctas .btn{width:100%;text-align:center;display:block;}
 
@@ -580,7 +582,7 @@ body.menu-open{
       </ul>
       <div class="sidebar-ctas">
         <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-teal goodreads-link">Add to Your Goodreads List</a>
-        <a href="#" class="btn btn-outline-navy" data-modal="arc-modal">Sign Up for ARCs</a>
+        <a href="#" class="btn btn-light" data-modal="arc-modal">Sign Up for ARCs</a>
       </div>
     </div>
   </div>
