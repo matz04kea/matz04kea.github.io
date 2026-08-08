@@ -704,6 +704,7 @@ body.menu-open{
 
 <section class="hero">
   <div class="hero-text">
+    <span class="hero-eyebrow">A Domestic Thriller</span>
     <h1 class="hero-title">Not a Good<br>Mother</h1>
     <p class="hero-intro">NOT A GOOD MOTHER is a fresh, twisty, page-turning thriller that explores the pressures of cultural duty and misogyny and the isolation of motherhood on a recent immigrant &mdash; a woman whose child is abducted from a park and who will do anything to get her back, only to discover that there&rsquo;s more to the kidnapping than she ever could have imagined.</p>
     <div class="hero-preorder-row">
@@ -916,8 +917,6 @@ document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener(
   }
 })());});
 document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
-const contactForm=document.getElementById('contact-form');
-if(contactForm){contactForm.addEventListener('submit',e=>{e.preventDefault();const btn=contactForm.querySelector('.contact-submit');btn.textContent='Message Sent ✓';btn.disabled=true;setTimeout(()=>{contactForm.reset();btn.textContent='Send Message';btn.disabled=false;},3000);});}
 
 </script>
 </body>

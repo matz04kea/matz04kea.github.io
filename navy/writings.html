@@ -525,8 +525,6 @@ document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener(
   }
 })());});
 document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
-const contactForm=document.getElementById('contact-form');
-if(contactForm){contactForm.addEventListener('submit',e=>{e.preventDefault();const btn=contactForm.querySelector('.contact-submit');btn.textContent='Message Sent ✓';btn.disabled=true;setTimeout(()=>{contactForm.reset();btn.textContent='Send Message';btn.disabled=false;},3000);});}
 
 // Newsletter subscribe fix - ensure button works on mobile
 document.querySelectorAll('.newsletter-form').forEach(function(form) {
