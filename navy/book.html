@@ -65,6 +65,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .btn-outline-light:hover{background:rgba(255,255,0,0.12);}.btn-outline-white{background:#ffffff;color:#1a2e45;border:2px solid #ffffff;}.btn-outline-white:hover{background:#ffff00;color:#1a2e45;border-color:#ffff00;}
 .btn-teal{background:#1a2e45;color:#ffff00;border:2px solid #1a2e45;}.btn-teal:hover{background:#ffff00;color:#1a2e45;border-color:#ffff00;}
 .btn-outline-teal{background:transparent;color:#ffff00;border:1px solid var(--teal);}
+.btn-outline-navy{background:transparent;color:#1a2e45;border:2px solid #1a2e45;}.btn-outline-navy:hover{background:#1a2e45;color:#ffff00;}
 .btn-outline-teal:hover{background:var(--teal);color:var(--champagne);}
 .section-label{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:#1a2e45;margin-bottom:1rem;display:block;}
 .section-label-light{color:#ffff00;}
@@ -441,11 +442,11 @@ body.menu-open{
 .sidebar-book-3d:hover{transform:translateY(-6px);}
 
 /* Sidebar preorder links + CTAs */
-.preorder-link-list li a{display:flex;justify-content:space-between;gap:1rem;text-decoration:none;padding:2px 0;}
+.preorder-link-list li a{display:flex;width:100%;justify-content:space-between;gap:1rem;text-decoration:none;padding:2px 0;}
 .preorder-link-list li a span:first-child{color:var(--text-light);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;}
 .preorder-link-list li a span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;}
 .preorder-link-list li a:hover span:last-child{text-decoration:underline;}
-.preorder-link-list li.disabled{opacity:0.55;}
+.preorder-link-list li.disabled{opacity:0.55;display:flex;justify-content:space-between;gap:1rem;padding:2px 0;}
 .sidebar-ctas{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem;}
 .sidebar-ctas .btn{width:100%;text-align:center;display:block;}
 
@@ -575,11 +576,11 @@ body.menu-open{
       <ul class="publisher-list preorder-link-list">
         <li><a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank"><span>Canada</span><span>Simon &amp; Schuster</span></a></li>
         <li><a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank"><span>USA</span><span>HarperCollins</span></a></li>
-        <li class="disabled"><span>UK &amp; Commonwealth</span><span>Bedford Square — Soon</span></li>
+        <li class="disabled"><span>UK &amp; Commonwealth</span><span>Bedford Square — Coming Soon</span></li>
       </ul>
       <div class="sidebar-ctas">
         <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-teal goodreads-link">Add to Your Goodreads List</a>
-        <a href="#" class="btn btn-outline-teal" data-modal="arc-modal">Sign Up for ARCs</a>
+        <a href="#" class="btn btn-outline-navy" data-modal="arc-modal">Sign Up for ARCs</a>
       </div>
     </div>
   </div>
@@ -691,6 +692,7 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
   document.querySelectorAll('[data-modal="arc-modal"]').forEach(function(el){
     el.addEventListener('click', function(e){ e.preventDefault(); modal.classList.add('open'); });
   });
+  if (window.location.hash === '#arc-signup' || window.location.hash === '#arc') { modal.classList.add('open'); }
   var closeBtn = document.getElementById('arc-modal-close');
   if(closeBtn) closeBtn.addEventListener('click', function(){ modal.classList.remove('open'); });
   modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('open'); });
