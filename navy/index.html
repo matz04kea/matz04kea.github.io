@@ -586,18 +586,22 @@ body.menu-open{
 }
 
 .hero-books-area{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;}
-.book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;}
+.book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-decoration:none;cursor:pointer;}
 .book-3d-img{width:100%;max-width:820px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
 .book-3d-img:hover{transform:translateY(-8px) scale(1.02);}
 @media(max-width:900px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 @media(max-width:600px){.book-3d-img{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}}
 
-/* Mobile: show the book cover before the text */
+/* Mobile: show the book cover before the text, large and prominent */
 @media(max-width:900px){
-  .hero{display:flex;flex-direction:column;}
-  .hero-books-area{order:1;margin-bottom:1.5rem;}
+  .hero{display:flex;flex-direction:column;padding-left:5%;padding-right:5%;}
+  .hero-books-area{order:1;margin-bottom:1.5rem;width:100%;}
   .hero-text{order:2;}
-  .book-3d-img{max-width:400px;}
+  .book-3d-img{max-width:520px;}
+}
+@media(max-width:600px){
+  .hero{padding-left:4%;padding-right:4%;}
+  .book-3d-img{width:88%;max-width:none;}
 }
 
 /* Preorder cards */
@@ -612,6 +616,45 @@ body.menu-open{
 .preorder-card .btn{width:100%;text-align:center;}
 .preorder-card .btn.disabled{opacity:0.55;cursor:default;pointer-events:none;}
 @media(max-width:700px){.preorder-grid{grid-template-columns:1fr;max-width:340px;}}
+
+/* Hero CTA clusters */
+.hero-preorder-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:1rem;}
+.hero-preorder-row .btn{padding:12px 20px;font-size:0.68rem;}
+.hero-preorder-row .btn.disabled{opacity:0.5;cursor:default;}
+.hero-secondary-row{display:flex;gap:0.7rem;flex-wrap:wrap;}
+.hero-secondary-row .btn{padding:11px 20px;font-size:0.68rem;}
+
+/* Advance praise tiles */
+.advance-section{background:#ffffff;padding:80px var(--pad);text-align:center;}
+.advance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;max-width:1180px;margin:2.5rem auto 0;text-align:left;}
+.advance-card{background:#f7f9fc;border-radius:8px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;}
+.advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3rem;line-height:0.5;color:#1a2e45;opacity:0.18;margin-bottom:1rem;display:block;}
+.advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
+.advance-person{display:flex;align-items:center;gap:0.8rem;}
+.advance-avatar{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:#1a2e45;color:#ffff00;display:flex;align-items:center;justify-content:center;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:1.05rem;}
+.advance-name{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text-dark);}
+.advance-credit{font-family:'Source Sans 3',sans-serif;font-size:0.74rem;color:var(--text-mid);}
+@media(max-width:900px){.advance-grid{grid-template-columns:1fr;max-width:480px;}}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(17,30,46,0.68);display:none;align-items:center;justify-content:center;z-index:300;padding:5%;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:8px;padding:2.5rem 2rem;max-width:420px;width:100%;position:relative;text-align:left;}
+.modal-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--text-mid);}
+.modal-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:1.5rem;color:var(--text-dark);margin-bottom:0.6rem;}
+.modal-sub{font-family:'Source Sans 3',sans-serif;font-size:0.88rem;color:var(--text-mid);line-height:1.6;margin-bottom:1.5rem;}
+.modal-form input{width:100%;padding:12px 14px;margin-bottom:0.9rem;border:1px solid rgba(0,0,0,0.15);border-radius:3px;font-family:'Source Sans 3',sans-serif;font-size:0.9rem;}
+.modal-submit{width:100%;text-align:center;}
+.nav-preorder{position:relative;list-style:none;}
+.nav-preorder-btn{background:#1a2e45;color:#ffff00!important;padding:9px 18px;border-radius:2px;opacity:1!important;}
+.nav-preorder-btn::after{display:none!important;}
+.nav-preorder-menu{display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.18);min-width:230px;padding:0.5rem 0;margin-top:8px;z-index:150;}
+.nav-preorder:hover .nav-preorder-menu{display:flex;flex-direction:column;}
+.nav-preorder-menu a,.nav-preorder-menu .nav-preorder-soon{display:block;padding:10px 18px;font-family:'Source Sans 3',sans-serif;font-size:0.82rem;color:var(--text-dark);text-decoration:none;white-space:nowrap;}
+.nav-preorder-menu a:hover{background:#f0f3f8;}
+.nav-preorder-menu .nav-preorder-soon{color:var(--text-light);font-style:italic;}
+.mobile-menu-label{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-top:0.5rem;}
+.mobile-menu .mobile-menu-soon{font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-light);font-style:italic;}
 </style>
 <script>
 (function(){
@@ -632,72 +675,84 @@ body.menu-open{
 <nav>
   <a href="index.html" class="nav-logo">Karabi George</a>
   <ul class="nav-links">
-    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="book.html" id="nav-book">Not a Good Mother</a></li>
+    <li><a href="writings.html" id="nav-writings">Resources for Writers</a></li>
     <li><a href="about.html" id="nav-about">About</a></li>
-    <li><a href="book.html" id="nav-book">Books</a></li>
-    <li><a href="writings.html" id="nav-writings">Resources For Writers</a></li>
     <li><a href="contact.html" id="nav-contact">Contact</a></li>
+    <li class="nav-preorder">
+      <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
+      <div class="nav-preorder-menu">
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank">Canada &mdash; Simon &amp; Schuster</a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank">United States &mdash; HarperCollins</a>
+        <span class="nav-preorder-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
+      </div>
+    </li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="book.html" onclick="closeMobile()">Not a Good Mother</a>
+  <a href="writings.html" onclick="closeMobile()">Resources for Writers</a>
   <a href="about.html" onclick="closeMobile()">About</a>
-  <a href="book.html" onclick="closeMobile()">Books</a>
-  <a href="writings.html" onclick="closeMobile()">Resources For Writers</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
+  <span class="mobile-menu-label">Preorder</span>
+  <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank">Canada &mdash; Simon &amp; Schuster</a>
+  <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank">United States &mdash; HarperCollins</a>
+  <span class="mobile-menu-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
 </div>
 <div class="menu-overlay" id="menu-overlay"></div>
 
 <section class="hero">
   <div class="hero-text">
-    <span class="hero-eyebrow">A Domestic Thriller</span>
     <h1 class="hero-title">Not a Good<br>Mother</h1>
     <p class="hero-intro">NOT A GOOD MOTHER is a fresh, twisty, page-turning thriller that explores the pressures of cultural duty and misogyny and the isolation of motherhood on a recent immigrant &mdash; a woman whose child is abducted from a park and who will do anything to get her back, only to discover that there&rsquo;s more to the kidnapping than she ever could have imagined.</p>
-    <div class="hero-btns">
-      <a href="book.html" class="btn btn-light">Learn More</a>
+    <div class="hero-preorder-row">
+      <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" class="btn btn-light">Preorder &middot; Canada</a>
+      <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" class="btn btn-light">Preorder &middot; US</a>
+      <span class="btn btn-light disabled">Preorder &middot; UK (Soon)</span>
+    </div>
+    <div class="hero-secondary-row">
       <a href="#" class="btn btn-outline-white goodreads-link">Add to Your Goodreads List</a>
+      <a href="#" class="btn btn-outline-white" data-modal="arc-modal">Sign Up for ARCs</a>
     </div>
   </div>
 
   
               <div class="hero-books-area">
-    <div class="book-3d-display">
+    <a href="book.html" class="book-3d-display">
       <img src="Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="book-3d-img">
-    </div>
+    </a>
   </div>
 </section>
 
-<section class="preorder-section reveal">
-  <span class="section-label">Preorder Now</span>
-  <h2 class="preorder-heading">Reserve your copy</h2>
-  <div class="preorder-grid">
-    <div class="preorder-card">
-      <span class="preorder-flag">Canada</span>
-      <p class="preorder-publisher">Simon &amp; Schuster</p>
-      <p class="preorder-date">December 29, 2026</p>
-      <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" class="btn btn-teal">Preorder</a>
+<section class="advance-section reveal">
+  <span class="section-label">Advance Praise</span>
+  <h2 class="preorder-heading">What early readers are saying</h2>
+  <div class="advance-grid">
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">Karabi George depicts the universally understood terror of a mother's child being taken from her in a way that is incredibly unsettling and will not let you stop turning the pages. This book is an edge-of-your-seat thriller while highlighting how quick society is to judge mothers, how isolating new motherhood can be, and the need to do better by all women in every stage of their mothering journey.</p>
+      <div class="advance-person">
+        <span class="advance-avatar">JH</span>
+        <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of <em>The Woods</em></p></div>
+      </div>
     </div>
-    <div class="preorder-card">
-      <span class="preorder-flag">United States</span>
-      <p class="preorder-publisher">HarperCollins</p>
-      <p class="preorder-date">April 6, 2027</p>
-      <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" class="btn btn-teal">Preorder</a>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">NOT A GOOD MOTHER by Karabi George is a knockout debut thriller that'll make your heart sit in your throat. Tense, twisted, and deeply emotional, this book will have you on the edge of your seat until the very end, and will continue to linger with you a long time thereafter.</p>
+      <div class="advance-person">
+        <span class="advance-avatar">HM</span>
+        <div><p class="advance-name">Hannah Mary McKinnon</p><p class="advance-credit">Internationally bestselling author of <em>A Killer Motive</em></p></div>
+      </div>
     </div>
-    <div class="preorder-card">
-      <span class="preorder-flag">UK &amp; Commonwealth</span>
-      <p class="preorder-publisher">Bedford Square</p>
-      <p class="preorder-date">February 11, 2027</p>
-      <span class="btn btn-teal disabled">Coming Soon</span>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian. Twists, cliffhangers, and shocking betrayals make Not a Good Mother a welcome and original addition to the genre.</p>
+      <div class="advance-person">
+        <span class="advance-avatar">RH</span>
+        <div><p class="advance-name">Robyn Harding</p><p class="advance-credit">International bestselling author of <em>Strangers in the Villa</em></p></div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="peer-section reveal">
-  <div class="peer-inner">
-    <span class="peer-quote-mark">"</span>
-    <p class="peer-quote">NOT A GOOD MOTHER by Karabi George is a knockout debut thriller that'll make your heart sit in your throat. Tense, twisted, and deeply emotional, this book will have you on the edge of your seat until the very end, and will continue to linger with you a long time thereafter.</p>
-    <p class="peer-attribution">— Hannah Mary McKinnon, <em>internationally bestselling author of A Killer Motive</em></p>
   </div>
 </section>
 
@@ -740,16 +795,66 @@ body.menu-open{
 <footer>
   <span class="footer-name">&copy; 2026 Karabi M. George Writing Inc. All rights reserved.</span>
   <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="book.html">Not a Good Mother</a></li>
+    <li><a href="writings.html">Resources for Writers</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="book.html">Books</a></li>
-    <li><a href="writings.html">Resources For Writers</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
   </ul>
 </footer>
 
-<script>var el=document.getElementById("nav-home");if(el){el.classList.add("active");}
+<div class="modal-overlay" id="arc-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="arc-modal-close" aria-label="Close">&times;</button>
+    <h3 class="modal-heading">Sign up for an ARC</h3>
+    <p class="modal-sub">Want to read NOT A GOOD MOTHER before it hits shelves? Leave your name and email and Karabi will be in touch about advance reader copies.</p>
+    <form class="modal-form" id="arc-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="c67f7151-2826-4816-9969-920ec7626230">
+      <input type="hidden" name="subject" value="New ARC signup — karabigeorge.com">
+      <input type="hidden" name="redirect" value="false">
+      <input type="checkbox" name="botcheck" style="display:none;">
+      <input type="text" name="Name" placeholder="Your name" required>
+      <input type="email" name="Email" placeholder="Your email" required>
+      <button type="submit" class="btn btn-teal modal-submit">Request an ARC</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// ARC signup modal
+(function(){
+  var modal = document.getElementById('arc-modal');
+  if(!modal) return;
+  document.querySelectorAll('[data-modal="arc-modal"]').forEach(function(el){
+    el.addEventListener('click', function(e){ e.preventDefault(); modal.classList.add('open'); });
+  });
+  var closeBtn = document.getElementById('arc-modal-close');
+  if(closeBtn) closeBtn.addEventListener('click', function(){ modal.classList.remove('open'); });
+  modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('open'); });
+  var arcForm = document.getElementById('arc-form');
+  if(arcForm){
+    arcForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = arcForm.querySelector('.modal-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      fetch(arcForm.action, { method: 'POST', body: new FormData(arcForm), headers: { Accept: 'application/json' } })
+        .then(function(){
+          btn.textContent = 'Request Sent ✓';
+          setTimeout(function(){
+            modal.classList.remove('open');
+            arcForm.reset();
+            btn.textContent = 'Request an ARC';
+            btn.disabled = false;
+          }, 2200);
+        })
+        .catch(function(){
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        });
+    });
+  }
+})();
 // Newsletter subscribe fix - ensure button works on mobile
 document.querySelectorAll('.newsletter-form').forEach(function(form) {
   var btn = form.querySelector('.newsletter-btn');

@@ -110,6 +110,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .contact-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:5rem;align-items:start;}
 .contact-form-wrap h2{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;color:var(--text-dark);margin-bottom:0.5rem;}
 .contact-form-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:1.05rem;font-style:italic;color:var(--text-mid);margin-bottom:2.5rem;line-height:1.75;}
+.agent-intro{font-family:'Source Sans 3',sans-serif;font-size:0.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.5rem;}
 .contact-form{display:flex;flex-direction:column;gap:1rem;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .contact-input,.contact-textarea{padding:14px 16px;background:var(--off-white);border:1px solid rgba(0,0,0,0.1);border-radius:2px;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:300;color:var(--text-dark);outline:none;transition:border-color 0.2s;width:100%;}
@@ -315,6 +316,16 @@ body.menu-open{
   width:100%;
   height:100%;
 }
+.nav-preorder{position:relative;list-style:none;}
+.nav-preorder-btn{background:#1a2e45;color:#ffff00!important;padding:9px 18px;border-radius:2px;opacity:1!important;}
+.nav-preorder-btn::after{display:none!important;}
+.nav-preorder-menu{display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.18);min-width:230px;padding:0.5rem 0;margin-top:8px;z-index:150;}
+.nav-preorder:hover .nav-preorder-menu{display:flex;flex-direction:column;}
+.nav-preorder-menu a,.nav-preorder-menu .nav-preorder-soon{display:block;padding:10px 18px;font-family:'Source Sans 3',sans-serif;font-size:0.82rem;color:var(--text-dark);text-decoration:none;white-space:nowrap;}
+.nav-preorder-menu a:hover{background:#f0f3f8;}
+.nav-preorder-menu .nav-preorder-soon{color:var(--text-light);font-style:italic;}
+.mobile-menu-label{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-top:0.5rem;}
+.mobile-menu .mobile-menu-soon{font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-light);font-style:italic;}
 </style>
 <script src="https://www.google.com/recaptcha/api.js" async defer>
 // Newsletter subscribe fix - ensure button works on mobile
@@ -356,20 +367,30 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
 <nav>
   <a href="index.html" class="nav-logo">Karabi George</a>
   <ul class="nav-links">
-    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="book.html" id="nav-book">Not a Good Mother</a></li>
+    <li><a href="writings.html" id="nav-writings">Resources for Writers</a></li>
     <li><a href="about.html" id="nav-about">About</a></li>
-    <li><a href="book.html" id="nav-book">Books</a></li>
-    <li><a href="writings.html" id="nav-writings">Resources For Writers</a></li>
     <li><a href="contact.html" id="nav-contact">Contact</a></li>
+    <li class="nav-preorder">
+      <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
+      <div class="nav-preorder-menu">
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank">Canada &mdash; Simon &amp; Schuster</a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank">United States &mdash; HarperCollins</a>
+        <span class="nav-preorder-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
+      </div>
+    </li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="book.html" onclick="closeMobile()">Not a Good Mother</a>
+  <a href="writings.html" onclick="closeMobile()">Resources for Writers</a>
   <a href="about.html" onclick="closeMobile()">About</a>
-  <a href="book.html" onclick="closeMobile()">Books</a>
-  <a href="writings.html" onclick="closeMobile()">Resources For Writers</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
+  <span class="mobile-menu-label">Preorder</span>
+  <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank">Canada &mdash; Simon &amp; Schuster</a>
+  <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank">United States &mdash; HarperCollins</a>
+  <span class="mobile-menu-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
 </div>
 
 <div class="page-header">
@@ -405,25 +426,10 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
     <div class="agents-sidebar reveal">
       <span class="section-label">Representation</span>
       <h3>Literary &amp; Media</h3>
+      <p class="agent-intro">Karabi is represented by Madeleine Milburn of the Madeleine Milburn Literary, TV &amp; Film Agency. Please reach out below for all book, translation, and film &amp; TV enquiries.</p>
       <div class="agent-card">
         <span class="agent-role">Primary Agent</span>
         <p class="agent-name">Madeleine Milburn</p>
-        <div class="agent-links">
-          <a href="tel:02074997550" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>020 7499 7550</a>
-          <a href="mailto:info@madeleinemilburn.com" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@madeleinemilburn.com</a>
-        </div>
-      </div>
-      <div class="agent-card">
-        <span class="agent-role">International Rights</span>
-        <p class="agent-name">Valentina Paulmichl</p>
-        <div class="agent-links">
-          <a href="tel:02074997550" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>020 7499 7550</a>
-          <a href="mailto:info@madeleinemilburn.com" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@madeleinemilburn.com</a>
-        </div>
-      </div>
-      <div class="agent-card">
-        <span class="agent-role">Film &amp; TV</span>
-        <p class="agent-name">Hannah Ladds</p>
         <div class="agent-links">
           <a href="tel:02074997550" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>020 7499 7550</a>
           <a href="mailto:info@madeleinemilburn.com" class="agent-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@madeleinemilburn.com</a>
@@ -459,10 +465,9 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
 <footer>
   <span class="footer-name">&copy; 2026 Karabi M. George Writing Inc. All rights reserved.</span>
   <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="book.html">Not a Good Mother</a></li>
+    <li><a href="writings.html">Resources for Writers</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="book.html">Books</a></li>
-    <li><a href="writings.html">Resources For Writers</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
   </ul>
