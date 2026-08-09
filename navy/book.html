@@ -449,7 +449,7 @@ body.menu-open{
   .book-sidebar-ctas{order:3;margin-top:0.5rem;}
   .sidebar-book-3d{width:88%!important;max-width:480px!important;}
 }
-@media(max-width:600px){.sidebar-book-3d{width:96%!important;max-width:none!important;}.book-sidebar-img{margin-bottom:1rem;}}
+@media(max-width:600px){.sidebar-book-3d{width:96%!important;max-width:none!important;}.book-sidebar-img{margin-bottom:1rem;}.book-preorder-row .btn,.sidebar-ctas .btn{font-size:0.68rem;padding:10px 6px;}}
 
 .preorder-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;color:var(--text-dark);margin:0.5rem auto 2.5rem;max-width:600px;}
 .sidebar-book-3d:hover{transform:translateY(-6px);}
@@ -462,11 +462,11 @@ body.menu-open{
 .preorder-link-list li.disabled{opacity:0.55;display:flex;justify-content:space-between;gap:1rem;padding:2px 0;}
 .preorder-link-list li.disabled span:first-child{color:var(--text-light);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;}
 .preorder-link-list li.disabled span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;font-weight:700;}
-.sidebar-ctas{display:flex;flex-direction:row;flex-wrap:wrap;gap:0.7rem;justify-content:center;margin-top:0;}
+.sidebar-ctas{display:flex;flex-direction:row;gap:0.7rem;margin-top:0;}
 .sidebar-ctas .btn-light:hover{background:#e6c800;color:#111e2e;border-color:#e6c800;}
-.sidebar-ctas .btn{flex:1 1 auto;min-width:180px;text-align:center;padding:12px 18px;font-size:0.85rem;}
-.book-preorder-row{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;}
-.book-preorder-row .btn{padding:12px 18px;font-size:0.85rem;}
+.sidebar-ctas .btn{flex:1 1 0;text-align:center;padding:12px 14px;font-size:0.85rem;}
+.book-preorder-row{display:flex;gap:0.6rem;margin-top:1rem;}
+.book-preorder-row .btn{flex:1 1 0;padding:12px 14px;font-size:0.85rem;text-align:center;}
 .book-preorder-row .btn.disabled{opacity:0.55;cursor:default;}
 
 /* Advance praise tiles (shared with home page) */
