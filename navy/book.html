@@ -123,11 +123,9 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .book-region{font-family:'Source Sans 3',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#ffffff;opacity:0.5;margin-top:0.5rem;text-align:center;display:block;}
 
 .book-content-section{padding:80px var(--pad);background:#fff;}
-.book-top{display:grid;grid-template-columns:minmax(0,1fr) 620px;grid-template-areas:"text image" "text ctas";gap:2rem 3.5rem;align-items:start;max-width:1350px;margin:0 auto 60px;}
-.book-text{grid-area:text;min-width:0;}
-.book-sidebar-image{grid-area:image;}
-.book-sidebar-ctas{grid-area:ctas;}
+.book-top{display:grid;grid-template-columns:minmax(0,1fr) 620px;gap:3.5rem;align-items:start;max-width:1350px;margin:0 auto 60px;}
 .book-text{min-width:0;}
+.book-sidebar-wrap{display:flex;flex-direction:column;gap:1.25rem;}
 .blurb-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:normal;font-weight:700;color:var(--text-dark);line-height:1.85;margin-bottom:1.75rem;}
 .blurb-prose{font-family:'Libre Baskerville',Georgia,serif;font-size:0.97rem;color:var(--text-dark);line-height:1.85;margin-bottom:1.5rem;}
 .timeline-entry{margin-bottom:1.5rem;padding-left:1.5rem;border-left:3px solid #ffff00;padding-left:1.2rem;}
@@ -445,6 +443,7 @@ body.menu-open{
 .sidebar-book-3d{width:100%;max-width:620px;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.5));transition:transform 0.4s ease;}
 @media(max-width:860px){
   .book-top{display:flex;flex-direction:column;}
+  .book-sidebar-wrap{display:contents;}
   .book-sidebar-image{order:1;}
   .book-text{order:2;}
   .book-sidebar-ctas{order:3;margin-top:0.5rem;}
@@ -465,7 +464,7 @@ body.menu-open{
 .preorder-link-list li.disabled span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;font-weight:700;}
 .sidebar-ctas{display:flex;flex-direction:row;flex-wrap:wrap;gap:0.7rem;justify-content:center;margin-top:0;}
 .sidebar-ctas .btn-light:hover{background:#e6c800;color:#111e2e;border-color:#e6c800;}
-.sidebar-ctas .btn{flex:1 1 auto;min-width:180px;text-align:center;}
+.sidebar-ctas .btn{flex:1 1 auto;min-width:180px;text-align:center;padding:12px 18px;font-size:0.85rem;}
 .book-preorder-row{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;}
 .book-preorder-row .btn{padding:12px 18px;font-size:0.85rem;}
 .book-preorder-row .btn.disabled{opacity:0.55;cursor:default;}
@@ -604,6 +603,7 @@ body.menu-open{
       <p class="blurb-tagline">Karabi George's riveting, pulse-pounding debut thriller asks a terrifying question that lingers in the back of all our minds—<em>How much can we really trust the people closest to us?</em></p>
     </div>
 
+    <div class="book-sidebar-wrap">
     <div class="book-sidebar-image reveal">
       <div class="book-sidebar-img">
         <picture>
@@ -624,6 +624,7 @@ body.menu-open{
         <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-light goodreads-link">Add to your Goodreads list</a>
         <a href="#" class="btn btn-light" data-modal="arc-modal">Sign up for ARCs</a>
       </div>
+    </div>
     </div>
   </div>
 </section>
