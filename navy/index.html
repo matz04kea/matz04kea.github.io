@@ -59,7 +59,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
 .page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .page-header-title::after{content:\'\';display:block;width:48px;height:3px;background:#ffff00;margin-top:16px;}
-.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn{display:inline-block;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;letter-spacing:0.01em;text-transform:none;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:#ffff00;color:#111e2e;border:2px solid #ffff00;}.btn-light:hover{background:#e6c800;color:#111e2e;border-color:#e6c800;}
 .btn-outline-light{background:transparent;color:#ffff00;border:2px solid #ffff00;}
 .btn-outline-light:hover{background:rgba(255,255,0,0.12);}.btn-outline-white{background:#ffffff;color:#1a2e45;border:2px solid #ffffff;}.btn-outline-white:hover{background:#ffffff;color:#111e2e;border:2px solid #ffff00;box-shadow:0 0 0 2px #ffff00;}
@@ -78,7 +78,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
 .newsletter-input:focus{border-color:rgba(245,237,224,0.6);}
 .newsletter-input::placeholder{color:rgba(245,237,224,0.4);}
-.newsletter-btn{padding:14px 22px;background:#ffff00;color:#111e2e;border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.newsletter-btn{padding:14px 22px;background:#ffff00;color:#111e2e;border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:'Libre Baskerville',Georgia,serif;font-size:0.88rem;font-weight:700;letter-spacing:0.01em;text-transform:none;cursor:pointer;transition:background 0.2s;}
 .newsletter-btn:hover{background:#ffffff;color:#1a2e45;}
 .newsletter-note{font-family:'Source Sans 3',sans-serif;font-size:0.72rem;color:rgba(245,237,224,0.5);}
 .newsletter-note a{color:rgba(255,255,255,0.65);text-decoration:none;}
@@ -592,14 +592,14 @@ body.menu-open{
 
 /* Mobile: show the book cover before the text, large and prominent */
 @media(max-width:900px){
-  .hero{display:flex;flex-direction:column;padding:36px 5% 60px;}
-  .hero-books-area{order:1;margin-bottom:1.5rem;width:100%;}
+  .hero{display:flex;flex-direction:column;padding:20px 4% 60px;}
+  .hero-books-area{order:1;margin-bottom:1.2rem;width:100%;}
   .hero-text{order:2;}
   .book-3d-img{width:96%!important;max-width:640px!important;max-height:none!important;margin:0 auto;}
 }
 @media(max-width:600px){
-  .hero{padding:24px 4% 50px;}
-  .book-3d-img{width:96%!important;max-width:none!important;}
+  .hero{padding:16px 3% 40px;}
+  .book-3d-img{width:100%!important;max-width:none!important;}
 }
 
 /* Preorder cards */
@@ -617,10 +617,10 @@ body.menu-open{
 
 /* Hero CTA clusters */
 .hero-preorder-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.3rem;justify-content:center;}
-.hero-preorder-row .btn{padding:14px 24px;font-size:0.74rem;}
+.hero-preorder-row .btn{padding:14px 24px;font-size:0.92rem;}
 .hero-preorder-row .btn.disabled{opacity:0.5;cursor:default;}
 .hero-secondary-row{display:flex;gap:0.7rem;flex-wrap:wrap;}
-.hero-secondary-row .btn{padding:14px 24px;font-size:0.74rem;}
+.hero-secondary-row .btn{padding:14px 24px;font-size:0.92rem;}
 
 /* Advance praise tiles */
 .advance-section{background:#ffffff;padding:80px var(--pad);text-align:center;}
@@ -706,8 +706,8 @@ body.menu-open{
     <h1 class="hero-title">Not a Good<br>Mother</h1>
     <p class="hero-intro">NOT A GOOD MOTHER is a fresh, twisty, page-turning thriller that explores the pressures of cultural duty and misogyny and the isolation of motherhood on a recent immigrant &mdash; a woman whose child is abducted from a park and who will do anything to get her back, only to discover that there&rsquo;s more to the kidnapping than she ever could have imagined.</p>
     <div class="hero-secondary-row">
-      <a href="#" class="btn btn-outline-white goodreads-link">Add to Your Goodreads List</a>
-      <a href="#" class="btn btn-outline-white" data-modal="arc-modal">Sign Up for ARCs</a>
+      <a href="#" class="btn btn-outline-white goodreads-link">Add to your Goodreads list</a>
+      <a href="#" class="btn btn-outline-white" data-modal="arc-modal">Sign up for ARCs</a>
     </div>
   </div>
 
@@ -719,7 +719,7 @@ body.menu-open{
     <div class="hero-preorder-row">
       <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" class="btn btn-light">Preorder &middot; Canada</a>
       <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" class="btn btn-light">Preorder &middot; US</a>
-      <span class="btn btn-light disabled">Preorder &middot; UK (Soon)</span>
+      <span class="btn btn-light disabled">Preorder &middot; UK (soon)</span>
     </div>
   </div>
 </section>
@@ -764,7 +764,7 @@ body.menu-open{
       <span class="section-label section-label-light">Meet the Author</span>
       <h2 class="author-heading">Karabi<br>George</h2>
       <p class="author-bio">Originally from India, I now live just outside Toronto with my husband and two kids. I hold a Creative Writing certificate from the University of British Columbia. I also work in corporate strategy, and enjoy reading, organizing book clubs, volunteering and traveling.</p>
-      <a href="about.html" class="btn btn-light" style="margin-top:0.5rem;">Read More</a>
+      <a href="about.html" class="btn btn-light" style="margin-top:0.5rem;">Read more</a>
     </div>
   </div>
 </section>

@@ -59,7 +59,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
 .page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--champagne);line-height:1.1;}
 .page-header-title::after{content:\'\';display:block;width:48px;height:3px;background:#ffff00;margin-top:16px;}
-.btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
+.btn{display:inline-block;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;letter-spacing:0.01em;text-transform:none;text-decoration:none;padding:14px 30px;border-radius:2px;transition:all 0.25s;cursor:pointer;border:none;}
 .btn-light{background:#ffff00;color:#111e2e;border:2px solid #ffff00;}.btn-light:hover{background:#ffffff;color:#1a2e45;border-color:#1a2e45;}
 .btn-outline-light{background:transparent;color:#ffff00;border:2px solid #ffff00;}
 .btn-outline-light:hover{background:rgba(255,255,0,0.12);}.btn-outline-white{background:#ffffff;color:#1a2e45;border:2px solid #ffffff;}.btn-outline-white:hover{background:#ffff00;color:#1a2e45;border-color:#ffff00;}
@@ -79,7 +79,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rg
 .newsletter-input{flex:1;padding:14px 18px;border:1px solid rgba(245,237,224,0.25);border-right:none;border-radius:2px 0 0 2px;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:300;background:rgba(255,255,255,0.08);color:var(--champagne);outline:none;transition:border-color 0.2s;}
 .newsletter-input:focus{border-color:rgba(245,237,224,0.6);}
 .newsletter-input::placeholder{color:rgba(245,237,224,0.4);}
-.newsletter-btn{padding:14px 22px;background:#ffff00;color:#111e2e;border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.newsletter-btn{padding:14px 22px;background:#ffff00;color:#111e2e;border:1px solid var(--champagne-warm);border-radius:0 2px 2px 0;font-family:'Libre Baskerville',Georgia,serif;font-size:0.88rem;font-weight:700;letter-spacing:0.01em;text-transform:none;cursor:pointer;transition:background 0.2s;}
 .newsletter-btn:hover{background:#ffffff;color:#1a2e45;}
 .newsletter-note{font-family:'Source Sans 3',sans-serif;font-size:0.72rem;color:rgba(245,237,224,0.5);}
 .newsletter-note a{color:rgba(255,255,255,0.65);text-decoration:none;}
@@ -120,7 +120,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .book-region{font-family:'Source Sans 3',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#ffffff;opacity:0.5;margin-top:0.5rem;text-align:center;display:block;}
 
 .book-content-section{padding:80px var(--pad);background:#fff;}
-.book-top{display:grid;grid-template-columns:1fr 480px;gap:4rem;align-items:start;max-width:1250px;margin:0 auto 60px;}
+.book-top{display:grid;grid-template-columns:1fr 620px;gap:3.5rem;align-items:start;max-width:1350px;margin:0 auto 60px;}
 .blurb-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:normal;font-weight:700;color:var(--text-dark);line-height:1.85;margin-bottom:1.75rem;}
 .blurb-prose{font-family:'Libre Baskerville',Georgia,serif;font-size:0.97rem;color:var(--text-dark);line-height:1.85;margin-bottom:1.5rem;}
 .timeline-entry{margin-bottom:1.5rem;padding-left:1.5rem;border-left:3px solid #ffff00;padding-left:1.2rem;}
@@ -435,8 +435,9 @@ body.menu-open{
 }
 
 .book-sidebar-img{display:flex;justify-content:center;margin-bottom:1.5rem;}
-.sidebar-book-3d{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.5));transition:transform 0.4s ease;}
-@media(max-width:860px){.book-top{display:flex;flex-direction:column;}.book-sidebar-new{order:1;}.book-text{order:2;}.sidebar-book-3d{max-width:340px;}}
+.sidebar-book-3d{width:100%;max-width:620px;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.5));transition:transform 0.4s ease;}
+@media(max-width:860px){.book-top{display:flex;flex-direction:column;}.book-sidebar-new{order:1;}.book-text{order:2;}.sidebar-book-3d{width:88%!important;max-width:480px!important;}}
+@media(max-width:600px){.sidebar-book-3d{width:96%!important;max-width:none!important;}.book-sidebar-img{margin-bottom:1rem;}}
 
 .preorder-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;color:var(--text-dark);margin:0.5rem auto 2.5rem;max-width:600px;}
 .sidebar-book-3d:hover{transform:translateY(-6px);}
@@ -583,8 +584,8 @@ body.menu-open{
         <li class="disabled"><span>UK &amp; Commonwealth</span><span>Bedford Square — Coming Soon</span></li>
       </ul>
       <div class="sidebar-ctas">
-        <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-teal goodreads-link">Add to Your Goodreads List</a>
-        <a href="#" class="btn btn-light" data-modal="arc-modal">Sign Up for ARCs</a>
+        <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" class="btn btn-teal goodreads-link">Add to your Goodreads list</a>
+        <a href="#" class="btn btn-light" data-modal="arc-modal">Sign up for ARCs</a>
       </div>
     </div>
   </div>
