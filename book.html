@@ -477,8 +477,9 @@ body.menu-open{
 /* Advance praise tiles (shared with home page) */
 .advance-section{background:#f0f3f8;padding:80px var(--pad);text-align:center;}
 .advance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;max-width:1180px;margin:2.5rem auto 0;text-align:left;}
-.advance-card{background:#ffffff;border-radius:8px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;}
-.advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3rem;line-height:0.5;color:#1a2e45;opacity:0.18;margin-bottom:1rem;display:block;}
+.advance-card{background:#ffffff;border-radius:10px;padding:2.4rem 1.9rem 2rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
+.advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
+.advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
 .advance-person{display:flex;align-items:center;gap:0.8rem;}
 
@@ -549,9 +550,9 @@ body.menu-open{
     <li class="nav-preorder">
       <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
       <div class="nav-preorder-menu">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer">Canada &mdash; Simon &amp; Schuster</a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer">United States &mdash; HarperCollins</a>
-        <span class="nav-preorder-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer">Canada</a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer">United States</a>
+        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer">United Kingdom</a>
       </div>
     </li>
   </ul>
@@ -566,7 +567,7 @@ body.menu-open{
   <div class="mobile-preorder-row">
     <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Canada</a>
     <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">US</a>
-    <span class="mobile-preorder-pill disabled">UK (soon)</span>
+    <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">UK</a>
   </div>
 </div>
 
@@ -623,7 +624,7 @@ body.menu-open{
       <div class="book-preorder-row">
         <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; Canada</a>
         <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; US</a>
-        <span class="btn btn-teal disabled">Preorder &middot; UK (soon)</span>
+        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; UK</a>
       </div>
     </div>
 
@@ -645,7 +646,7 @@ body.menu-open{
       <span class="advance-quote-mark">"</span>
       <p class="advance-quote">Karabi George depicts the universally understood terror of a mother's child being taken from her in a way that is incredibly unsettling and will not let you stop turning the pages. This book is an edge-of-your-seat thriller while highlighting how quick society is to judge mothers, how isolating new motherhood can be, and the need to do better by all women in every stage of their mothering journey.</p>
       <div class="advance-person">
-        <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of <em>The Woods</em></p></div>
+        <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of the highly anticipated novel <em>The Woods</em></p></div>
       </div>
     </div>
     <div class="advance-card">
