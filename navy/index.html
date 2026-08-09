@@ -42,7 +42,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Source Sans 3',sans-serif;background:var(--page-bg);color:var(--text-dark);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px;}
-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
+body{padding-top:72px;}
 .nav-logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;position:relative;transition:opacity 0.2s;}.nav-logo::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:#1a2e45;transition:width 0.2s;}.nav-logo:hover::after{width:100%;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{position:relative;}
@@ -120,7 +121,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 
 .hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 120px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:center;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.055) 0%,transparent 65%);pointer-events:none;}
-.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
+.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;min-width:0;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
 .hero-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:700;color:#ffffff;line-height:1.05;margin-bottom:1.5rem;}
 .hero-title::after{content:\'\';display:block;width:56px;height:3px;background:#ffff00;margin-top:12px;margin-bottom:4px;}
@@ -144,9 +145,9 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 @media(max-width:600px){.books-stack{width:190px;}.book-3d{width:130px;height:194px;}}
 
 
-.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:end;min-height:88vh;position:relative;overflow:visible;}
+.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:3rem;align-items:end;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 65%);pointer-events:none;}
-.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;}
+.hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;min-width:0;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
 .hero-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:700;color:#ffffff;line-height:1.05;margin-bottom:1.5rem;}
 .hero-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1rem,1.5vw,1.18rem);color:#ffffff;opacity:0.88;line-height:1.85;margin-bottom:2.5rem;max-width:480px;font-style:normal;}
@@ -585,7 +586,7 @@ body.menu-open{
   height:100%;
 }
 
-.hero-books-area{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;}
+.hero-books-area{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:fadeUp 0.85s 0.12s ease both;min-width:0;}
 .book-3d-display{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-decoration:none;cursor:pointer;}
 .book-3d-img{width:100%;max-width:900px;max-height:640px;object-fit:contain;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,0.55)) drop-shadow(0 0 2px rgba(255,255,255,0.4)) drop-shadow(0 20px 35px rgba(0,0,0,0.6));transition:transform 0.4s ease;}
 .book-3d-img:hover{transform:translateY(-8px) scale(1.02);}
@@ -653,6 +654,10 @@ body.menu-open{
 .nav-preorder-menu .nav-preorder-soon{color:var(--text-light);font-style:italic;}
 .mobile-menu-label{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-top:0.5rem;}
 .mobile-menu .mobile-menu-soon{font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-light);font-style:italic;}
+.mobile-preorder-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.6rem;}
+.mobile-preorder-pill{font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;background:#ffff00;color:#111e2e;padding:10px 18px;border-radius:2px;text-decoration:none;opacity:1;}
+.mobile-preorder-pill.disabled{background:#c9c96a;color:#4a4a2a;}
+
 </style>
 <script>
 (function(){
@@ -694,9 +699,11 @@ body.menu-open{
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="contact.html" onclick="closeMobile()">Contact</a>
   <span class="mobile-menu-label">Preorder</span>
-  <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank">Canada &mdash; Simon &amp; Schuster</a>
-  <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank">United States &mdash; HarperCollins</a>
-  <span class="mobile-menu-soon">UK &amp; Commonwealth &mdash; Coming Soon</span>
+  <div class="mobile-preorder-row">
+    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" class="mobile-preorder-pill">Canada</a>
+    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" class="mobile-preorder-pill">US</a>
+    <span class="mobile-preorder-pill disabled">UK (soon)</span>
+  </div>
 </div>
 <div class="menu-overlay" id="menu-overlay"></div>
 
