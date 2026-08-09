@@ -69,6 +69,7 @@ body{padding-top:72px;}
 .btn-outline-navy{background:transparent;color:#1a2e45;border:2px solid #1a2e45;}.btn-outline-navy:hover{background:#1a2e45;color:#ffff00;}
 .btn-outline-teal:hover{background:var(--teal);color:var(--champagne);}
 .preorder-link-list li{padding:8px 0;}
+.sidebar-preorder-label{font-size:0.85rem;letter-spacing:0.2em;}
 .section-label{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:#1a2e45;margin-bottom:1rem;display:block;}
 .section-label-light{color:#ffff00;}
 .section-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;color:var(--text-dark);margin-bottom:1.5rem;}
@@ -122,7 +123,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 .book-region{font-family:'Source Sans 3',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#ffffff;opacity:0.5;margin-top:0.5rem;text-align:center;display:block;}
 
 .book-content-section{padding:80px var(--pad);background:#fff;}
-.book-top{display:grid;grid-template-columns:minmax(0,1fr) 620px;gap:3.5rem;align-items:end;max-width:1350px;margin:0 auto 60px;}
+.book-top{display:grid;grid-template-columns:minmax(0,1fr) 620px;gap:3.5rem;align-items:start;max-width:1350px;margin:0 auto 60px;}
 .book-text{min-width:0;}
 .blurb-intro{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:normal;font-weight:700;color:var(--text-dark);line-height:1.85;margin-bottom:1.75rem;}
 .blurb-prose{font-family:'Libre Baskerville',Georgia,serif;font-size:0.97rem;color:var(--text-dark);line-height:1.85;margin-bottom:1.5rem;}
@@ -439,7 +440,7 @@ body.menu-open{
 
 .book-sidebar-img{display:flex;justify-content:center;margin-bottom:1.5rem;}
 .sidebar-book-3d{width:100%;max-width:620px;height:auto;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.5));transition:transform 0.4s ease;}
-@media(max-width:860px){.book-top{display:flex;flex-direction:column;}.book-sidebar-new{order:1;}.book-text{order:2;}.sidebar-book-3d{width:88%!important;max-width:480px!important;}}
+@media(max-width:860px){.book-top{display:flex;flex-direction:column;}.book-sidebar-new{order:1;}.book-text{order:2;}.sidebar-book-3d{width:88%!important;max-width:480px!important;}.preorder-link-list li a span:first-child,.preorder-link-list li.disabled span:first-child{font-size:0.68rem!important;letter-spacing:0.1em!important;}.preorder-link-list li a span:last-child,.preorder-link-list li.disabled span:last-child{font-size:1rem!important;}.sidebar-preorder-label{font-size:0.68rem!important;letter-spacing:0.28em!important;}}
 @media(max-width:600px){.sidebar-book-3d{width:96%!important;max-width:none!important;}.book-sidebar-img{margin-bottom:1rem;}}
 
 .preorder-heading{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;color:var(--text-dark);margin:0.5rem auto 2.5rem;max-width:600px;}
@@ -447,12 +448,12 @@ body.menu-open{
 
 /* Sidebar preorder links + CTAs */
 .preorder-link-list li a{display:flex;width:100%;justify-content:space-between;gap:1rem;text-decoration:none;padding:2px 0;}
-.preorder-link-list li a span:first-child{color:var(--text-light);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;}
-.preorder-link-list li a span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.15rem;font-weight:700;}
+.preorder-link-list li a span:first-child{color:var(--text-light);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;}
+.preorder-link-list li a span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;font-weight:700;}
 .preorder-link-list li a:hover span:last-child{text-decoration:underline;}
 .preorder-link-list li.disabled{opacity:0.55;display:flex;justify-content:space-between;gap:1rem;padding:2px 0;}
-.preorder-link-list li.disabled span:first-child{color:var(--text-light);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;}
-.preorder-link-list li.disabled span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.15rem;font-weight:700;}
+.preorder-link-list li.disabled span:first-child{color:var(--text-light);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;}
+.preorder-link-list li.disabled span:last-child{color:#1a2e45;font-family:'Libre Baskerville',Georgia,serif;font-size:1.3rem;font-weight:700;}
 .sidebar-ctas{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem;}
 .sidebar-ctas .btn-teal:hover{background:#eef2f7;color:#1a2e45;border-color:#1a2e45;}
 .sidebar-ctas .btn-light:hover{background:#e6c800;color:#111e2e;border-color:#e6c800;}
@@ -586,7 +587,7 @@ body.menu-open{
       <div class="book-sidebar-img">
         <img src="Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="sidebar-book-3d">
       </div>
-      <span class="section-label">Preorder Now</span>
+      <span class="section-label sidebar-preorder-label">Preorder Now</span>
       <ul class="publisher-list preorder-link-list">
         <li><a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank"><span>Canada</span><span>Simon &amp; Schuster</span></a></li>
         <li><a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank"><span>USA</span><span>HarperCollins</span></a></li>
