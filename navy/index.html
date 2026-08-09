@@ -145,7 +145,7 @@ footer{background:var(--teal-darkest);padding:28px var(--pad);display:flex;align
 @media(max-width:600px){.books-stack{width:190px;}.book-3d{width:130px;height:194px;}}
 
 
-.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:3rem;align-items:end;min-height:88vh;position:relative;overflow:visible;}
+.hero{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:80px var(--pad) 100px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:3rem;align-items:end;min-height:88vh;position:relative;overflow:visible;}
 .hero::before{content:'';position:absolute;top:-180px;right:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 65%);pointer-events:none;}
 .hero-text{position:relative;z-index:2;animation:fadeUp 0.8s ease both;min-width:0;}
 .hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1.2rem;display:block;}
@@ -618,10 +618,10 @@ body.menu-open{
 
 /* Hero CTA clusters */
 .hero-preorder-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.3rem;justify-content:center;}
-.hero-preorder-row .btn{padding:14px 24px;font-size:0.92rem;}
+.hero-preorder-row .btn{padding:13px 20px;font-size:0.86rem;}
 .hero-preorder-row .btn.disabled{opacity:0.5;cursor:default;}
 .hero-secondary-row{display:flex;gap:0.6rem;flex-wrap:wrap;}
-.hero-secondary-row .btn{padding:12px 18px;font-size:0.76rem;text-align:center;white-space:nowrap;}
+.hero-secondary-row .btn{padding:13px 20px;font-size:0.86rem;text-align:center;white-space:nowrap;}
 
 /* Advance praise tiles */
 .advance-section{background:#ffffff;padding:80px var(--pad);text-align:center;}
@@ -663,17 +663,26 @@ body.menu-open{
 (function(){
   // If running in the /navy/ subfolder on GitHub, images are one level up
   var prefix = (window.location.pathname.indexOf('/navy/') !== -1) ? '../' : '';
-  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg'];
-  document.addEventListener('DOMContentLoaded', function(){
+  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg','Not_a_good_mother_3D.webp'];
+  function fixPaths(){
     document.querySelectorAll('img').forEach(function(img){
       imgs.forEach(function(name){
         if(img.getAttribute('src') === name) img.src = prefix + name;
       });
     });
-  });
+    document.querySelectorAll('source').forEach(function(src){
+      imgs.forEach(function(name){
+        if(src.getAttribute('srcset') === name) src.srcset = prefix + name;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', fixPaths);
+  } else {
+    fixPaths();
+  }
 })();
 </script>
-<link rel="preload" as="image" href="Not_a_good_mother_3D.png" fetchpriority="high">
 </head>
 <body>
 <nav>
@@ -722,7 +731,10 @@ body.menu-open{
   
               <div class="hero-books-area">
     <a href="book.html" class="book-3d-display">
-      <img src="Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="book-3d-img" fetchpriority="high">
+      <picture>
+        <source srcset="Not_a_good_mother_3D.webp" type="image/webp">
+        <img src="Not_a_good_mother_3D.png" alt="Not a Good Mother by Karabi George" class="book-3d-img" fetchpriority="high">
+      </picture>
     </a>
     <div class="hero-preorder-row">
       <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" class="btn btn-light">Preorder &middot; Canada</a>

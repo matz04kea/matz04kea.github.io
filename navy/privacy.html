@@ -631,14 +631,24 @@ body.menu-open{
 (function(){
   // If running in the /navy/ subfolder on GitHub, images are one level up
   var prefix = (window.location.pathname.indexOf('/navy/') !== -1) ? '../' : '';
-  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg'];
-  document.addEventListener('DOMContentLoaded', function(){
+  var imgs = ['Karabi-Mitra-04.jpg','Not_a_good_mother_3D.png','Not_a_Good_Mother-Final.jpg','Not_a_good_mother_3D.webp'];
+  function fixPaths(){
     document.querySelectorAll('img').forEach(function(img){
       imgs.forEach(function(name){
         if(img.getAttribute('src') === name) img.src = prefix + name;
       });
     });
-  });
+    document.querySelectorAll('source').forEach(function(src){
+      imgs.forEach(function(name){
+        if(src.getAttribute('srcset') === name) src.srcset = prefix + name;
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', fixPaths);
+  } else {
+    fixPaths();
+  }
 })();
 </script>
 </head>
