@@ -551,6 +551,8 @@ if(contactForm){
     btn.textContent='Sending...';
     btn.disabled=true;
     const data=new FormData(contactForm);
+    data.delete('g-recaptcha-response');
+    data.delete('recaptcha');
     try{
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
       const json=await res.json();
