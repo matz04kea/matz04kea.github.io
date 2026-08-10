@@ -432,11 +432,11 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
         <input type="hidden" name="redirect" value="false">
         <input type="checkbox" name="botcheck" style="display:none;">
         <div class="form-row">
-          <input type="text" class="contact-input" placeholder="Your name" required>
-          <input type="email" class="contact-input" placeholder="Your email" required>
+          <input type="text" name="Name" class="contact-input" placeholder="Your name" required>
+          <input type="email" name="Email" class="contact-input" placeholder="Your email" required>
         </div>
-        <input type="text" class="contact-input" placeholder="Subject">
-        <textarea class="contact-textarea" placeholder="Your message" required></textarea>
+        <input type="text" name="Subject" class="contact-input" placeholder="Subject">
+        <textarea name="Message" class="contact-textarea" placeholder="Your message" required></textarea>
                 <div class="g-recaptcha" data-sitekey="6Ld2lbssAAAAAPY6NjVHkiQ96MpVdQNW-BBax1Ww" data-theme="dark" style="margin-bottom:0.5rem;"></div>
         <input type="hidden" name="recaptcha" id="recaptcha-token">
         <button type="submit" class="contact-submit">Send Message</button>
