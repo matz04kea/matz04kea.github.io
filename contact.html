@@ -544,6 +544,7 @@ if(contactForm){
       alert('Please complete the reCAPTCHA verification before sending.');
       return;
     }
+    document.getElementById('recaptcha-token').value = recaptchaResponse;
     e.preventDefault();
     const btn=contactForm.querySelector('.contact-submit');
     const orig=btn.textContent;
