@@ -56,7 +56,7 @@ body{padding-top:72px;}
 .nav-links a:hover,.nav-links a.active{opacity:1;}.nav-links a.active::after{width:100%;}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--text-dark);}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;gap:1.5rem;z-index:99;}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;align-items:flex-start;gap:1.5rem;z-index:99;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-family:'Libre Baskerville',Georgia,serif;font-size:1.2rem;letter-spacing:0.01em;text-transform:none;color:var(--text-dark);text-decoration:none;opacity:0.8;}
 .page-header{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:44px var(--pad) 38px;text-align:center;}
@@ -481,8 +481,8 @@ body.menu-open{
 
 /* Advance praise tiles (shared with home page) */
 .advance-section{background:#f0f3f8;padding:80px var(--pad);text-align:center;}
-.advance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;max-width:1180px;margin:2.5rem auto 0;text-align:left;}
-.advance-card{background:#ffffff;border-radius:10px;padding:2.4rem 1.9rem 2rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
+.advance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
+.advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
 .advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
@@ -490,7 +490,7 @@ body.menu-open{
 
 .advance-name{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text-dark);}
 .advance-credit{font-family:'Source Sans 3',sans-serif;font-size:0.74rem;color:var(--text-mid);}
-@media(max-width:900px){.advance-grid{grid-template-columns:1fr;max-width:480px;}}
+@media(max-width:700px){.advance-grid{grid-template-columns:1fr;max-width:480px;}}
 
 /* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(17,30,46,0.68);display:none;align-items:center;justify-content:center;z-index:300;padding:5%;}
@@ -508,15 +508,14 @@ body.menu-open{
 .nav-preorder{position:relative;list-style:none;}
 .nav-preorder-btn{background:#1a2e45;color:#ffff00!important;padding:9px 18px;border-radius:2px;opacity:1!important;}
 .nav-preorder-btn::after{display:none!important;}
-.nav-preorder-menu{display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.18);min-width:230px;padding:0.5rem 0;margin-top:8px;z-index:150;}
-.nav-preorder:hover .nav-preorder-menu{display:flex;flex-direction:column;}
-.nav-preorder-menu a,.nav-preorder-menu .nav-preorder-soon{display:block;padding:10px 18px;font-family:'Source Sans 3',sans-serif;font-size:0.82rem;color:var(--text-dark);text-decoration:none;white-space:nowrap;}
-.nav-preorder-menu a:hover{background:#f0f3f8;}
-.nav-preorder-menu .nav-preorder-soon{color:var(--text-light);font-style:italic;}
+.nav-preorder-menu{display:none;flex-direction:column;gap:0.5rem;position:absolute;top:100%;right:0;background:#1a2e45;border-radius:6px;box-shadow:0 12px 30px rgba(0,0,0,0.25);min-width:260px;padding:0.7rem;margin-top:8px;z-index:150;}
+.nav-preorder:hover .nav-preorder-menu{display:flex;}
+.nav-preorder-pill{display:block;background:#ffff00;color:#111e2e;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:0.9rem;text-transform:none!important;text-align:center;padding:10px 16px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background 0.2s;opacity:1!important;}
+.nav-preorder-pill:hover{background:#e6c800;}
 .mobile-menu-label{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dark);margin-top:0.9rem;display:block;}
 .mobile-menu .mobile-menu-soon{font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-light);font-style:italic;}
-.mobile-preorder-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.6rem;}
-.mobile-preorder-pill{font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;background:#ffff00;color:#111e2e;padding:10px 18px;border-radius:2px;text-decoration:none;opacity:1;}
+.mobile-preorder-row{display:flex;flex-direction:column;gap:8px;margin-top:0.7rem;background:#1a2e45;border-radius:8px;padding:12px;box-sizing:border-box;width:100%;}
+.mobile-preorder-pill{display:block;width:100%;box-sizing:border-box;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;text-transform:none!important;background:#ffff00;color:#111e2e;padding:12px 14px;border-radius:2px;text-decoration:none;opacity:1!important;text-align:center;}
 .mobile-preorder-pill.disabled{background:#c9c96a;color:#4a4a2a;}
 
 </style>
@@ -556,9 +555,9 @@ body.menu-open{
     <li class="nav-preorder">
       <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
       <div class="nav-preorder-menu">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer">Canada</a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer">United States</a>
-        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada</a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US</a>
+        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK</a>
       </div>
     </li>
   </ul>
@@ -571,14 +570,14 @@ body.menu-open{
   <a href="contact.html" onclick="closeMobile()">Contact</a>
   <span class="mobile-menu-label">Preorder</span>
   <div class="mobile-preorder-row">
-    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Canada</a>
-    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">US</a>
-    <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">UK</a>
+    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada</a>
+    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US</a>
+    <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK</a>
   </div>
 </div>
 
 <div class="page-header">
-  <span class="page-header-eyebrow">A Novel</span>
+  <span class="page-header-eyebrow">Debut Novel &middot; Releasing December 2026</span>
   <h1 class="page-header-title">Not a Good Mother</h1>
 </div>
 <div class="menu-overlay" id="menu-overlay"></div>
@@ -655,7 +654,7 @@ body.menu-open{
   <div class="advance-grid">
     <div class="advance-card">
       <span class="advance-quote-mark">"</span>
-      <p class="advance-quote">Karabi George depicts the universally understood terror of a mother's child being taken from her in a way that is incredibly unsettling and will not let you stop turning the pages. NOT A GOOD MOTHER is an edge-of-your-seat thriller while highlighting how quick society is to judge mothers, how isolating new motherhood can be, and the need to do better by all women in every stage of their mothering journey.</p>
+      <p class="advance-quote">In Not a Good Mother, Karabi George depicts the universally understood terror of a mother's child being taken from her in a way that is incredibly unsettling and will not let you stop turning the pages. On an even deeper level, she gives us insight into what it's like to experience marriage, motherhood, and loss as a new immigrant, the feeling of loneliness, bias and hopelessness. This book is an edge-of-your-seat thriller while at the same time highlighting how quick society is to judge mothers on their merit, how isolating new motherhood can be and the need to do better by all women in every stage of their mothering journey.</p>
       <div class="advance-person">
         <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of the highly anticipated novel <em>The Woods</em></p></div>
       </div>
@@ -672,6 +671,13 @@ body.menu-open{
       <p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian. Twists, cliffhangers, and shocking betrayals make NOT A GOOD MOTHER a welcome and original addition to the genre.</p>
       <div class="advance-person">
         <div><p class="advance-name">Robyn Harding</p><p class="advance-credit">International bestselling author of <em>Strangers in the Villa</em></p></div>
+      </div>
+    </div>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">In NOT A GOOD MOTHER Karabi George explores what happens when one fateful decision sets into motion every mother's worst fear. The twists and ticking-clock tension make it a read-in-a-day thriller, but it's George's sharp insights and unique perspective as a new Canadian that elevate this debut.</p>
+      <div class="advance-person">
+        <div><p class="advance-name">Karma Brown</p><p class="advance-credit">#1 international bestselling author of <em>Mother is Watching</em></p></div>
       </div>
     </div>
   </div>
