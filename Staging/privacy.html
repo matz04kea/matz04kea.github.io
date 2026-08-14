@@ -35,13 +35,13 @@ body{padding-top:72px;}
 .nav-links a{position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:#1a2e45;transition:width 0.2s;}
 .nav-links a:hover::after{width:100%;}
-.nav-links a{font-family:'Source Sans 3',sans-serif;font-size:0.92rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.7;transition:opacity 0.2s;}
+.nav-links a{font-family:'Libre Baskerville',Georgia,serif;font-size:1.02rem;font-weight:400;letter-spacing:0.01em;text-transform:none;color:var(--text-dark);text-decoration:none;opacity:0.78;transition:opacity 0.2s;}
 .nav-links a:hover,.nav-links a.active{opacity:1;}.nav-links a.active::after{width:100%;}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--text-dark);}
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);padding:1.5rem var(--pad);flex-direction:column;align-items:flex-start;gap:1.5rem;z-index:99;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Source Sans 3',sans-serif;font-size:1.05rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dark);text-decoration:none;opacity:0.72;}
+.mobile-menu a{font-family:'Libre Baskerville',Georgia,serif;font-size:1.2rem;letter-spacing:0.01em;text-transform:none;color:var(--text-dark);text-decoration:none;opacity:0.8;}
 .page-header{background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);padding:44px var(--pad) 38px;text-align:center;}
 .page-header-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#ffff00;margin-bottom:1rem;display:block;}
 .page-header-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.4rem,4.8vw,4rem);font-weight:700;color:var(--champagne);line-height:1.1;}
@@ -620,15 +620,13 @@ body.menu-open{
 .nav-preorder-btn::after{display:none!important;}
 .nav-preorder-menu{display:none;flex-direction:column;gap:0.5rem;position:absolute;top:100%;right:0;background:#1a2e45;border-radius:6px;box-shadow:0 12px 30px rgba(0,0,0,0.25);min-width:260px;padding:0.7rem;margin-top:8px;z-index:150;}
 .nav-preorder:hover .nav-preorder-menu{display:flex;}
-.nav-preorder-pill{display:flex;flex-direction:column;align-items:center;gap:1px;background:#ffff00;color:#111e2e;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:0.9rem;text-transform:none!important;text-align:center;padding:6px 14px;border-radius:2px;text-decoration:none;white-space:normal;transition:background 0.2s;opacity:1!important;}
+.nav-preorder-pill{display:block;background:#ffff00;color:#111e2e;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:0.9rem;text-transform:none!important;text-align:center;padding:10px 16px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background 0.2s;opacity:1!important;}
 .nav-preorder-pill:hover{background:#e6c800;}
-.nav-preorder-pill-sub{font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:0.74rem;letter-spacing:0.01em;text-transform:none!important;color:rgba(17,30,46,0.65);}
 .mobile-menu-label{font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dark);margin-top:0.9rem;display:block;}
 .mobile-menu .mobile-menu-soon{font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--text-light);font-style:italic;}
 .mobile-preorder-row{display:flex;flex-direction:column;gap:8px;margin-top:0.7rem;background:#1a2e45;border-radius:8px;padding:12px;box-sizing:border-box;width:100%;}
-.mobile-preorder-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;box-sizing:border-box;font-family:'Libre Baskerville',Georgia,serif;font-size:0.9rem;font-weight:700;text-transform:none!important;background:#ffff00;color:#111e2e;padding:9px 14px;border-radius:2px;text-decoration:none;opacity:1!important;text-align:center;}
+.mobile-preorder-pill{display:block;width:100%;box-sizing:border-box;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;text-transform:none!important;background:#ffff00;color:#111e2e;padding:12px 14px;border-radius:2px;text-decoration:none;opacity:1!important;text-align:center;}
 .mobile-preorder-pill.disabled{background:#c9c96a;color:#4a4a2a;}
-.mobile-preorder-pill-sub{font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:0.74rem;letter-spacing:0.01em;text-transform:none!important;color:rgba(17,30,46,0.65);}
 
 </style>
 <script>
@@ -668,9 +666,9 @@ body.menu-open{
     <li class="nav-preorder">
       <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
       <div class="nav-preorder-menu">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill"><span>Preorder &middot; Canada</span><span class="nav-preorder-pill-sub">Available Dec 29, 2026</span></a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill"><span>Preorder &middot; US</span><span class="nav-preorder-pill-sub">Available Apr 6, 2027</span></a>
-        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill"><span>Preorder &middot; UK</span><span class="nav-preorder-pill-sub">Available Feb 11, 2027</span></a>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada</a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US</a>
+        <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK</a>
       </div>
     </li>
   </ul>
@@ -683,9 +681,9 @@ body.menu-open{
   <a href="contact.html">Contact</a>
   <span class="mobile-menu-label">Preorder</span>
   <div class="mobile-preorder-row">
-    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill"><span>Preorder &middot; Canada</span><span class="mobile-preorder-pill-sub">Available Dec 29, 2026</span></a>
-    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill"><span>Preorder &middot; US</span><span class="mobile-preorder-pill-sub">Available Apr 6, 2027</span></a>
-    <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill"><span>Preorder &middot; UK</span><span class="mobile-preorder-pill-sub">Available Feb 11, 2027</span></a>
+    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada</a>
+    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US</a>
+    <a href="https://www.amazon.co.uk/dp/1835015085" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK</a>
   </div>
 </div>
 
