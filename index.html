@@ -631,6 +631,20 @@ body.menu-open{
 .advance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
 .advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
+.praise-carousel{display:flex;align-items:center;justify-content:center;gap:1.5rem;max-width:780px;margin:1rem auto 0;}
+.praise-slides{position:relative;flex:1;}
+.praise-slide{display:none;text-align:center;max-width:640px;margin:0 auto;padding:0 0.5rem;min-height:17rem;}
+.praise-slide.active{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.praise-slide .advance-quote-mark{font-size:5.2rem;margin-bottom:0.6rem;}
+.praise-slide .advance-quote{text-align:center;font-size:clamp(1.2rem,2.5vw,1.6rem);}
+.praise-slide .advance-person{flex-direction:column;justify-content:center;gap:0.3rem;margin-top:0.8rem;}
+.praise-slide .advance-name{text-transform:uppercase;letter-spacing:0.06em;}
+.praise-arrow{background:none;border:none;cursor:pointer;font-size:2.4rem;color:#1a2e45;opacity:0.45;transition:opacity 0.2s;padding:0 0.4rem;line-height:1;font-family:'Libre Baskerville',Georgia,serif;flex-shrink:0;}
+.praise-arrow:hover{opacity:1;}
+.praise-dots{display:flex;justify-content:center;gap:8px;margin-top:1.6rem;}
+.praise-dot{width:8px;height:8px;border-radius:50%;background:rgba(26,46,69,0.22);border:none;padding:0;cursor:pointer;transition:background 0.2s;}
+.praise-dot.active{background:#1a2e45;}
+@media(max-width:700px){.praise-carousel{gap:0.4rem;}.praise-arrow{font-size:1.8rem;}.praise-slide{padding:0 0.2rem;min-height:13.5rem;}.praise-slide .advance-quote{font-size:1.1rem;}}
 .advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
 .advance-person{display:flex;align-items:center;gap:0.8rem;}
@@ -752,37 +766,45 @@ body.menu-open{
 </section>
 
 <section class="advance-section reveal">
-  <span class="section-label">Advance Praise</span>
-  <h2 class="preorder-heading">What early readers are saying</h2>
-  <div class="advance-grid">
-    <div class="advance-card">
-      <span class="advance-quote-mark">"</span>
-      <p class="advance-quote">In Not a Good Mother, Karabi George depicts the universally understood terror of a mother's child being taken from her in a way that is incredibly unsettling and will not let you stop turning the pages. On an even deeper level, she gives us insight into what it's like to experience marriage, motherhood, and loss as a new immigrant, the feeling of loneliness, bias and hopelessness. This book is an edge-of-your-seat thriller while at the same time highlighting how quick society is to judge mothers on their merit, how isolating new motherhood can be and the need to do better by all women in every stage of their mothering journey.</p>
-      <div class="advance-person">
-        <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of the highly anticipated novel <em>The Woods</em></p></div>
+  <div class="praise-carousel">
+    <button class="praise-arrow praise-arrow-prev" aria-label="Previous review">&#8249;</button>
+    <div class="praise-slides">
+      <div class="praise-slide active">
+        <span class="advance-quote-mark">"</span>
+        <p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian.</p>
+        <div class="advance-person">
+          <div><p class="advance-name">Robyn Harding</p><p class="advance-credit">International bestselling author of <em>Strangers in the Villa</em></p></div>
+        </div>
+      </div>
+      <div class="praise-slide">
+        <span class="advance-quote-mark">"</span>
+        <p class="advance-quote">The twists and ticking-clock tension make it a read-in-a-day thriller.</p>
+        <div class="advance-person">
+          <div><p class="advance-name">Karma Brown</p><p class="advance-credit">#1 international bestselling author of <em>Mother is Watching</em></p></div>
+        </div>
+      </div>
+      <div class="praise-slide">
+        <span class="advance-quote-mark">"</span>
+        <p class="advance-quote">A knockout debut thriller that'll make your heart sit in your throat.</p>
+        <div class="advance-person">
+          <div><p class="advance-name">Hannah Mary McKinnon</p><p class="advance-credit">Internationally bestselling author of <em>A Killer Motive</em></p></div>
+        </div>
+      </div>
+      <div class="praise-slide">
+        <span class="advance-quote-mark">"</span>
+        <p class="advance-quote">An edge-of-your-seat thriller while at the same time highlighting how isolating new motherhood can be.</p>
+        <div class="advance-person">
+          <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of the highly anticipated novel <em>The Woods</em></p></div>
+        </div>
       </div>
     </div>
-    <div class="advance-card">
-      <span class="advance-quote-mark">"</span>
-      <p class="advance-quote">NOT A GOOD MOTHER by Karabi George is a knockout debut thriller that'll make your heart sit in your throat. Tense, twisted, and deeply emotional, this book will have you on the edge of your seat until the very end, and will continue to linger with you a long time thereafter.</p>
-      <div class="advance-person">
-        <div><p class="advance-name">Hannah Mary McKinnon</p><p class="advance-credit">Internationally bestselling author of <em>A Killer Motive</em></p></div>
-      </div>
-    </div>
-    <div class="advance-card">
-      <span class="advance-quote-mark">"</span>
-      <p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian. Twists, cliffhangers, and shocking betrayals make NOT A GOOD MOTHER a welcome and original addition to the genre.</p>
-      <div class="advance-person">
-        <div><p class="advance-name">Robyn Harding</p><p class="advance-credit">International bestselling author of <em>Strangers in the Villa</em></p></div>
-      </div>
-    </div>
-    <div class="advance-card">
-      <span class="advance-quote-mark">"</span>
-      <p class="advance-quote">In NOT A GOOD MOTHER Karabi George explores what happens when one fateful decision sets into motion every mother's worst fear. The twists and ticking-clock tension make it a read-in-a-day thriller, but it's George's sharp insights and unique perspective as a new Canadian that elevate this debut.</p>
-      <div class="advance-person">
-        <div><p class="advance-name">Karma Brown</p><p class="advance-credit">#1 international bestselling author of <em>Mother is Watching</em></p></div>
-      </div>
-    </div>
+    <button class="praise-arrow praise-arrow-next" aria-label="Next review">&#8250;</button>
+  </div>
+  <div class="praise-dots">
+    <button class="praise-dot active" data-slide="0" aria-label="Show review 1"></button>
+    <button class="praise-dot" data-slide="1" aria-label="Show review 2"></button>
+    <button class="praise-dot" data-slide="2" aria-label="Show review 3"></button>
+    <button class="praise-dot" data-slide="3" aria-label="Show review 4"></button>
   </div>
 </section>
 
@@ -983,6 +1005,27 @@ document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener(
   }
 })());});
 document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
+
+(function(){
+  var slides = document.querySelectorAll('.praise-slide');
+  var dots = document.querySelectorAll('.praise-dot');
+  var prevBtn = document.querySelector('.praise-arrow-prev');
+  var nextBtn = document.querySelector('.praise-arrow-next');
+  if(!slides.length) return;
+  var current = 0;
+  function show(i){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  if(prevBtn) prevBtn.addEventListener('click', function(){ show(current - 1); });
+  if(nextBtn) nextBtn.addEventListener('click', function(){ show(current + 1); });
+  dots.forEach(function(dot, idx){
+    dot.addEventListener('click', function(){ show(idx); });
+  });
+})();
 
 </script>
 </body>
