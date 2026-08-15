@@ -633,18 +633,19 @@ body.menu-open{
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
 .praise-carousel{display:flex;align-items:center;justify-content:center;gap:1.5rem;max-width:780px;margin:1rem auto 0;}
 .praise-slides{position:relative;flex:1;}
-.praise-slide{display:none;text-align:center;max-width:640px;margin:0 auto;padding:0 0.5rem;min-height:17rem;}
-.praise-slide.active{display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.praise-slide .advance-quote-mark{font-size:5.2rem;margin-bottom:0.6rem;}
-.praise-slide .advance-quote{text-align:center;font-size:clamp(1.2rem,2.5vw,1.6rem);}
-.praise-slide .advance-person{flex-direction:column;justify-content:center;gap:0.3rem;margin-top:0.8rem;}
+.praise-slide{display:none;text-align:center;max-width:640px;margin:0 auto;padding:0 0.5rem;box-sizing:border-box;min-height:13rem;}
+.praise-slide.active{display:flex;flex-direction:column;align-items:center;}
+.praise-slide .advance-quote-mark{font-size:5.2rem;margin-bottom:0.6rem;flex-shrink:0;}
+.praise-quote-wrap{flex:1;display:flex;align-items:flex-end;justify-content:center;width:100%;min-height:0;}
+.praise-slide .advance-quote{text-align:center;font-size:clamp(1.2rem,2.5vw,1.6rem);margin:0 0 0.6rem;}
+.praise-slide .advance-person{flex-direction:column;justify-content:center;gap:0.3rem;flex-shrink:0;margin-top:0;}
 .praise-slide .advance-name{text-transform:uppercase;letter-spacing:0.06em;}
 .praise-arrow{background:none;border:none;cursor:pointer;font-size:2.4rem;color:#1a2e45;opacity:0.45;transition:opacity 0.2s;padding:0 0.4rem;line-height:1;font-family:'Libre Baskerville',Georgia,serif;flex-shrink:0;}
 .praise-arrow:hover{opacity:1;}
 .praise-dots{display:flex;justify-content:center;gap:8px;margin-top:1.6rem;}
 .praise-dot{width:8px;height:8px;border-radius:50%;background:rgba(26,46,69,0.22);border:none;padding:0;cursor:pointer;transition:background 0.2s;}
 .praise-dot.active{background:#1a2e45;}
-@media(max-width:700px){.praise-carousel{gap:0.4rem;align-items:flex-start;}.praise-arrow{font-size:1.8rem;margin-top:5.2rem;}.praise-slide{padding:0 0.2rem;min-height:21rem;}.praise-slide.active{justify-content:flex-start;padding-top:1rem;}.praise-slide .advance-quote{font-size:1.1rem;margin-bottom:0.6rem;}.praise-slide .advance-person{margin-top:0.2rem;}}
+@media(max-width:700px){.praise-carousel{gap:0.4rem;align-items:flex-start;}.praise-arrow{font-size:1.8rem;margin-top:3.8rem;}.praise-slide{padding:0 0.2rem;min-height:18.5rem;}.praise-slide .advance-quote{font-size:1.1rem;margin:0 0 0.5rem;}}
 .advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
 .advance-person{display:flex;align-items:center;gap:0.8rem;}
@@ -771,28 +772,28 @@ body.menu-open{
     <div class="praise-slides">
       <div class="praise-slide active">
         <span class="advance-quote-mark">"</span>
-        <p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian.</p>
+        <div class="praise-quote-wrap"><p class="advance-quote">A pulse-pounding thriller that explores the isolation and expectations of motherhood through the unique lens of a new Canadian.</p></div>
         <div class="advance-person">
           <div><p class="advance-name">Robyn Harding</p><p class="advance-credit">International bestselling author of <em>Strangers in the Villa</em></p></div>
         </div>
       </div>
       <div class="praise-slide">
         <span class="advance-quote-mark">"</span>
-        <p class="advance-quote">The twists and ticking-clock tension make it a read-in-a-day thriller.</p>
+        <div class="praise-quote-wrap"><p class="advance-quote">The twists and ticking-clock tension make it a read-in-a-day thriller.</p></div>
         <div class="advance-person">
           <div><p class="advance-name">Karma Brown</p><p class="advance-credit">#1 international bestselling author of <em>Mother is Watching</em></p></div>
         </div>
       </div>
       <div class="praise-slide">
         <span class="advance-quote-mark">"</span>
-        <p class="advance-quote">A knockout debut thriller that'll make your heart sit in your throat.</p>
+        <div class="praise-quote-wrap"><p class="advance-quote">A knockout debut thriller that'll make your heart sit in your throat.</p></div>
         <div class="advance-person">
           <div><p class="advance-name">Hannah Mary McKinnon</p><p class="advance-credit">Internationally bestselling author of <em>A Killer Motive</em></p></div>
         </div>
       </div>
       <div class="praise-slide">
         <span class="advance-quote-mark">"</span>
-        <p class="advance-quote">An edge-of-your-seat thriller while at the same time highlighting how isolating new motherhood can be.</p>
+        <div class="praise-quote-wrap"><p class="advance-quote">An edge-of-your-seat thriller while at the same time highlighting how isolating new motherhood can be.</p></div>
         <div class="advance-person">
           <div><p class="advance-name">Jessica Hamilton</p><p class="advance-credit">Author of the highly anticipated novel <em>The Woods</em></p></div>
         </div>
