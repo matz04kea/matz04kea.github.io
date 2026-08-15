@@ -627,13 +627,13 @@ body.menu-open{
 .hero-secondary-row .btn{padding:13px 20px;font-size:0.86rem;text-align:center;white-space:nowrap;}
 
 /* Advance praise tiles */
-.advance-section{background:#f0f3f8;padding:64px var(--pad);text-align:center;}
+.advance-section{background:#f0f3f8;padding:64px var(--pad) 42px;text-align:center;}
 .advance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
 .advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
 .praise-carousel{display:flex;align-items:center;justify-content:center;gap:1.5rem;max-width:780px;margin:0 auto;}
 .praise-slides{position:relative;flex:1;}
-.praise-slide{display:none;text-align:center;max-width:640px;margin:0 auto;padding:0 0.5rem;box-sizing:border-box;min-height:13rem;}
+.praise-slide{display:none;text-align:center;max-width:640px;margin:0 auto;padding:0 0.5rem;box-sizing:border-box;min-height:15.5rem;}
 .praise-slide.active{display:flex;flex-direction:column;align-items:center;}
 .praise-slide .advance-quote-mark{font-size:5.2rem;margin-bottom:0.6rem;flex-shrink:0;}
 .praise-quote-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;}
@@ -1026,6 +1026,38 @@ document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('c
   dots.forEach(function(dot, idx){
     dot.addEventListener('click', function(){ show(idx); });
   });
+
+  function equalizeSlideHeights(){
+    var maxH = 0;
+    slides.forEach(function(slide){
+      var wasActive = slide.classList.contains('active');
+      var origMinHeight = slide.style.minHeight;
+      var origVisibility = slide.style.visibility;
+      var origPosition = slide.style.position;
+      slide.style.minHeight = '0';
+      slide.style.visibility = 'hidden';
+      slide.style.position = 'static';
+      if(!wasActive) slide.classList.add('active');
+      var h = slide.getBoundingClientRect().height;
+      if(h > maxH) maxH = h;
+      if(!wasActive) slide.classList.remove('active');
+      slide.style.minHeight = origMinHeight;
+      slide.style.visibility = origVisibility;
+      slide.style.position = origPosition;
+    });
+    if(maxH > 0){
+      slides.forEach(function(slide){ slide.style.minHeight = maxH + 'px'; });
+    }
+  }
+  equalizeSlideHeights();
+  var praiseResizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(praiseResizeTimer);
+    praiseResizeTimer = setTimeout(equalizeSlideHeights, 150);
+  });
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(equalizeSlideHeights);
+  }
 })();
 
 </script>
