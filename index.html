@@ -663,6 +663,8 @@ body.menu-open{
 .modal-arc-def{font-family:'Source Sans 3',sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.9rem;}
 .modal-sub{font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.5rem;}
 .modal-form input{width:100%;padding:12px 14px;margin-bottom:0.9rem;border:1px solid rgba(0,0,0,0.15);border-radius:3px;font-family:'Source Sans 3',sans-serif;font-size:0.9rem;}
+.modal-checkbox-label{display:flex;align-items:flex-start;gap:0.55rem;font-family:'Libre Baskerville',Georgia,serif;font-style:italic;font-size:0.82rem;color:var(--text-mid);line-height:1.5;margin-bottom:1.1rem;cursor:pointer;}
+.modal-checkbox-label input{width:auto;margin:0.2rem 0 0;flex-shrink:0;cursor:pointer;}
 .modal-submit{width:100%;text-align:center;}
 .modal-confirm{display:none;text-align:center;padding:1.75rem 1.5rem;background:#f7f9fc;border:2px solid #ffff00;border-radius:8px;}
 .modal-confirm.open{display:block;}
@@ -901,7 +903,7 @@ body.menu-open{
     <button class="modal-close" id="arc-modal-close" aria-label="Close">&times;</button>
     <h3 class="modal-heading">Sign up for an ARC</h3>
     <p class="modal-arc-def">Advance Reader Copy</p>
-    <p class="modal-sub">Want to read NOT A GOOD MOTHER before it hits shelves, in exchange for an honest review? Leave your name and email below and Karabi will be in touch &mdash; signing up doesn&rsquo;t guarantee a copy, but you&rsquo;ll be among the first to know.</p>
+    <p class="modal-sub">Want to read NOT A GOOD MOTHER before it hits shelves, in exchange for an honest review? Leave your name and email below and Karabi will be in touch with ARC details &mdash; signing up doesn&rsquo;t guarantee a copy, but you&rsquo;ll be among the first to know.</p>
     <form class="modal-form" id="arc-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="c67f7151-2826-4816-9969-920ec7626230">
       <input type="hidden" name="subject" value="New ARC signup — karabigeorge.com">
@@ -909,6 +911,10 @@ body.menu-open{
       <input type="checkbox" name="botcheck" style="display:none;">
       <input type="text" name="Name" placeholder="Your name" required>
       <input type="email" name="Email" placeholder="Your email" required>
+      <label class="modal-checkbox-label">
+        <input type="checkbox" name="Newsletter_Opt_In" value="Yes">
+        <span>Also keep me subscribed to Karabi's newsletter for future book news, events, and updates. You can unsubscribe anytime.</span>
+      </label>
       <button type="submit" class="btn btn-teal modal-submit">Request an ARC</button>
     </form>
     <div class="modal-confirm" id="arc-confirm">
