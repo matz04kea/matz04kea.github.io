@@ -481,8 +481,9 @@ body.menu-open{
 
 /* Advance praise tiles (shared with home page) */
 .advance-section{background:#f0f3f8;padding:80px var(--pad);text-align:center;}
-.advance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
-.advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;}
+.advance-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
+.advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;grid-column:span 3;}
+.advance-card:nth-child(7),.advance-card:nth-child(8),.advance-card:nth-child(9){grid-column:span 2;}
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
 .advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
@@ -707,6 +708,13 @@ body.menu-open{
   <div class="advance-grid">
     <div class="advance-card">
       <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">Karabi George's assured debut explores every parent's deepest fear&mdash;and delivers a warning: How deeply can you trust the closest people in your life? Haunted by the belief that she has failed her baby and struggling to bear the judgement of everyone around her, Reema's determination to uncover the truth could upend her entire life. Perfect for book clubs seeking thoughtful, character-driven thrillers.</p>
+      <div class="advance-person">
+        <div><p class="advance-name">Sarah Pekkanen</p><p class="advance-credit">#1 New York Times bestselling author of <em>The Women in White</em> and <em>The Locked Ward</em></p></div>
+      </div>
+    </div>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
       <p class="advance-quote">NOT A GOOD MOTHER is everything thriller readers crave: a bingeable ride of twists and turns, a strong protagonist to root for, and one wild punch of an ending. But what sets Karabi George's debut apart is her thoughtful, nuanced portrait of immigrant motherhood: Reema's loneliness and isolation as she searches for community, and the suspicion and mistrust she faces while living through every mother's worst nightmare. George expertly balances taut, compelling storytelling with emotional depth&mdash;a brilliant new voice in domestic suspense.</p>
       <div class="advance-person">
         <div><p class="advance-name">Ashley Audrain</p><p class="advance-credit">New York Times bestselling author of <em>The Push</em> and <em>The Whispers</em></p></div>
@@ -759,6 +767,13 @@ body.menu-open{
       <p class="advance-quote">NOT A GOOD MOTHER by Karabi George is a knockout debut thriller that'll make your heart sit in your throat. Tense, twisted, and deeply emotional, this book will have you on the edge of your seat until the very end, and will continue to linger with you a long time thereafter.</p>
       <div class="advance-person">
         <div><p class="advance-name">Hannah Mary McKinnon</p><p class="advance-credit">Internationally bestselling author of <em>A Killer Motive</em></p></div>
+      </div>
+    </div>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">A compelling thriller about every parent's worst nightmare, NOT A GOOD MOTHER exposes the realities of motherhood alongside a stunning narrative that will keep you up past your bedtime. Karabi George kept me guessing right up to that final, deliciously unexpected twist!</p>
+      <div class="advance-person">
+        <div><p class="advance-name">Jessica Payne</p><p class="advance-credit">Author of <em>Somebody Worth Killing</em> and <em>Never Trust the Husband</em></p></div>
       </div>
     </div>
     <div class="advance-card">
