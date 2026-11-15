@@ -938,6 +938,121 @@ body{padding-top:116px;}
 </footer>
 
 <script>
+// Newsletter subscribe fix - ensure button works on mobile
+document.querySelectorAll('.newsletter-form').forEach(function(form) {
+  var btn = form.querySelector('.newsletter-btn');
+  var inp = form.querySelector('.newsletter-input');
+  if (!btn || !inp) return;
+  // Remove old onclick and replace with robust handler
+  btn.removeAttribute('onclick');
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var email = inp.value.trim();
+    if (email && /^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      window.open('https://karabigeorge.substack.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    } else {
+      window.open('https://karabigeorge.substack.com/subscribe', '_blank');
+    }
+  });
+});
+
+</script>
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+const menuOverlay=document.getElementById('menu-overlay');
+
+var scrollY = 0;
+function openMobile(){
+  scrollY = window.scrollY;
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  if(menuOverlay) menuOverlay.classList.add('open');
+  document.body.classList.add('menu-open');
+  document.body.style.top = '-' + scrollY + 'px';
+}
+function closeMobile(){
+  if(mobileMenu) mobileMenu.classList.remove('open');
+  if(hamburger) hamburger.classList.remove('open');
+  if(menuOverlay) menuOverlay.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  document.body.style.top = '';
+  window.scrollTo(0, scrollY);
+}
+if(hamburger&&mobileMenu){
+  hamburger.addEventListener('click',()=>{
+    mobileMenu.classList.contains('open') ? closeMobile() : openMobile();
+  });
+}
+if(menuOverlay){ menuOverlay.addEventListener('click', closeMobile); }
+document.querySelectorAll('.reveal').forEach(el=>{
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+  obs.observe(el);
+});
+document.querySelectorAll('.newsletter-btn').forEach(btn=>{btn.addEventListener('click',()=>(function(){
+  var inp = this.closest('.newsletter-form, .newsletter-inner, section').querySelector('.newsletter-input');
+  var email = inp ? inp.value.trim() : '';
+  if(email && /^[^@]+@[^@]+\.[^@]+$/.test(email)){
+    window.open('https://karabigeorge.substack.com/subscribe?email='+encodeURIComponent(email),'_blank');
+  } else {
+    window.open('https://karabigeorge.substack.com/subscribe','_blank');
+  }
+})());});
+document.querySelectorAll('.goodreads-link').forEach(el=>{el.addEventListener('click',e=>{e.preventDefault();window.open('https://www.goodreads.com/book/show/250951692-not-a-good-mother','_blank');});});
+
+(function(){
+  var slides = document.querySelectorAll('.praise-slide');
+  var dots = document.querySelectorAll('.praise-dot');
+  var prevBtn = document.querySelector('.praise-arrow-prev');
+  var nextBtn = document.querySelector('.praise-arrow-next');
+  if(!slides.length) return;
+  var current = 0;
+  function show(i){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  if(prevBtn) prevBtn.addEventListener('click', function(){ show(current - 1); });
+  if(nextBtn) nextBtn.addEventListener('click', function(){ show(current + 1); });
+  dots.forEach(function(dot, idx){
+    dot.addEventListener('click', function(){ show(idx); });
+  });
+
+  function equalizeSlideHeights(){
+    var maxH = 0;
+    slides.forEach(function(slide){
+      var wasActive = slide.classList.contains('active');
+      var origMinHeight = slide.style.minHeight;
+      var origVisibility = slide.style.visibility;
+      var origPosition = slide.style.position;
+      slide.style.minHeight = '0';
+      slide.style.visibility = 'hidden';
+      slide.style.position = 'static';
+      if(!wasActive) slide.classList.add('active');
+      var h = slide.getBoundingClientRect().height;
+      if(h > maxH) maxH = h;
+      if(!wasActive) slide.classList.remove('active');
+      slide.style.minHeight = origMinHeight;
+      slide.style.visibility = origVisibility;
+      slide.style.position = origPosition;
+    });
+    if(maxH > 0){
+      slides.forEach(function(slide){ slide.style.minHeight = maxH + 'px'; });
+    }
+  }
+  equalizeSlideHeights();
+  var praiseResizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(praiseResizeTimer);
+    praiseResizeTimer = setTimeout(equalizeSlideHeights, 150);
+  });
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(equalizeSlideHeights);
+  }
+})();
+
 </script>
 </body>
 </html>
