@@ -29,7 +29,7 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Source Sans 3',sans-serif;background:var(--page-bg);color:var(--text-dark);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
-body{padding-top:72px;}
+
 .nav-logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;position:relative;transition:opacity 0.2s;}.nav-logo::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:#1a2e45;transition:width 0.2s;}.nav-logo:hover::after{width:100%;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{position:relative;}
@@ -628,6 +628,16 @@ body.menu-open{
 .mobile-preorder-pill{display:block;width:100%;box-sizing:border-box;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;text-transform:none!important;background:#ffff00;color:#111e2e;padding:12px 14px;border-radius:2px;text-decoration:none;opacity:1!important;text-align:center;}
 .mobile-preorder-pill.disabled{background:#c9c96a;color:#4a4a2a;}
 
+
+/* Sticky promo strip */
+body{padding-top:116px;}
+.promo-strip{position:fixed;top:72px;left:0;right:0;z-index:98;height:44px;display:flex;align-items:center;justify-content:center;gap:0.35rem;background:#1a2e45;color:#fff;text-decoration:none;padding:0 var(--pad);font-family:'Source Sans 3',sans-serif;font-size:0.95rem;white-space:nowrap;overflow:hidden;border-bottom:3px solid #ffff00;}
+.promo-strip strong{color:#ffff00;font-weight:600;}
+.promo-strip .promo-arrow{color:#ffff00;margin-left:0.2rem;}
+.promo-strip:hover .promo-text{text-decoration:underline;}
+.promo-short{display:none;}
+@media(max-width:600px){.promo-strip{font-size:0.82rem;padding:0 3%;}.promo-long{display:none;}.promo-short{display:inline;}}
+.btn-sub{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.05em;text-transform:none;opacity:0.8;margin-top:2px;line-height:1.2;}
 </style>
 <script>
 (function(){
@@ -666,14 +676,15 @@ body.menu-open{
     <li class="nav-preorder">
       <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
       <div class="nav-preorder-menu">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada</a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US</a>
-        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK</a>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada<span class="btn-sub">Available Dec 29, 2026</span></a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US<span class="btn-sub">Available Apr 6, 2027</span></a>
+        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK<span class="btn-sub">Available Feb 11, 2027</span></a>
       </div>
     </li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<a class="promo-strip" href="canada-preorder.html"><span class="promo-text promo-long"><strong>Canada pre-order offer:</strong> Pre-order NOT A GOOD MOTHER and get a free bookmark + sticker (while supplies last)</span><span class="promo-text promo-short"><strong>Canada pre-order offer:</strong> free bookmark + sticker</span><span class="promo-arrow">&rarr;</span></a>
 <div class="mobile-menu" id="mobile-menu">
   <a href="book.html">Not a Good Mother</a>
   <a href="writings.html">Newsletter</a>
@@ -681,15 +692,15 @@ body.menu-open{
   <a href="contact.html">Contact</a>
   <span class="mobile-menu-label">Preorder</span>
   <div class="mobile-preorder-row">
-    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada</a>
-    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US</a>
-    <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK</a>
+    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada<span class="btn-sub">Available Dec 29, 2026</span></a>
+    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US<span class="btn-sub">Available Apr 6, 2027</span></a>
+    <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK<span class="btn-sub">Available Feb 11, 2027</span></a>
   </div>
 </div>
 
 <div class="privacy-section">
   <h1>Privacy Policy</h1>
-  <span class="updated">Last updated: April 17, 2026</span>
+  <span class="updated">Last updated: November 15, 2026</span>
 
   <p>This Privacy Policy explains how Karabi M. George Writing Inc. ("we", "us", or "our") collects, uses and protects personal information submitted through <strong>karabigeorge.com</strong> (the "Website").</p>
 
@@ -697,15 +708,15 @@ body.menu-open{
   <p>We may collect the following personal information:</p>
   <ul>
     <li><strong>Contact form submissions</strong> — your name, email address and message when you contact us through the Website.</li>
-    <li><strong>ARC (Advance Reader Copy) signups</strong> — your name and email address when you sign up to be considered for an advance reader copy.</li>
+    <li><strong>Canada pre-order campaign submissions</strong> — if you take part in the Canada pre-order offer, the details you provide (such as your name, email address and mailing address) and a copy of your pre-order receipt, submitted through our Google Form, by email or by Instagram direct message.</li>
     <li><strong>Newsletter subscriptions</strong> — your email address if you choose to subscribe to updates via Substack.</li>
   </ul>
-  <p>We do not collect any payment information or sensitive personal data.</p>
+  <p>We do not collect payment card details or sensitive personal data. Pre-order receipts may show order details; you are welcome to hide any payment information on your receipt before sending it.</p>
 
   <h2>2. How We Use Your Information</h2>
   <ul>
     <li>To respond to enquiries submitted through the contact form.</li>
-    <li>To contact you if you are selected to receive an Advance Reader Copy.</li>
+    <li>To confirm your pre-order and mail you the free bookmark and sticker, if you take part in the Canada pre-order campaign.</li>
     <li>To send newsletter updates and writing dispatches if you have subscribed.</li>
     <li>We do not sell, rent or share your personal information with third parties for marketing purposes.</li>
   </ul>
@@ -713,7 +724,8 @@ body.menu-open{
   <h2>3. Third-Party Services</h2>
   <p>This Website uses the following third-party services which may process your data:</p>
   <ul>
-    <li><strong>Web3Forms</strong> — processes contact form and ARC signup submissions and delivers them to our email inbox. See their privacy policy at <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">web3forms.com/privacy</a>.</li>
+    <li><strong>Web3Forms</strong> — processes contact form submissions and delivers them to our email inbox. See their privacy policy at <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">web3forms.com/privacy</a>.</li>
+    <li><strong>Google Forms</strong> — used to collect Canada pre-order campaign submissions, including uploaded receipts. Responses are stored in Google's services and are subject to Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>. If you instead send your receipt by email or Instagram direct message, it is also subject to the privacy policy of that service.</li>
     <li><strong>Substack</strong> — manages newsletter subscriptions. See their privacy policy at <a href="https://substack.com/privacy" target="_blank" rel="noopener noreferrer">substack.com/privacy</a>.</li>
     <li><strong>GitHub Pages</strong> — hosts this Website. See GitHub's privacy policy at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">github.com</a>.</li>
     <li><strong>Google Analytics</strong> — we use Google Analytics to understand how visitors use this website. It collects anonymised data including pages visited, time spent on pages, general location (country/city level), device type, and how visitors found the site (e.g. via Google search or social media). Google Analytics does not collect personally identifiable information. You can opt out of Google Analytics tracking at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a>. Subject to Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
@@ -737,7 +749,7 @@ body.menu-open{
   </ul>
 
   <h2>6. Data Retention</h2>
-  <p>Contact form and ARC signup submissions are sent to us via Web3Forms, which stores submissions for up to 3 years before automatic deletion, and delivers a copy directly to our email inbox. We may retain this information — including in a separate internal list for ARC signups, used to track and manage advance reader copy selections — for as long as reasonably necessary, which for ARC requests may be several months given selections are typically made closer to the book's publication date. You can request that your information be deleted at any time by contacting us via the <a href="contact.html">Contact page</a>. Newsletter subscriber data is held by Substack and governed by their retention policy.</p>
+  <p>Contact form submissions are sent to us via Web3Forms, which stores submissions for up to 3 years before automatic deletion, and delivers a copy directly to our email inbox. We may retain this information for as long as reasonably necessary. Canada pre-order campaign submissions, including receipts, are used only to verify your pre-order and send your gift, and are kept only for as long as reasonably necessary. You can request that your information be deleted at any time by contacting us via the <a href="contact.html">Contact page</a>. Newsletter subscriber data is held by Substack and governed by their retention policy.</p>
 
   <h2>7. Contact Us</h2>
   <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us via the <a href="contact.html">Contact page</a>.</p>

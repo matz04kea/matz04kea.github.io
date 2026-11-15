@@ -46,7 +46,7 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Source Sans 3',sans-serif;background:var(--page-bg);color:var(--text-dark);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:16px;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;}
-body{padding-top:72px;}
+
 .nav-logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--text-dark);letter-spacing:0.07em;text-decoration:none;white-space:nowrap;position:relative;transition:opacity 0.2s;}.nav-logo::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:#1a2e45;transition:width 0.2s;}.nav-logo:hover::after{width:100%;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{position:relative;}
@@ -483,6 +483,7 @@ body.menu-open{
 .advance-section{background:#f0f3f8;padding:80px var(--pad);text-align:center;}
 .advance-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem;max-width:1100px;margin:2.5rem auto 0;text-align:left;}
 .advance-card{background:#ffffff;border-radius:10px;padding:1.7rem 1rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(26,46,69,0.08);border-bottom:4px solid #ffff00;transition:transform .25s ease,box-shadow .25s ease;grid-column:span 3;}
+.advance-card:nth-child(13){grid-column:span 6;}
 .advance-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,46,69,0.15);}
 .advance-quote-mark{font-family:'Libre Baskerville',Georgia,serif;font-size:3.4rem;line-height:0.4;color:#c9a600;opacity:1;margin-bottom:0.9rem;display:block;}
 .advance-quote{font-family:'Libre Baskerville',Georgia,serif;font-size:1rem;font-style:italic;color:var(--text-dark);line-height:1.65;margin-bottom:1.5rem;flex:1;}
@@ -520,6 +521,45 @@ body.menu-open{
 .mobile-preorder-pill{display:block;width:100%;box-sizing:border-box;font-family:'Libre Baskerville',Georgia,serif;font-size:0.95rem;font-weight:700;text-transform:none!important;background:#ffff00;color:#111e2e;padding:12px 14px;border-radius:2px;text-decoration:none;opacity:1!important;text-align:center;}
 .mobile-preorder-pill.disabled{background:#c9c96a;color:#4a4a2a;}
 
+
+/* Canada pre-order campaign */
+.canada-section{background:#fff;padding:70px var(--pad);scroll-margin-top:90px;}
+.canada-card{max-width:960px;margin:0 auto;background:linear-gradient(135deg,#2f6090 0%,#1a2e45 55%,#111e2e 100%);border-radius:8px;padding:2.6rem 2.4rem;display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center;color:#fff;box-shadow:0 14px 34px rgba(26,46,69,0.18);}
+.canada-label{font-family:'Source Sans 3',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffff00;display:block;margin-bottom:0.6rem;}
+.canada-title{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;line-height:1.25;color:#fff;margin-bottom:0.8rem;}
+.canada-sub{font-size:1.02rem;color:rgba(255,255,255,0.88);margin-bottom:1.2rem;}
+.canada-steps{list-style:none;counter-reset:cs;margin:0 0 1.5rem;padding:0;}
+.canada-steps li{counter-increment:cs;position:relative;padding-left:2.2rem;margin-bottom:0.5rem;font-size:1rem;color:#fff;}
+.canada-steps li::before{content:counter(cs);position:absolute;left:0;top:2px;width:1.5rem;height:1.5rem;border-radius:50%;background:#ffff00;color:#111e2e;font-weight:700;font-size:0.8rem;display:flex;align-items:center;justify-content:center;line-height:1;}
+.canada-card .btn-light{background:#ffff00;color:#111e2e;border:1px solid #ffff00;}
+.canada-card .btn-light:hover{background:#e6c800;border-color:#e6c800;color:#111e2e;}
+.canada-alt{font-size:0.9rem;color:rgba(255,255,255,0.8);margin-top:1rem;}
+.canada-alt a{color:#ffff00;}
+.canada-note{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:0.6rem;}
+.canada-gifts{display:flex;align-items:center;gap:1.2rem;}
+.canada-gifts img{display:block;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,0.35);}
+.canada-gifts .g-sticker{width:150px;height:150px;border-radius:50%;}
+.canada-gifts .g-bookmark{width:112px;height:auto;}
+@media(max-width:800px){.canada-card{grid-template-columns:1fr;padding:2rem 1.5rem;}.canada-gifts{justify-content:center;order:-1;}.canada-gifts .g-sticker{width:120px;height:120px;}.canada-gifts .g-bookmark{width:90px;}}
+
+/* Sticky promo strip */
+body{padding-top:116px;}
+.promo-strip{position:fixed;top:72px;left:0;right:0;z-index:98;height:44px;display:flex;align-items:center;justify-content:center;gap:0.35rem;background:#1a2e45;color:#fff;text-decoration:none;padding:0 var(--pad);font-family:'Source Sans 3',sans-serif;font-size:0.95rem;white-space:nowrap;overflow:hidden;border-bottom:3px solid #ffff00;}
+.promo-strip strong{color:#ffff00;font-weight:600;}
+.promo-strip .promo-arrow{color:#ffff00;margin-left:0.2rem;}
+.promo-strip:hover .promo-text{text-decoration:underline;}
+.promo-short{display:none;}
+@media(max-width:600px){.promo-strip{font-size:0.82rem;padding:0 3%;}.promo-long{display:none;}.promo-short{display:inline;}}
+.canada-section{scroll-margin-top:130px;}
+/* Preorder button subtext + alignment */
+.btn-sub{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.7rem;font-weight:400;letter-spacing:0.05em;text-transform:none;opacity:0.8;margin-top:2px;line-height:1.2;}
+.hero-preorder-row,.hero-secondary-row,.book-preorder-row,.sidebar-ctas{display:grid!important;gap:0.6rem;}
+.hero-preorder-row,.book-preorder-row{grid-template-columns:repeat(3,minmax(0,1fr));}
+.hero-secondary-row,.sidebar-ctas{grid-template-columns:1fr;}
+.hero-preorder-row .btn,.book-preorder-row .btn,.hero-secondary-row .btn,.sidebar-ctas .btn{display:flex!important;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;margin:0;white-space:normal;}
+.hero-preorder-row{margin-top:0.6rem;}
+.hero-preorder-row .btn,.book-preorder-row .btn,.hero-secondary-row .btn,.sidebar-ctas .btn{height:56px;padding:0 12px!important;}
+@media(max-width:480px){.hero-preorder-row,.book-preorder-row{grid-template-columns:1fr;}}
 </style>
 <script>
 (function(){
@@ -608,9 +648,9 @@ body.menu-open{
     <li class="nav-preorder">
       <a href="javascript:void(0)" class="nav-preorder-btn">Preorder</a>
       <div class="nav-preorder-menu">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada</a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US</a>
-        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK</a>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; Canada<span class="btn-sub">Available Dec 29, 2026</span></a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; US<span class="btn-sub">Available Apr 6, 2027</span></a>
+        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="nav-preorder-pill">Preorder &middot; UK<span class="btn-sub">Available Feb 11, 2027</span></a>
       </div>
     </li>
   </ul>
@@ -623,9 +663,9 @@ body.menu-open{
   <a href="contact.html" onclick="closeMobile()">Contact</a>
   <span class="mobile-menu-label">Preorder</span>
   <div class="mobile-preorder-row">
-    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada</a>
-    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US</a>
-    <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK</a>
+    <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; Canada<span class="btn-sub">Available Dec 29, 2026</span></a>
+    <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; US<span class="btn-sub">Available Apr 6, 2027</span></a>
+    <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="mobile-preorder-pill">Preorder &middot; UK<span class="btn-sub">Available Feb 11, 2027</span></a>
   </div>
 </div>
 
@@ -635,6 +675,7 @@ body.menu-open{
 </div>
 <div class="menu-overlay" id="menu-overlay"></div>
 
+<a class="promo-strip" href="canada-preorder.html"><span class="promo-text promo-long"><strong>Canada pre-order offer:</strong> Pre-order NOT A GOOD MOTHER and get a free bookmark + sticker (while supplies last)</span><span class="promo-text promo-short"><strong>Canada pre-order offer:</strong> free bookmark + sticker</span><span class="promo-arrow">&rarr;</span></a>
 <section class="book-content-section">
   <div class="book-top">
     <div class="book-text reveal">
@@ -685,22 +726,42 @@ body.menu-open{
       </div>
       <span class="section-label sidebar-preorder-label" style="text-align:center;display:block;">Preorder Now</span>
       <div class="book-preorder-row">
-        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; Canada</a>
-        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; US</a>
-        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; UK</a>
+        <a href="https://www.simonandschuster.ca/books/Not-a-Good-Mother/Karabi-George/9781668214145" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; Canada<span class="btn-sub">Available Dec 29, 2026</span></a>
+        <a href="https://www.harpercollins.com/products/not-a-good-mother-karabi-george?variant=45306341457954" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; US<span class="btn-sub">Available Apr 6, 2027</span></a>
+        <a href="https://bedfordsquarepublishers.co.uk/book/not-a-good-mother/" target="_blank" rel="noopener noreferrer" class="btn btn-teal">Preorder &middot; UK<span class="btn-sub">Available Feb 11, 2027</span></a>
       </div>
     </div>
 
     <div class="book-sidebar-ctas reveal">
       <div class="sidebar-ctas">
         <a href="https://www.goodreads.com/book/show/250951692-not-a-good-mother" target="_blank" rel="noopener noreferrer" class="btn btn-light goodreads-link">Add to your Goodreads list</a>
-        <a href="#" class="btn btn-light" data-modal="arc-modal">Sign up for ARCs</a>
       </div>
     </div>
     </div>
   </div>
 </section>
 
+<section class="canada-section reveal" id="canada-preorder">
+  <div class="canada-card">
+    <div>
+      <span class="canada-label">Canada Pre-Order Campaign</span>
+      <h2 class="canada-title">Pre-order in Canada and get a free bookmark and sticker</h2>
+      <p class="canada-sub">Pre-order NOT A GOOD MOTHER from any retailer in Canada by December 29, 2026 and Karabi will send you a customized bookmark and sticker. While supplies last.</p>
+      <ol class="canada-steps">
+        <li>Pre-order the book from any Canadian retailer</li>
+        <li>Fill in the short form with your mailing details</li>
+        <li>Upload your receipt (or email it)</li>
+      </ol>
+      <a class="btn btn-light" href="https://docs.google.com/forms/d/e/1FAIpQLScM4CQFKmcrDw-SQrvQ8EFjq6qept9YJhv5XJZjVBq3CTQCbA/viewform" target="_blank" rel="noopener noreferrer">Claim Your Bookmark &amp; Sticker</a>
+      <p class="canada-alt">Prefer not to use the form? Email your receipt to <a href="mailto:karabimgeorge@gmail.com">karabimgeorge@gmail.com</a> or DM <a href="https://www.instagram.com/karabi_george_author" target="_blank" rel="noopener noreferrer">@karabi_george_author</a> on Instagram.</p>
+      <p class="canada-note">Canada only. Limited quantities.</p>
+    </div>
+    <div class="canada-gifts">
+      <img class="g-sticker" src="preorder-sticker.jpg" alt="NOT A GOOD MOTHER sticker" loading="lazy">
+      <img class="g-bookmark" src="preorder-bookmark.jpg" alt="NOT A GOOD MOTHER bookmark" loading="lazy">
+    </div>
+  </div>
+</section>
 <section class="advance-section reveal">
   <span class="section-label">Advance Praise</span>
   <h2 class="preorder-heading">What early readers are saying</h2>
@@ -777,6 +838,13 @@ body.menu-open{
     </div>
     <div class="advance-card">
       <span class="advance-quote-mark">"</span>
+      <p class="advance-quote">An intense, thrilling read about the realities of motherhood that will have your heart pounding from the very first chapter.</p>
+      <div class="advance-person">
+        <div><p class="advance-name">Gabbie Hanks</p><p class="advance-credit">USA Today bestselling author of <em>Nasty Little Secrets</em></p></div>
+      </div>
+    </div>
+    <div class="advance-card">
+      <span class="advance-quote-mark">"</span>
       <p class="advance-quote">A compelling thriller about every parent's worst nightmare, NOT A GOOD MOTHER exposes the realities of motherhood alongside a stunning narrative that will keep you up past your bedtime. Karabi George kept me guessing right up to that final, deliciously unexpected twist!</p>
       <div class="advance-person">
         <div><p class="advance-name">Jessica Payne</p><p class="advance-credit">Author of <em>Somebody Worth Killing</em> and <em>Never Trust the Husband</em></p></div>
@@ -827,34 +895,6 @@ body.menu-open{
   </ul>
 </footer>
 
-<div class="modal-overlay" id="arc-modal">
-  <div class="modal-box">
-    <button class="modal-close" id="arc-modal-close" aria-label="Close">&times;</button>
-    <h3 class="modal-heading">Sign up for an ARC</h3>
-    <p class="modal-arc-def">Advance Reader Copy</p>
-    <p class="modal-sub">Want to read NOT A GOOD MOTHER before it hits shelves, in exchange for an honest review? Leave your name and email below and Karabi will be in touch with ARC details &mdash; signing up doesn&rsquo;t guarantee a copy, but you&rsquo;ll be among the first to know.</p>
-    <form class="modal-form" id="arc-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="c67f7151-2826-4816-9969-920ec7626230">
-      <input type="hidden" name="subject" value="New ARC signup — karabigeorge.com">
-      <input type="hidden" name="redirect" value="false">
-      <input type="checkbox" name="botcheck" style="display:none;">
-      <input type="text" name="Name" placeholder="Your name" required>
-      <input type="email" name="Email" placeholder="Your email" required>
-      <label class="modal-checkbox-label">
-        <input type="checkbox" name="Newsletter_Opt_In" value="Yes">
-        <span>Also keep me subscribed to Karabi's newsletter for future book news, events, and updates. You can unsubscribe anytime.</span>
-      </label>
-      <button type="submit" class="btn btn-teal modal-submit">Request an ARC</button>
-    </form>
-    <div class="modal-confirm" id="arc-confirm">
-      <span class="modal-confirm-check">&#10003;</span>
-      <p class="modal-heading" style="margin-bottom:0.5rem;">Thank you!</p>
-      <p class="modal-sub" style="margin-bottom:1.25rem;">We&rsquo;ve received your request &mdash; stay tuned, Karabi will follow up if you&rsquo;re selected to receive an Advance Reader Copy.</p>
-      <button type="button" class="btn btn-teal" id="arc-confirm-close" style="width:100%;">Close</button>
-    </div>
-  </div>
-</div>
-
 <script>var el=document.getElementById("nav-book");if(el){el.classList.add("active");}
 // Newsletter subscribe fix - ensure button works on mobile
 document.querySelectorAll('.newsletter-form').forEach(function(form) {
@@ -873,70 +913,6 @@ document.querySelectorAll('.newsletter-form').forEach(function(form) {
     }
   });
 });
-// ARC signup modal
-(function(){
-  var modal = document.getElementById('arc-modal');
-  if(!modal) return;
-  document.querySelectorAll('[data-modal="arc-modal"]').forEach(function(el){
-    el.addEventListener('click', function(e){ e.preventDefault(); modal.classList.add('open'); });
-  });
-  if (window.location.hash === '#arc-signup' || window.location.hash === '#arc') { modal.classList.add('open'); }
-  var closeBtn = document.getElementById('arc-modal-close');
-  if(closeBtn) closeBtn.addEventListener('click', function(){
-    modal.classList.remove('open');
-    var f = document.getElementById('arc-form');
-    var c = document.getElementById('arc-confirm');
-    if(f){ f.reset(); f.style.display = ''; }
-    if(c) c.classList.remove('open');
-  });
-  modal.addEventListener('click', function(e){
-    if(e.target === modal){
-      modal.classList.remove('open');
-      var f = document.getElementById('arc-form');
-      var c = document.getElementById('arc-confirm');
-      if(f){ f.reset(); f.style.display = ''; }
-      if(c) c.classList.remove('open');
-    }
-  });
-  var arcForm = document.getElementById('arc-form');
-  if(arcForm){
-    var arcConfirm = document.getElementById('arc-confirm');
-    var arcConfirmClose = document.getElementById('arc-confirm-close');
-    if(arcConfirmClose){
-      arcConfirmClose.addEventListener('click', function(){
-        modal.classList.remove('open');
-        arcForm.reset();
-        arcForm.style.display = '';
-        if(arcConfirm) arcConfirm.classList.remove('open');
-        var btn = arcForm.querySelector('.modal-submit');
-        btn.textContent = 'Request an ARC';
-        btn.disabled = false;
-      });
-    }
-    arcForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      var btn = arcForm.querySelector('.modal-submit');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      fetch(arcForm.action, { method: 'POST', body: new FormData(arcForm), headers: { Accept: 'application/json' } })
-        .then(function(res){ return res.json(); })
-        .then(function(data){
-          if (data && data.success) {
-            arcForm.style.display = 'none';
-            if(arcConfirm) arcConfirm.classList.add('open');
-          } else {
-            btn.textContent = 'Something went wrong — try again';
-            btn.disabled = false;
-          }
-        })
-        .catch(function(){
-          btn.textContent = 'Something went wrong — try again';
-          btn.disabled = false;
-        });
-    });
-  }
-})();
-
 </script>
 <script>
 const hamburger=document.getElementById('hamburger');
